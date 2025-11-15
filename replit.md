@@ -6,6 +6,14 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**November 15, 2025 - GDPR Cookie Consent Banner & Privacy Page**
+- Created privacy.html page with placeholder content structure (Privacy Policy, Cookie Policy, Data Protection sections)
+- Implemented GDPR-compliant cookie consent banner across all pages with Accept and Reject buttons
+- Banner stores user choice in localStorage ('accepted' or 'rejected') and respects prior selections
+- Added Privacy & Cookies link to footer navigation on all pages
+- CSS styling includes dark charcoal background, teal accent for Accept button, responsive mobile layout
+- Note: Future non-essential scripts/cookies should check localStorage.getItem('cookieConsent') === 'accepted' before loading
+
 **November 15, 2025 - Launch Compass Button Styling**
 - Created .btn.small modifier class for smaller button variant
 - Shortened button text from "Use Launch Compass" to "Launch Compass" and centered it

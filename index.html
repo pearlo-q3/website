@@ -147,9 +147,8 @@
     <div class="container footer-inner">
       <p>© <span id="year"></span> Qube Catalyst. All rights reserved.</p>
       <p>
-        <a href="https://www.linkedin.com/in/pearl-oguchi" target="_blank" rel="noopener">
-          LinkedIn
-        </a>
+        <a href="privacy.html">Privacy & Cookies</a>
+        · <a href="https://www.linkedin.com/in/pearl-oguchi" target="_blank" rel="noopener">LinkedIn</a>
         · <a href="mailto:pearlo@qubecatalyst.com">pearlo@qubecatalyst.com</a>
       </p>
     </div>
@@ -157,6 +156,44 @@
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-banner-content">
+      <p>
+        We use cookies to improve your experience on our site. 
+        <a href="privacy.html">Learn more</a>
+      </p>
+      <div class="cookie-banner-buttons">
+        <button id="cookie-reject" class="btn secondary small">Reject</button>
+        <button id="cookie-accept" class="btn primary small">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cookie banner consent functionality
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptButton = document.getElementById('cookie-accept');
+    const rejectButton = document.getElementById('cookie-reject');
+    
+    // Check if user has already made a choice
+    if (!localStorage.getItem('cookieConsent')) {
+      cookieBanner.style.display = 'block';
+    }
+    
+    // Accept cookies
+    acceptButton.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieBanner.style.display = 'none';
+    });
+    
+    // Reject cookies
+    rejectButton.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'rejected');
+      cookieBanner.style.display = 'none';
+    });
+  </script>
 </body>
 
 </html>
