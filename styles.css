@@ -679,20 +679,20 @@ nav a:hover {
 }
 
 .savvycal-container {
-  min-height: 300px;
+  min-height: 150px;
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
   background: var(--brand-bg);
   border-radius: 0.75rem;
-  padding: 1.5rem;
+  padding: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 768px) {
   .savvycal-container {
-    padding: 1rem;
-    min-height: 350px;
+    padding: 0;
+    min-height: 175px;
   }
 }
 
