@@ -12,6 +12,7 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 - Redesigned contact methods as 3 styled cards (Book a Call, Email, LinkedIn)
 - Applied consistent visual styling with alternating backgrounds and brand color accents
 - Improved mobile responsiveness with adaptive calendar container
+- Added favicon using Q³ logo across all pages for browser tab branding
 
 **November 15, 2025 - About Page Visual Enhancement**
 - Transformed "How Q³ Fixes This" numbered list into 2-column benefit grid with hover effects
