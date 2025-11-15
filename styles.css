@@ -681,7 +681,7 @@ nav a:hover {
 .savvycal-container {
   min-height: 150px;
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
   margin: 0 auto;
   background: var(--brand-bg);
   border-radius: 0.75rem;
@@ -845,4 +845,5 @@ nav a:hover {
   .cookie-banner-buttons {
     align-self: center;
   }
+  
 }
