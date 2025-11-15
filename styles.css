@@ -541,13 +541,22 @@ nav a:hover {
 }
 
 .transformation-box {
-  margin-top: 3rem;
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
   padding: 2.5rem;
   background: linear-gradient(135deg,
       rgba(0, 121, 107, 0.05),
       rgba(0, 200, 83, 0.03));
   border-radius: 0.75rem;
   border: 2px solid var(--brand-primary);
+}
+
+@media (max-width: 968px) {
+  .transformation-box {
+    margin-top: 3rem;
+  }
 }
 
 .transformation-box h3 {
