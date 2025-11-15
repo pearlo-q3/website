@@ -679,7 +679,7 @@ nav a:hover {
 }
 
 .savvycal-container {
-  min-height: 800px;
+  min-height: 550px;
   width: 100%;
   background: var(--brand-bg);
   border-radius: 0.75rem;
@@ -690,7 +690,7 @@ nav a:hover {
 @media (max-width: 768px) {
   .savvycal-container {
     padding: 1rem;
-    min-height: 700px;
+    min-height: 500px;
   }
 }
 
