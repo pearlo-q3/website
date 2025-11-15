@@ -1,0 +1,240 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  --brand-primary: #00796B;
+  /* Deep Teal */
+  --brand-accent: #00C853;
+  /* Electric Green */
+  --brand-bg: #FAFAFA;
+  /* Off-White */
+  --brand-surface: #ffffff;
+  /* Cards, header, footer */
+  --brand-charcoal: #263238;
+  /* Charcoal */
+  --brand-muted: #607d8b;
+  /* Soft grey/blue */
+  --brand-border: #e0e0e0;
+
+  --font-heading: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--brand-charcoal);
+  background: var(--brand-bg);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+/* Layout */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Header */
+.site-header {
+  background: var(--brand-surface);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.logo img {
+  height: 120px;
+  /* was 40px */
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.45rem;
+  /* was 1.15rem */
+  color: var(--brand-charcoal);
+}
+
+nav a {
+  margin-left: 1rem;
+  font-size: 0.95rem;
+  color: var(--brand-muted);
+}
+
+nav a:hover {
+  color: var(--brand-primary);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg,
+      rgba(0, 121, 107, 0.09),
+      rgba(0, 200, 83, 0.06));
+  padding: 4rem 0;
+}
+
+.hero-inner {
+  max-width: 720px;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--brand-muted);
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--brand-charcoal);
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+}
+
+/* Sections & cards */
+.section {
+  padding: 3rem 0;
+}
+
+.section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--brand-charcoal);
+}
+
+.section p {
+  max-width: 720px;
+}
+
+.section-muted {
+  color: var(--brand-muted);
+  margin-bottom: 1.5rem;
+}
+
+.section-cards .cards {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-cards .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  background: var(--brand-surface);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--brand-border);
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.75rem;
+}
+
+/* Buttons & links */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: var(--brand-primary);
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn.secondary {
+  background: var(--brand-surface);
+  color: var(--brand-charcoal);
+  border-color: var(--brand-border);
+}
+
+.btn.secondary:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--brand-primary);
+}
+
+/* Contact block */
+.contact-block {
+  background: var(--brand-surface);
+  border-top: 1px solid var(--brand-border);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--brand-border);
+  background: var(--brand-surface);
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
