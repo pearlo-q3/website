@@ -6,12 +6,28 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**November 15, 2025 - Contact Page Redesign with Calendar Embed**
+- Restructured contact page with qualifier section at top ("Is this for you?")
+- Integrated SavvyCal inline calendar embed for direct on-page booking
+- Redesigned contact methods as 3 styled cards (Book a Call, Email, LinkedIn)
+- Applied consistent visual styling with alternating backgrounds and brand color accents
+- Improved mobile responsiveness with adaptive calendar container
+
+**November 15, 2025 - About Page Visual Enhancement**
+- Transformed "How Q³ Fixes This" numbered list into 2-column benefit grid with hover effects
+- Added alternating section backgrounds (white, gradients) for visual rhythm
+- Styled problem narrative section with bordered boxes and highlighted climax text
+- Added transformation section at bottom of services with teal border and grid layout
+- Moved service card images from homepage to about page services section
+- Added headshot image to About section using two-column layout
+- Reduced section padding from 4rem to 3rem for tighter page flow
+
 **November 15, 2025 - Homepage Redesign**
 - Added professional stock images throughout the homepage for better visual engagement
 - Implemented uniform spacing system with CSS variables for consistent vertical rhythm
 - Enhanced visual hierarchy with grid layouts, card hover effects, and improved typography
 - Added responsive design breakpoints (968px, 768px, 640px) for mobile optimization
-- Integrated images: hero collaboration image, service card images (quality review, compass, partnership), and founders section image
+- Removed images from "How Qube Catalyst helps" service cards for cleaner text-focused design
 
 ## User Preferences
 
@@ -36,16 +52,18 @@ Preferred communication style: Simple, everyday language.
 
 **Layout System**
 - Container-based layout: Max-width constraint (1080px) for readable content width
-- Grid-based layouts: Two-column hero (text + image), three-column service cards, two-column who-section
-- Section spacing: CSS variables (--section-padding: 4rem desktop, --section-padding-mobile: 2.5rem)
+- Grid-based layouts: Two-column hero (text + image), three-column service cards, two-column benefit grids
+- Section spacing: CSS variables (--section-padding: 3rem desktop, --section-padding-mobile: 2rem)
 - Responsive breakpoints: 968px (grid to single column), 768px (mobile adjustments), 640px (footer layout)
+- Visual rhythm: Alternating section backgrounds (white, gradients, teal accents) for improved scanability
 - Rationale: Provides visual consistency, predictable spacing, and excellent mobile experience
 
 ### Asset Management
 
 **Images and Resources**
 - Logo storage: `/assets/q3Logo.png`
-- Stock images: `/attached_assets/stock_images/` (hero, service cards, founders section)
+- Headshot: `/assets/headshot.png` (displayed on about page)
+- Stock images: `/attached_assets/stock_images/` (hero, service cards on about page, founders section)
 - External fonts: Google Fonts CDN integration
 - Rationale: Professional imagery enhances credibility while maintaining reasonable page weight
 
@@ -78,6 +96,8 @@ Preferred communication style: Simple, everyday language.
 - Service: SavvyCal
 - Purpose: 15-minute triage call booking
 - URL: https://savvycal.com/pearlo/free-strategy-session
+- Integration: Inline embed on contact page using SavvyCal's embed.js API
+- Implementation: Calendar widget loads directly on the page for seamless booking experience
 
 **Placeholder External Tool**
 - Launch Compass: Referenced but URL not yet configured
