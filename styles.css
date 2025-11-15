@@ -442,3 +442,100 @@ nav a:hover {
 .footer-inner a:hover {
   color: var(--brand-primary);
 }
+
+.story-section {
+  background: var(--brand-surface);
+  border-top: 1px solid var(--brand-border);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.problem-section {
+  background: linear-gradient(135deg,
+      rgba(0, 121, 107, 0.03),
+      rgba(0, 200, 83, 0.02));
+}
+
+.problem-list {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--brand-surface);
+  border-left: 4px solid var(--brand-primary);
+  border-radius: 0.5rem;
+}
+
+.problem-list p {
+  margin: 0.75rem 0;
+  font-size: 1.1rem;
+  color: var(--brand-charcoal);
+}
+
+.problem-climax {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--brand-primary);
+}
+
+.highlight-text {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 121, 107, 0.05);
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.highlight-text strong {
+  color: var(--brand-primary);
+  font-size: 1.15rem;
+}
+
+.benefits-section {
+  background: var(--brand-surface);
+  border-top: 1px solid var(--brand-border);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.benefits-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.benefit-box {
+  padding: 2rem;
+  background: linear-gradient(135deg,
+      rgba(0, 121, 107, 0.03),
+      rgba(0, 200, 83, 0.02));
+  border-left: 3px solid var(--brand-accent);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.benefit-box:hover {
+  background: linear-gradient(135deg,
+      rgba(0, 121, 107, 0.06),
+      rgba(0, 200, 83, 0.04));
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 121, 107, 0.08);
+}
+
+.benefit-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+
+.benefit-box p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--brand-charcoal);
+}
