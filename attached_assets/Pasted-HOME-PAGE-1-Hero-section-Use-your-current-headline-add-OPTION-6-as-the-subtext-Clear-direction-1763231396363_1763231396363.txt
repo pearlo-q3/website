@@ -1,0 +1,126 @@
+HOME PAGE
+1. Hero section
+
+Use your current headline + add OPTION 6 as the subtext:
+
+Clear direction for founders building apps without a technical lead.
+I help you turn a chaotic, unclear build into a product that actually works — with clearer flows, stronger decisions and a confident path to launch.
+
+This sets the frame instantly:
+non-tech founders → building apps → lacking technical leadership → you provide clarity.
+
+2. Under the hero — “THE REAL PROBLEM FOUNDERS FACE” (OPTION 2)
+
+This sits perfectly as the first major section after the hero.
+
+Why:
+
+It mirrors the frustrations founders feel
+
+It sells the problem before the solution
+
+It positions you as the antidote to chaos and blind spots
+
+Use it exactly as written.
+
+3. Services section
+
+No change needed except tightening copy later.
+
+This sits after the problem so your services feel like the logical response.
+
+4. Before the final CTA at the bottom — “THE TRANSFORMATION” (OPTION 5)
+
+This is your emotional turning point.
+
+It shifts them from:
+
+“Yes, this is my problem”
+to
+
+“Yes, she is the person who can fix it.”
+
+This section converts extremely well because it frames the before → after.
+
+⭐ ABOUT & SERVICES PAGE
+
+This page should tell a deeper story, so we layer complexity gradually.
+
+1. Introduction (your existing About intro)
+
+Keep your Meta + 20-year experience + product clarity angle.
+
+2. “WHY Q³ EXISTS” (OPTION 1)
+
+This section fits beautifully near the top of the About page.
+
+It helps express your mission:
+
+Why you built Q³
+
+Why this problem matters
+
+Why non-tech founders need your leadership
+
+Place it after your personal intro.
+
+3. “WHAT’S ACTUALLY HAPPENING (BUT NOBODY SAYS IT)” (OPTION 3)
+
+This is the strongest anti-guru, truthful section.
+
+Put this right before your services list.
+
+This primes founders to feel seen and understood before you show them what you offer.
+
+This section does the emotional heavy lifting.
+
+4. “HOW Q³ FIXES THIS” (OPTION 4)
+
+Place this as the Services explanation block.
+
+This is where you articulate your methodology and thinking, not the packages themselves.
+
+Here’s the flow:
+
+Intro → Why Q³ → What’s Actually Happening → How Q³ Fixes This → Services Cards
+
+That’s the right narrative arc.
+
+⭐ CONTACT PAGE
+
+This page stays mostly lean.
+
+But you can add OPTION 5 (The Transformation) as a small block above your final contact CTA.
+
+It reinforces that reaching out = moving from chaos → clarity.
+
+⭐ SUMMARY MAP
+HOME
+
+Hero → OPTION 6
+
+Section 1 → OPTION 2
+
+Services (existing)
+
+Before CTA → OPTION 5
+
+ABOUT & SERVICES
+
+Intro (existing)
+
+OPTION 1 → Why Q³ Exists
+
+OPTION 3 → What’s Actually Happening
+
+OPTION 4 → How Q³ Fixes This
+
+Services Cards
+
+CONTACT
+
+Intro (existing)
+
+Optional: OPTION 5 mini-block
+
+Contact details
