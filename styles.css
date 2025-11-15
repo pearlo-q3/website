@@ -369,6 +369,19 @@ nav a:hover {
   font-size: 0.875rem;
 }
 
+.btn.secondary.small {
+  background: #00796B;
+  color: #ffffff;
+  border-color: #00796B;
+  font-weight: 600;
+}
+
+.btn.secondary.small:hover {
+  background: #00695c;
+  border-color: #00695c;
+  color: #ffffff;
+}
+
 .text-link {
   display: inline-block;
   margin-top: 0.5rem;

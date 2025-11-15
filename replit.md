@@ -6,10 +6,12 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
-**November 15, 2025 - Launch Compass Button Size Reduction**
+**November 15, 2025 - Launch Compass Button Styling**
 - Created .btn.small modifier class for smaller button variant
-- Reduced Launch Compass button size on about page services section
-- Maintained consistent styling with existing button design system
+- Shortened button text from "Use Launch Compass" to "Launch Compass" and centered it
+- Changed button color to brand teal (#00796B) with white text
+- Increased font weight to 600 for better visibility and emphasis
+- Added hover state with darker teal (#00695c)
 
 **November 15, 2025 - Transformation Section Alignment Fix**
 - Centered transformation box with max-width (900px) for better visual balance
