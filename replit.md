@@ -6,6 +6,12 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**November 15, 2025 - Transformation Section Alignment Fix**
+- Centered transformation box with max-width (900px) for better visual balance
+- Added auto margins to align with service cards grid layout above
+- Increased top spacing from 3rem to 4rem for improved separation from service cards
+- Maintained mobile responsiveness with breakpoint-specific margin adjustment
+
 **November 15, 2025 - Favicon Fix**
 - Created square 1:1 aspect ratio favicon to prevent browser squishing
 - Generated dedicated favicon.png file from Q³ cube icon
