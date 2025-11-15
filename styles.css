@@ -582,3 +582,146 @@ nav a:hover {
   color: var(--brand-charcoal);
   font-weight: 600;
 }
+
+.qualifier-section {
+  background: linear-gradient(135deg,
+      rgba(0, 121, 107, 0.05),
+      rgba(0, 200, 83, 0.03));
+}
+
+.qualifier-section h1 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  color: var(--brand-charcoal);
+  text-align: center;
+}
+
+.qualifier-list {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.qualifier-item {
+  padding: 1.5rem;
+  background: var(--brand-surface);
+  border-left: 4px solid var(--brand-primary);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.qualifier-item p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--brand-charcoal);
+}
+
+.qualifier-cta {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--brand-primary);
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calendar-section {
+  background: var(--brand-surface);
+  border-top: 1px solid var(--brand-border);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.calendar-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.05rem;
+  color: var(--brand-muted);
+}
+
+.savvycal-container {
+  min-height: 800px;
+  width: 100%;
+  background: var(--brand-bg);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .savvycal-container {
+    padding: 1rem;
+    min-height: 700px;
+  }
+}
+
+.contact-details-section {
+  background: var(--brand-bg);
+}
+
+.contact-details-section h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-methods {
+  display: grid;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .contact-methods {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-method {
+  text-align: center;
+  padding: 2rem;
+  background: var(--brand-surface);
+  border-radius: 0.75rem;
+  border: 1px solid var(--brand-border);
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 121, 107, 0.12);
+  border-color: var(--brand-primary);
+}
+
+.contact-method h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  color: var(--brand-primary);
+}
+
+.contact-method p {
+  margin: 0;
+}
+
+.contact-method a {
+  color: var(--brand-charcoal);
+  font-weight: 500;
+  transition: color 0.2s ease;
+  word-break: break-word;
+}
+
+.contact-method a:hover {
+  color: var(--brand-primary);
+}
