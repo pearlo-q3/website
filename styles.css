@@ -201,12 +201,12 @@ nav a:hover {
 }
 
 .section {
-  padding: var(--section-padding) 0;
+  padding: 3rem 0;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: var(--section-padding-mobile) 0;
+    padding: 2rem 0;
   }
 }
 
@@ -538,4 +538,47 @@ nav a:hover {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--brand-charcoal);
+}
+
+.transformation-box {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg,
+      rgba(0, 121, 107, 0.05),
+      rgba(0, 200, 83, 0.03));
+  border-radius: 0.75rem;
+  border: 2px solid var(--brand-primary);
+}
+
+.transformation-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--brand-primary);
+  margin-bottom: 1rem;
+}
+
+.transformation-box > p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.transformation-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .transformation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.transformation-item {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.transformation-item strong {
+  color: var(--brand-charcoal);
+  font-weight: 600;
 }
