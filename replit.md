@@ -6,6 +6,11 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**November 15, 2025 - Favicon Fix**
+- Created square 1:1 aspect ratio favicon to prevent browser squishing
+- Generated dedicated favicon.png file from Q³ cube icon
+- Updated all three pages to use the new square favicon for proper display in browser tabs
+
 **November 15, 2025 - Contact Page Redesign with Calendar Embed**
 - Restructured contact page with qualifier section at top ("Is this for you?")
 - Integrated SavvyCal inline calendar embed for direct on-page booking
