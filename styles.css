@@ -681,7 +681,7 @@ nav a:hover {
 .savvycal-container {
   min-height: 150px;
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   background: var(--brand-bg);
   border-radius: 0.75rem;
@@ -694,14 +694,6 @@ nav a:hover {
     padding: 0;
     min-height: 175px;
   }
-}
-
-/* Force SavvyCal iframe to scale */
-.savvycal-container iframe {
-  height: 100px !important;   /* try 550, 500, or 450 */
-  width: 100% !important;
-  max-width: 100% !important;
-  border: 0 !important;
 }
 
 .contact-details-section {
@@ -853,17 +845,4 @@ nav a:hover {
   .cookie-banner-buttons {
     align-self: center;
   }
-
-  /* Force SavvyCal embed to a fixed height */
-  #savvycal-embed,
-  #savvycal-embed * {
-    max-height: 300px !important;   /* reduce here – try 450, 400, 350 */
-    min-height: 0 !important;
-  }
-
-  #savvycal-embed iframe {
-    height: 300px !important;        /* same value */
-  }
-  
 }
-
