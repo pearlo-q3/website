@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact – Qube Catalyst</title>
+  <meta name="keywords" content="founder, product owner, tech lead, strategy call, agency, AI tools">
   <link rel="icon" type="image/png" href="assets/q3favicon.png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,7 +124,7 @@
   <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-banner-content">
       <p>
-        We use cookies to improve your experience on our site. 
+        We use cookies to improve your experience on our site.
         <a href="privacy.html">Learn more</a>
       </p>
       <div class="cookie-banner-buttons">
@@ -138,20 +139,20 @@
     const cookieBanner = document.getElementById('cookie-banner');
     const acceptButton = document.getElementById('cookie-accept');
     const rejectButton = document.getElementById('cookie-reject');
-    
+
     // Check if user has already made a choice
     if (!localStorage.getItem('cookieConsent')) {
       cookieBanner.style.display = 'block';
     }
-    
+
     // Accept cookies
-    acceptButton.addEventListener('click', function() {
+    acceptButton.addEventListener('click', function () {
       localStorage.setItem('cookieConsent', 'accepted');
       cookieBanner.style.display = 'none';
     });
-    
+
     // Reject cookies
-    rejectButton.addEventListener('click', function() {
+    rejectButton.addEventListener('click', function () {
       localStorage.setItem('cookieConsent', 'rejected');
       cookieBanner.style.display = 'none';
     });
