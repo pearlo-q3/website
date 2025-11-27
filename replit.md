@@ -6,6 +6,11 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**November 27, 2025 - SEO Files Added**
+- Created robots.txt in root folder to allow search engine crawling and reference sitemap
+- Created sitemap.xml with all four pages (index, about, contact, privacy) with priority levels
+- Domain configured as https://qubecatalyst.com/
+
 **November 15, 2025 - GDPR Cookie Consent Banner & Privacy Page**
 - Created privacy.html page with placeholder content structure (Privacy Policy, Cookie Policy, Data Protection sections)
 - Implemented GDPR-compliant cookie consent banner across all pages with Accept and Reject buttons
