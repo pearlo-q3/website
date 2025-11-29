@@ -6,6 +6,15 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**November 29, 2025 - Blog Section Added**
+- Created blog.html listing page with consistent site styling
+- Created blog/ folder for article storage
+- Added first blog post: VerAIQ launch announcement (blog/veraiq-launch.html)
+- Added Blog link to navigation menu on all pages (index, about, contact, privacy)
+- Added blog-specific CSS styles (blog cards, article layout, meta tags styling)
+- Updated sitemap.xml to include blog.html and blog/veraiq-launch.html
+- All blog pages include SEO meta tags (title, description, keywords, Open Graph)
+
 **November 27, 2025 - SEO Files Added**
 - Created robots.txt in root folder to allow search engine crawling and reference sitemap
 - Created sitemap.xml with all four pages (index, about, contact, privacy) with priority levels
