@@ -1096,8 +1096,16 @@ nav a:hover {
 
 @media (max-width: 968px) {
   .reviews-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .review-card {
+    padding: 1rem;
+  }
+  
+  .review-content p {
+    font-size: 0.9rem;
   }
 }
 
