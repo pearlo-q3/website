@@ -1090,13 +1090,8 @@ nav a:hover {
 
 .reviews-grid {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1.5rem;
-}
-
-.reviews-grid .review-card {
-  flex: 1;
-  min-width: 0;
 }
 
 .review-card {
