@@ -6,6 +6,15 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**November 30, 2025 - Blog Article Styling Enhancement**
+- Improved article typography with narrower container (720px max-width) for better readability
+- Added teal accent line under article headers for visual polish
+- Styled intro paragraph with teal left border callout
+- Made email and calendar contact links bold with teal color for emphasis
+- Added styled CTA section with gradient background
+- Implemented auto-generated blog previews using JavaScript (fetches article intro, truncates to 180 chars)
+- Blog cards use data-article-url attribute to dynamically load preview text
+
 **November 29, 2025 - Blog Section Added**
 - Created blog.html listing page with consistent site styling
 - Created blog/ folder for article storage
