@@ -1,34 +1,49 @@
 import http.server
 import socketserver
-import os
 
 ALLOWED_HOSTS = {
     'qubecatalyst.com',
     'www.qubecatalyst.com',
-    'localhost',
-    '0.0.0.0',
-    '127.0.0.1',
 }
+
+LOCALHOST_HOSTS = {'localhost', '127.0.0.1', '0.0.0.0'}
 
 PORT = 5000
 
 class SecureHandler(http.server.SimpleHTTPRequestHandler):
-    def do_GET(self):
-        host = self.headers.get('Host', '').split(':')[0]
+    def is_allowed(self):
+        host = self.headers.get('Host', '').split(':')[0].lower()
+        x_forwarded_host = self.headers.get('X-Forwarded-Host', '').split(':')[0].lower()
         
-        if host in ALLOWED_HOSTS or host.startswith('localhost') or host.startswith('127.'):
+        print(f"Request - Host: {host}, X-Forwarded-Host: {x_forwarded_host}")
+        
+        if host in LOCALHOST_HOSTS and not x_forwarded_host:
+            return True
+        
+        check_host = x_forwarded_host if x_forwarded_host else host
+        
+        if check_host in ALLOWED_HOSTS:
+            return True
+        
+        if 'replit' in check_host or 'repl.co' in check_host:
+            print(f"BLOCKED: {check_host}")
+            return False
+            
+        return False
+
+    def do_GET(self):
+        if self.is_allowed():
             return super().do_GET()
         else:
             self.send_response(403)
             self.send_header('Content-type', 'text/plain')
+            self.send_header('Cache-Control', 'no-store')
             self.end_headers()
-            self.wfile.write(b'Forbidden')
+            self.wfile.write(b'Forbidden - Access this site via qubecatalyst.com')
             return
 
     def do_HEAD(self):
-        host = self.headers.get('Host', '').split(':')[0]
-        
-        if host in ALLOWED_HOSTS or host.startswith('localhost') or host.startswith('127.'):
+        if self.is_allowed():
             return super().do_HEAD()
         else:
             self.send_response(403)
@@ -36,7 +51,11 @@ class SecureHandler(http.server.SimpleHTTPRequestHandler):
             self.end_headers()
             return
 
-with socketserver.TCPServer(("0.0.0.0", PORT), SecureHandler) as httpd:
+class ReusableTCPServer(socketserver.TCPServer):
+    allow_reuse_address = True
+
+with ReusableTCPServer(("0.0.0.0", PORT), SecureHandler) as httpd:
     print(f"Serving on port {PORT}")
-    print(f"Allowed hosts: {ALLOWED_HOSTS}")
+    print(f"Only allowing: {ALLOWED_HOSTS}")
+    print("Blocking all replit.app and repl.co domains")
     httpd.serve_forever()
