@@ -1,0 +1,218 @@
+Excellent — let’s build you a **second December article**, this time engineered to hit *another cluster* of your 200 SEO keywords AND directly speak to **SMEs upgrading internal systems** *and* **non-technical founders building apps**.
+
+I’ll write it in your anti-guru style: clear, direct, no fluff, no “thought leadership waffling.”
+
+You can post this mid-December.
+
+---
+
+# **ARTICLE #2 (DECEMBER 2025)**
+
+## **Title:** *Why Software Projects Go Sideways: The Hidden Risks No One Tells Founders or SMEs About*
+
+**SEO clusters targeted:**
+upgrade spreadsheets, replace manual processes, internal tools, build an app, app idea, app development agency, freelancer developers, unclear user flows, app delays, scope creep, app development cost, app roadmap, product strategy, business operations, system upgrade, SME software, customer portal, booking system, technical oversight, non-technical founder, launch readiness
+
+---
+
+# **Intro (paste inside `.article-intro`)**
+
+<p class="article-intro">
+Most software projects don't fail because of bad code. They fail because the people leading them — founders and SME owners — never get the visibility they need. Whether you're building an app, replacing spreadsheets or modernising manual processes, the real risks aren’t technical. They’re structural, strategic and hidden from you until the last possible moment.
+</p>
+
+---
+
+# **Why This Happens So Often**
+
+People love to blame “the developer” or “the agency,” but here’s the truth:
+
+You can’t manage what you can’t see.
+
+If you’re a non-technical founder trying to turn an app idea into a real product, or an established SME replacing internal spreadsheets with a proper system, you’re stepping into a world where:
+
+* decisions get made without your input
+* unclear user flows go unnoticed
+* scope creep is normalised
+* costs rise without warning
+* timelines slip quietly
+* and no one is responsible for launch readiness
+
+None of these show up on a proposal.
+They show up **later**, when the build stops matching your business.
+
+---
+
+# **The Five Risk Zones That Derail Most Software Projects**
+
+## **1. “We can build that” becomes “we didn’t know that mattered”**
+
+Founders talk in problems.
+Developers talk in features.
+SMEs talk in workflows.
+These worlds rarely align without guidance — and misalignment becomes expensive fast.
+
+## **2. Spreadsheets hide complexity that software cannot avoid**
+
+When businesses replace spreadsheets or manual processes with an internal tool or customer portal, they often discover new rules, exceptions and behaviours they never documented.
+
+Your business logic becomes a moving target.
+
+## **3. User flows are unclear — and no one realises until the end**
+
+A build might “work,” but users still fail.
+
+That’s how SMEs end up with booking systems staff can’t use, and founders end up with apps that behave well in demos but collapse with real customers.
+
+## **4. App development “sprints” prioritise speed over sense**
+
+Agencies optimise for getting features out.
+They don’t optimise for:
+
+* coherence
+* commercial logic
+* operational reality
+* long-term maintainability
+
+This is how you get products that technically function but make no sense.
+
+## **5. Nobody defines ‘launch-ready’**
+
+This is the biggest failure point.
+
+Founders assume it means “working.”
+Agencies assume it means “deployable.”
+SMEs assume it means “usable by staff and customers.”
+
+Without a definition, everyone ships something different.
+
+---
+
+# **Why Founders and SMEs Feel Lost**
+
+Because the tech world expects you to make decisions without ever giving you the information you need to make them.
+
+You aren’t given:
+
+* a clear app roadmap
+* a breakdown of high-risk flows
+* a view of where the build is strong or weak
+* insights into whether your system reflects real workflows
+* an explanation of rising app development costs
+* a way to verify what your agency delivers
+
+So you end up leading with instinct instead of clarity.
+
+And instinct is not a launch strategy.
+
+---
+
+# **What Needs to Change (And Why Most Teams Never Fix It)**
+
+Software projects only stay on track when someone owns:
+
+* the user experience
+* the business logic
+* the product direction
+* the prioritisation
+* the launch criteria
+
+But agencies don’t own this.
+Freelancers don’t.
+Internal teams rarely do.
+
+Which means **you** get stuck doing it — even if you’ve never built software before.
+
+That’s why so many founders and SMEs reach December with:
+
+* a half-ready app
+* an internal tool no one understands
+* a customer portal staff can’t use
+* a booking system that breaks under pressure
+* or more budget burned than expected
+
+This isn’t mismanagement.
+This is what happens when no one is guiding the project at the product level.
+
+---
+
+# **How to Get Control Back — Without Becoming Technical**
+
+You don’t need to learn code.
+You don’t need a Computer Science degree.
+You don’t need to micromanage your agency.
+
+You just need:
+
+## **1. Clear user journeys**
+
+Define what users must be able to do — founders, customers, staff, admins.
+
+## **2. Explicit launch criteria**
+
+Write down what “ready” means for *your* product or system.
+
+## **3. Visibility across the build**
+
+Not status updates.
+Not Jira tickets.
+Actual visibility.
+
+## **4. Early detection of risk**
+
+Scope creep, unclear flows, mismatched assumptions.
+
+## **5. A product brain on your side**
+
+Not a developer.
+Not a project manager.
+A partner who sees the whole picture.
+
+That’s the gap Qube Catalyst fills — the second brain for founders and SMEs who can’t afford blind spots.
+
+---
+
+# **The Bottom Line**
+
+Most app ideas don’t fail.
+Most SMEs don’t fail at digitisation.
+What fails is the **bridge** between vision and implementation.
+
+If your app build, internal tool or system upgrade already feels messy — or you’re heading into Q1 unsure what’s actually been built — this is the moment to reset direction, not wait for things to break.
+
+---
+
+# **Want help reviewing your build before the new year?**
+
+Whether you’re:
+
+* building an app with an agency
+* working with freelancers or offshore teams
+* replacing spreadsheets
+* modernising manual processes
+* creating a customer portal or internal tool
+
+…you shouldn’t have to guess.
+
+You can book a strategy call here:
+👉 **[https://qubecatalyst.com/contact.html](https://qubecatalyst.com/contact.html)**
+
+Or email directly:
+📩 **[hello@qubecatalyst.com](mailto:hello@qubecatalyst.com)**
+
+Your build doesn’t need to be perfect.
+It just needs direction.
+
+---
+
+# Want the ready-to-paste HTML file?
+
+I can generate the exact `<article>` block with:
+
+* correct `<h1>–<h3>` structure
+* intro class
+* SEO meta tags
+* Open Graph tags
+* blog preview rules
+
+Just say: **"Generate HTML version #2"**
