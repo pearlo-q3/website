@@ -1,0 +1,288 @@
+Got you. Let’s give Replit AI a *surgical* brief so it builds the `/partners` page, wires up CTAs, uses your brand colours, and adds image sections that visually say “dev agencies hard at work for clients”.
+
+You can copy–paste this straight into Replit AI.
+
+---
+
+### 🔧 Query for Replit AI
+
+> **TASK:**
+> In this Next.js + Tailwind project (VerAIQ), create a fully designed “VerAIQ Partner Programme” landing page at `/partners` and lightly update the footer to link to it.
+>
+> **TECH + STYLE REQUIREMENTS**
+>
+> * Tech: Next.js App Router + React + Tailwind CSS (assume this stack).
+> * Create a new page at: `app/partners/page.tsx` (or `.jsx` depending on the project convention).
+> * Use **VerAIQ / Q³ brand-inspired colours** (define them in Tailwind or inline utility classes as needed):
+>
+>   * Primary deep teal: `#022C3A`
+>   * Dark navy background: `#020817`
+>   * Accent electric green: `#22C55E`
+>   * Accent warm coral: `#FB7185`
+>   * Soft grey text: `#CBD5F5`
+>   * Off-white background sections: `#0B1220` / `#020617`
+> * Design language:
+>
+>   * Modern SaaS landing page.
+>   * Large hero section, clear CTAs, alternating dark/light sections.
+>   * Generous spacing, rounded cards (`rounded-2xl`), subtle shadows.
+>   * Layout should be responsive and look good on mobile and desktop.
+>
+> **IMAGES / VISUALS**
+>
+> * Create simple **hero + illustration sections** that visually represent:
+>
+>   * Development agencies and freelancers working on client projects.
+>   * Collaboration between dev teams and non-technical founders.
+> * Since we’re in code, do NOT call external APIs. Use:
+>
+>   * Either simple SVG illustrations defined as React components (e.g. abstract dev team scene with screens/avatars).
+>   * Or placeholder `<div>` with gradient backgrounds and icons (Heroicons / Lucide) that we can later replace with real images.
+> * Put these visuals in:
+>
+>   * Hero section (left copy, right illustration).
+>   * A mid-page “How agencies use VerAIQ” section with a visual.
+>
+> **PAGE STRUCTURE + COPY**
+>
+> Build the `/partners` page with the following sections and copy. Use headings, subheadings, and Tailwind-styled components (cards, grids, etc.). You can adjust exact HTML tags but **don’t change the text except for minor formatting like line breaks**.
+>
+> ---
+>
+> **HERO SECTION**
+>
+> * Big title, subtitle, and 2 primary CTAs.
+>
+> **Copy:**
+>
+> Title:
+> `Turn Client Chaos into Clean Launches (and Earn Recurring Revenue)`
+>
+> Subheadline:
+> `VerAIQ gives your non-technical clients a guided QA and launch readiness tool. You get fewer “is it ready?” arguments, cleaner handovers, and a new recurring revenue stream.`
+>
+> Buttons:
+>
+> * Primary CTA button: `Apply to Become a Partner` → link this to a prop or placeholder URL like `/partner-apply` (I’ll later replace with a Tally.so form URL).
+> * Secondary CTA button: `Book a 10-Minute Partner Call` → link to a placeholder URL `/partner-call` (I’ll later replace with my SavvyCal link).
+>
+> Also add a small text link under the hero CTAs:
+> `Built for developer agencies, freelancers, and fractional CTOs who want fewer launch surprises.`
+>
+> On the right side of the hero, include a visual block:
+>
+> * A card or illustration representing a dev team at desks with screens and a client on a call. Use simple SVG / icon composition in React.
+>
+> ---
+>
+> **SECTION: Who VerAIQ Partners Are For**
+>
+> Heading: `Who the VerAIQ Partner Programme Is For`
+>
+> Body text (use bullet points in a 2-column layout or stacked cards on mobile):
+>
+> * Developer agencies building apps for non-technical founders
+> * Freelance developers tired of messy UAT and launch delays
+> * Fractional CTOs and product consultants who want structured QA without hiring testers
+>
+> Paragraph:
+>
+> `If your clients keep asking “when can we launch?” and testing always turns into a blame game, VerAIQ is for you.`
+>
+> ---
+>
+> **SECTION: The Problem**
+>
+> Heading: `The Problem: Speed Without Structure Kills Trust`
+>
+> Copy:
+>
+> `Your team ships. The client skims. Users find the real bugs in the wild.`
+>
+> `You get:`
+>
+> * `Endless messages about “broken” flows that were never clearly tested`
+> * `Last-minute UAT panics`
+> * `Clients blaming “quality” when the real issue is lack of process`
+>
+> `You didn’t sign up to run their QA department. But right now, you’re acting like it.`
+>
+> Style: put this in a dark card with subtle accent border (teal/green).
+>
+> ---
+>
+> **SECTION: How VerAIQ Fixes This**
+>
+> Heading: `How VerAIQ Fixes This`
+>
+> Copy:
+>
+> `VerAIQ is a guided launch readiness tool for non-technical founders.`
+>
+> `It:`
+>
+> * `Walks your clients through structured test flows`
+> * `Logs issues in plain language they understand`
+> * `Produces a clear launch readiness report you can align around`
+>
+> `No extra testers on your payroll. No more vague “it feels buggy” feedback.`
+>
+> Layout: two-column; on the right, show another visual card or icon grid representing:
+>
+> * checklists, bugs, and a readiness gauge.
+>
+> ---
+>
+> **SECTION: How Agencies Use VerAIQ (TESTING SCENARIOS)**
+>
+> Heading: `How Agencies Use VerAIQ With Their Clients`
+>
+> Short intro text:
+> `You can use VerAIQ in three ways depending on how your clients work:`
+>
+> Then show **3 cards** with these exact texts:
+>
+> 1. **Client-Led Testing (default)**
+>    `The founder follows VerAIQ’s guided test flows. They log issues in plain language. You review the readiness report together and agree what must be fixed before launch.`
+>
+> 2. **Agency-Led Testing**
+>    `Your team runs the tests on behalf of the client using a VerAIQ plan. Ideal for busy founders or when you offer a premium “we’ll test it for you” service.`
+>
+> 3. **Hybrid Testing**
+>    `The founder logs issues; your team verifies and prioritises them. VerAIQ generates a shared readiness score so you can make transparent, aligned launch decisions.`
+>
+> Visually, surround these with a subtle background panel and an illustration/icon cluster that hints at collaboration (e.g. multiple avatars, arrows, screens).
+>
+> ---
+>
+> **SECTION: How the Partner Programme Works**
+>
+> Heading: `How the VerAIQ Partner Programme Works`
+>
+> Copy:
+>
+> `1. You introduce VerAIQ at the right moment`
+> `When your client says “When can we launch?”, that’s your cue.`
+>
+> `2. They sign up using your partner link`
+> `They get guided testing. You stay in control.`
+>
+> `3. You both get clarity`
+> `You see a clean list of issues and a readiness score.`
+>
+> `4. You get paid`
+> `You earn a share of their subscription and any Expert Review add-ons.`
+>
+> Render this as a 4-step horizontal or vertical timeline with icons.
+>
+> ---
+>
+> **SECTION: Commission & Benefits**
+>
+> Heading: `Commission Structure & Partner Benefits`
+>
+> Layout: two columns: “Agencies” and “Freelancers / Indie Devs”.
+>
+> Text:
+>
+> `For Agencies`
+>
+> * `20% recurring commission for 12 months on all VerAIQ subscriptions`
+> * `30% commission on the first Expert Review (£450) you route`
+> * `Upgrade to 25% recurring after 10+ paying clients per year`
+>
+> `For Freelancers / Indie Devs`
+>
+> * `15% recurring commission for 12 months`
+> * `25% on the first Expert Review for each referred client`
+>
+> `Beyond cash, you get:`
+>
+> * `Fewer late-night “is it ready?” messages`
+> * `Cleaner project endings and renewals`
+> * `A more “grown-up” QA process without hiring testers`
+>
+> ---
+>
+> **SECTION: What You Get as a Partner**
+>
+> Heading: `What You Get as a VerAIQ Partner`
+>
+> Render as a 3x2 grid of cards.
+>
+> Bullet content:
+>
+> * `A unique partner link and simple performance dashboard`
+> * `A co-branded launch readiness PDF for your clients`
+> * `Email and WhatsApp scripts you can copy-paste into your workflow`
+> * `A “VerAIQ Partner” badge for your website and proposals`
+> * `Priority access to new features and agency-only resources`
+> * `A repeatable way to reduce UAT chaos on every project`
+>
+> ---
+>
+> **SECTION: How to Join**
+>
+> Heading: `How to Join the Partner Programme`
+>
+> Copy:
+>
+> `1. Apply via the short form – tell us about your clients and projects.`
+> `2. Jump on a 10-minute call – we confirm fit and walk you through the workflow.`
+> `3. Get your partner kit – link, scripts, co-branded PDF, and badge.`
+> `4. Start introducing VerAIQ on your next project.`
+>
+> Under this, repeat the two main CTA buttons:
+>
+> * `Apply to Become a Partner` → same Tally.so placeholder URL
+> * `Book a 10-Minute Partner Call` → same SavvyCal placeholder URL
+>
+> Add a small reassurance line under the buttons:
+> `No minimum volume. We review partner performance every 90 days to keep the programme focused and high-quality.`
+>
+> ---
+>
+> **SECTION: FAQ (Short)**
+>
+> Heading: `Questions We Get a Lot`
+>
+> Provide 3 FAQ items with the following content:
+>
+> Q1: `Can we use VerAIQ on all clients?`
+> A1: `Yes, but it’s especially effective for non-technical founders and teams doing their own testing.`
+>
+> Q2: `Do you handle support?`
+> A2: `Yes. We support the VerAIQ tool and guided flows. You keep focusing on delivery and client relationships.`
+>
+> Q3: `Is there a minimum volume?`
+> A3: `No minimum. Start with a single project. We review partner performance every 90 days.`
+>
+> ---
+>
+> **FOOTER CHANGES**
+>
+> 1. In whatever global footer or main layout component is used for the VerAIQ marketing site (e.g. `components/Footer.tsx` or similar), add a link:
+>
+>    * Text: `Partner Programme`
+>    * Href: `/partners`
+> 2. Make no assumptions about the Q³ WordPress site; just ensure `/partners` exists and works so I can manually add a “Partner with VerAIQ” link from the Q³ site.
+>
+> ---
+>
+> **GENERAL IMPLEMENTATION NOTES**
+>
+> * Use semantic HTML where possible (`<main>`, `<section>`, `<header>`, `<footer>`).
+> * Use Tailwind for spacing/typography; e.g. `max-w-5xl mx-auto px-4 py-16`.
+> * Don’t refactor unrelated components or pages. Touch only the new `/partners` page and, minimally, the shared footer component to add the “Partner Programme” link.
+> * Keep the design clean, professional, and consistent with a modern SaaS brand.
+>
+> **DELIVERABLES**
+>
+> * A fully implemented `app/partners/page.tsx` (or `.jsx`) React component with all sections above.
+> * Updated footer component with a `Partner Programme` link pointing to `/partners`.
+> * Simple illustration components / gradient blocks where image placeholders are needed so that the page looks visually complete even before I swap in custom artwork later.
+
+---
+
+Paste that into Replit AI and let it build the page.
+Once it’s generated the code, we can iterate on styling or tweak copy — but this gives you a solid, on-brand partner landing page in one shot.
