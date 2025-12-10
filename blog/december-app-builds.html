@@ -42,6 +42,11 @@
           <img src="../assets/q3Logo.png" alt="Qube Catalyst logo" />
         </a>
       </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav>
         <a href="../index.html">Home</a>
         <a href="../about.html">About &amp; Services</a>
@@ -49,6 +54,7 @@
         <a href="../contact.html">Contact</a>
         <a href="https://veraiq.qubecatalyst.com">VerAIQ</a>
       </nav>
+      <div class="nav-overlay"></div>
     </div>
   </header>
 
@@ -300,6 +306,21 @@
   </div>
 
   <script>
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    function toggleNav() {
+      navToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+      navOverlay.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    }
+
+    navToggle.addEventListener('click', toggleNav);
+    navOverlay.addEventListener('click', toggleNav);
+
     function acceptCookies() {
       localStorage.setItem('cookieConsent', 'accepted');
       document.getElementById('cookieBanner').style.display = 'none';
