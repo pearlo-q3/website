@@ -1,0 +1,42 @@
+FAQ — How Q³ Works
+1) What does a Micro Confidence Review actually include?
+
+A Micro Confidence Review is a focused pass over 3–4 critical journeys — the flows that determine whether people trust and complete key actions. I walk them like a real user, document where things break or confuse, and return a prioritised action plan your team can act on immediately.
+
+For many founders, this is the point where they would normally rely on software acceptance testing or user acceptance testing for business owners, but without the technical framing. My role is to translate that sign-off moment into clear, human decisions you can stand behind.
+
+2) How fast is a Micro Confidence Review, and what do you need from us?
+
+It’s designed to be lightweight and fast. I don’t need full documentation or long discovery cycles — just access to the product (staging is fine), context on the key journeys, and any known constraints.
+
+Some teams already have an internal app launch checklist they’re trying to work through. Others don’t. Either way, the output becomes a clear reference for what needs attention now versus what can safely wait.
+
+3) How do you work with agencies and freelancers without causing conflict?
+
+I don’t replace your agency or second-guess them publicly. I work alongside you, privately, to clarify what’s solid, what’s assumed, and where the real risks sit.
+
+That’s especially valuable when founders are worried about outsourcing app development risks or quietly wondering whether changing software agencies mid project would actually improve things — or just create new problems. My role is to help you see clearly before decisions escalate.
+
+4) What happens if our project is already messy or halfway built?
+
+That’s normal. Most people bring me in once things feel unclear, not at the start.
+
+At that stage, the work is about understanding how the project is actually being run — scope, decision-making, and trade-offs — not blaming anyone. This is often when founders start revisiting fixed price vs hourly software models after the fact, trying to explain instability. I help you make sense of where you are and what matters next.
+
+5) Do you review code or do “code quality checks”?
+
+I’m not running a formal audit or rewriting code. My focus is whether the product behaves in a way you can confidently approve.
+
+Where it’s useful, I surface indicators that function as a code quality check for non-programmers — things you can understand, question, and use in conversations with your build team without needing to read source code.
+
+6) How does the Fractional Launch Partner service work in practice?
+
+This is for teams beyond first launch who need continuity. I stay alongside you across releases, helping you make cleaner decisions as the product evolves.
+
+That often includes anticipating downstream realities — like how features affect support, stability, and app hosting costs — so you’re not surprised by what it takes to keep the system running once it’s live.
+
+7) When should someone use VerAIQ instead of working with you directly?
+
+VerAIQ is for earlier or quieter moments, when you’re not ready to involve anyone else yet.
+
+Founders use it to organise their thinking, clarify what they’ve been told, and prepare for conversations with an agency — often around things like software development contract templates or expectations before work starts. It’s self-serve orientation, not advice, and it often helps people decide whether they even need hands-on support.
