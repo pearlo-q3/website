@@ -6,17 +6,17 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FJNXE3M7L"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() {dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-4FJNXE3M7L');
   </script>
   <title>Blog | Qube Catalyst – Launch & Digitisation Guidance</title>
   <meta name="description"
-  content="Judgement-led writing for non-technical founders and SMEs navigating agency-built software, launch decisions, and modernisation without a technical lead.">
+    content="Judgement-led writing for non-technical founders and SMEs navigating agency-built software, launch decisions, and modernisation without a technical lead.">
 
   <meta name="keywords"
-  content="non-technical founder, app idea, build an app, app development agency, freelance developer, app not ready, launch readiness, launch checklist, product confidence, software startup advice, SME software, upgrade systems, avoid app development mistakes">
+    content="non-technical founder, app idea, build an app, app development agency, freelance developer, app not ready, launch readiness, launch checklist, product confidence, software startup advice, SME software, upgrade systems, avoid app development mistakes">
   <link rel="canonical" href="https://qubecatalyst.com/blog.html">
 
   <meta property="og:title" content="Blog | Qube Catalyst – Confidence Signals">
@@ -64,9 +64,10 @@
     <section class="section blog-header">
       <div class="container">
         <h1>Confidence Signals</h1>
-        <p class="blog-intro"> Practical insights for non-technical founders and established SMEs who are building apps, customer portals or
-        internal tools with agencies or freelancers, or upgrading spreadsheets and manual processes into proper
-        software and want clear, honest guidance on what “ready to launch” really looks like.</p>
+        <p class="blog-intro"> Practical insights for non-technical founders and established SMEs who are building apps,
+          customer portals or
+          internal tools with agencies or freelancers, or upgrading spreadsheets and manual processes into proper
+          software and want clear, honest guidance on what “ready to launch” really looks like.</p>
       </div>
     </section>
 
@@ -74,11 +75,24 @@
       <div class="container">
         <div class="blog-grid">
 
+          <article class="blog-card" data-article-url="blog/january-delivery-timelines-slip.html">
+            <div class="blog-card-content">
+              <div class="blog-meta">
+                <span class="blog-date">January 2026</span>
+                <span class="blog-category">Product Delivery</span>
+              </div>
+              <h2><a href="blog/january-delivery-timelines-slip.html">When delivery timelines slip and no one can
+                  explain why</a></h2>
+              <p class="blog-preview"></p>
+              <a class="text-link" href="blog/january-delivery-timelines-slip.html">Read more →</a>
+            </div>
+          </article>
+
           <article class="blog-card" data-article-url="blog/january-ready-decision.html">
             <div class="blog-card-content">
               <div class="blog-meta">
                 <span class="blog-date">January 2026</span>
-                <span class="blog-category">Launch Strategy</span>
+                <span class="blog-category">Product Delivery</span>
               </div>
               <h2><a href="blog/january-ready-decision.html">January Is When "Are We Ready?" Gets Louder</a></h2>
               <p class="blog-preview"></p>
@@ -92,7 +106,8 @@
                 <span class="blog-date">December 2025</span>
                 <span class="blog-category">Launch Strategy</span>
               </div>
-              <h2><a href="blog/december-app-builds.html">Why Software Projects Go Sideways: The Hidden Risks No One Tells Founders or SMEs About</a></h2>
+              <h2><a href="blog/december-app-builds.html">Why Software Projects Go Sideways: The Hidden Risks No One
+                  Tells Founders or SMEs About</a></h2>
               <p class="blog-preview"></p>
               <a class="text-link" href="blog/december-app-builds.html">Read more →</a>
             </div>
@@ -104,8 +119,9 @@
                 <span class="blog-date">November 2025</span>
                 <span class="blog-category">Announcement</span>
               </div>
-              <h2><a href="blog/veraiq-launch.html">                  Introducing VerAIQ: A Product Readiness Tool for Non-Technical Founders Working Without a Tech Lead
-                  </a></h2>
+              <h2><a href="blog/veraiq-launch.html"> Introducing VerAIQ: A Product Readiness Tool for Non-Technical
+                  Founders Working Without a Tech Lead
+                </a></h2>
               <p class="blog-preview"></p>
               <a class="text-link" href="blog/veraiq-launch.html">Read more →</a>
             </div>
@@ -171,14 +187,14 @@
 
     function loadBlogPreviews() {
       var cards = document.querySelectorAll('.blog-card[data-article-url]');
-      cards.forEach(function(card) {
+      cards.forEach(function (card) {
         var url = card.getAttribute('data-article-url');
         var previewEl = card.querySelector('.blog-preview');
         if (!url || !previewEl) return;
 
         fetch(url)
-          .then(function(response) { return response.text(); })
-          .then(function(html) {
+          .then(function (response) {return response.text();})
+          .then(function (html) {
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, 'text/html');
             var intro = doc.querySelector('.article-intro');
@@ -187,7 +203,7 @@
               previewEl.textContent = truncateText(text, 180);
             }
           })
-          .catch(function(err) {
+          .catch(function (err) {
             console.log('Could not load preview for: ' + url);
           });
       });
