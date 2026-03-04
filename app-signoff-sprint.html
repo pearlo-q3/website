@@ -20,7 +20,7 @@
     content="A fixed-price clarity sprint for non-technical founders who need to know exactly what they’re approving before they commit more time or money.">
 
   <link rel="icon" type="image/png" href="assets/q3favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap"
@@ -328,23 +328,8 @@
         icon.textContent = '−';
       }
     }
-
-    // Mobile navigation toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('nav');
-    const navOverlay = document.querySelector('.nav-overlay');
-
-    function toggleNav() {
-      navToggle.classList.toggle('active');
-      nav.classList.toggle('active');
-      navOverlay.classList.toggle('active');
-      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    }
-
-    navToggle.addEventListener('click', toggleNav);
-    navOverlay.addEventListener('click', toggleNav);
   </script>
-  <script src="nav.js"></script>
+  <script src="nav.js?v=3"></script>
 </body>
 
 </html>

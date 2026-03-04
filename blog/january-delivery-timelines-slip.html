@@ -31,7 +31,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../assets/q3favicon.png" />
-  <link rel="stylesheet" href="../styles.css?v=2" />
+  <link rel="stylesheet" href="../styles.css?v=3" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -279,20 +279,6 @@
   </div>
 
   <script>
-    // Mobile navigation toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('nav');
-    const navOverlay = document.querySelector('.nav-overlay');
-
-    function toggleNav() {
-      navToggle.classList.toggle('active');
-      nav.classList.toggle('active');
-      navOverlay.classList.toggle('active');
-      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    }
-
-    navToggle.addEventListener('click', toggleNav);
-    navOverlay.addEventListener('click', toggleNav);
 
     function acceptCookies() {
       localStorage.setItem('cookieConsent', 'accepted');
@@ -308,7 +294,7 @@
       document.getElementById('cookieBanner').style.display = 'none';
     }
   </script>
-  <script src="../nav.js"></script>
+  <script src="../nav.js?v=3"></script>
 </body>
 
 </html>
