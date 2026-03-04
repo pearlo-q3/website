@@ -140,10 +140,13 @@ nav a:hover {
 }
 
 .dropdown-arrow {
-  font-size: 0.65rem;
-  transition: transform 0.2s ease;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-left: 4px;
+  transition: transform 0.5s ease;
   display: inline-block;
   line-height: 1;
+  color: var(--brand-primary);
 }
 
 .nav-dropdown.open .dropdown-arrow {
@@ -1977,7 +1980,7 @@ font-weight: 600;
   position: relative;
 }
 
-.dc-step + .dc-step {
+.dc-step+.dc-step {
   border-top: 1px solid #eef4f3;
 }
 
@@ -2250,5 +2253,16 @@ font-weight: 600;
 
   .dc-pricing-amount {
     font-size: 2.25rem;
+  }
+}
+
+/* Home only: 3-up services grid */
+.cards.cards-3up {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .cards.cards-3up {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
