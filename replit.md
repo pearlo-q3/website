@@ -6,6 +6,19 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**March 2026 - Delivery Catalyst Programme Page Redesign**
+- Premium redesign of delivery-catalyst.html as flagship high-ticket service page
+- Deep teal gradient hero (#004d40 → #00695c) with white text, checklist card, ghost button variant
+- New trust bar section: 4 credential stats (20+ years, Meta, Founder-first, Independent)
+- Benefits grid with teal top-border cards, check icons, hover lift animation
+- Numbered process steps with solid teal circles, white numbers, connecting vertical line
+- Featured pricing box with deep teal background, large £550 amount display
+- Two testimonial quote cards with decorative quotation mark
+- All DC page styles use `dc-*` prefix class names in styles.css to avoid conflicts
+- Navigation dropdown now fully click-based (no hover) for desktop and mobile
+- Shared nav.js handles hamburger + dropdown toggle; duplicate inline nav JS removed from all 11 pages
+- CSS version bumped to ?v=4 across all pages for cache busting
+
 **November 30, 2025 - Blog Article Styling Enhancement**
 - Improved article typography with narrower container (720px max-width) for better readability
 - Added teal accent line under article headers for visual polish
