@@ -64,7 +64,7 @@ You can copy–paste this straight into Replit AI.
 > Buttons:
 >
 > * Primary CTA button: `Apply to Become a Partner` → link this to a prop or placeholder URL like `/partner-apply` (I’ll later replace with a Tally.so form URL).
-> * Secondary CTA button: `Book a 10-Minute Partner Call` → link to a placeholder URL `/partner-call` (I’ll later replace with my SavvyCal link).
+> * Secondary CTA button: `Book a 10-Minute Partner Call` → link to a placeholder URL `/partner-call` (I’ll later replace with my Calendly link).
 >
 > Also add a small text link under the hero CTAs:
 > `Built for developer agencies, freelancers, and fractional CTOs who want fewer launch surprises.`
@@ -235,7 +235,7 @@ You can copy–paste this straight into Replit AI.
 > Under this, repeat the two main CTA buttons:
 >
 > * `Apply to Become a Partner` → same Tally.so placeholder URL
-> * `Book a 10-Minute Partner Call` → same SavvyCal placeholder URL
+> * `Book a 10-Minute Partner Call` → same Calendly placeholder URL
 >
 > Add a small reassurance line under the buttons:
 > `No minimum volume. We review partner performance every 90 days to keep the programme focused and high-quality.`

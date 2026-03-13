@@ -70,7 +70,7 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 **November 15, 2025 - Contact Page Redesign with Calendar Embed**
 - Restructured contact page with qualifier section at top ("Is this for you?")
-- Integrated SavvyCal inline calendar embed for direct on-page booking
+- Integrated Calendly inline calendar embed for direct on-page booking
 - Redesigned contact methods as 3 styled cards (Book a Call, Email, LinkedIn)
 - Applied consistent visual styling with alternating backgrounds and brand color accents
 - Improved mobile responsiveness with adaptive calendar container
@@ -143,7 +143,7 @@ Preferred communication style: Simple, everyday language.
 **Conversion Points**
 - Primary CTA: "Book a Micro Confidence Review" (links to contact page)
 - Secondary CTA: "Use Launch Compass" (external tool, placeholder URL)
-- Contact methods: Direct email (pearlo@qubecatalyst.com) and SavvyCal scheduling link
+- Contact methods: Direct email (pearlo@qubecatalyst.com) and Calendly scheduling link
 - Rationale: Multiple conversion paths to accommodate different user preferences
 
 ## External Dependencies
@@ -156,10 +156,10 @@ Preferred communication style: Simple, everyday language.
 - Integration: Preconnect optimization for performance
 
 **Scheduling Integration**
-- Service: SavvyCal
+- Service: Calendly
 - Purpose: 15-minute triage call booking
-- URL: https://savvycal.com/pearlo/free-strategy-session
-- Integration: Inline embed on contact page using SavvyCal's embed.js API
+- URL: https://calendly.com/pearlo-qubecatalyst/clarity-call
+- Integration: Inline embed on contact page using Calendly's embed.js API
 - Implementation: Calendar widget loads directly on the page for seamless booking experience
 
 **Placeholder External Tool**
