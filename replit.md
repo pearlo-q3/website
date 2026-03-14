@@ -6,6 +6,19 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**March 2026 - Guides Section Built + Mobile Nav Fix**
+- Created guides.html hub page and 5 individual SEO guide pages at root level:
+  - how-to-plan-a-software-project.html (Stage 1)
+  - how-to-choose-a-development-agency.html (Stage 2)
+  - what-a-realistic-mvp-scope-looks-like.html (Stage 3)
+  - how-to-track-progress-on-a-software-build.html (Stage 4)
+  - how-to-know-if-your-app-is-ready-to-launch.html (Stage 5)
+- All guide pages use `guide-*` CSS prefix (no blog classes), document-style layout with 740px centred content column
+- Guide CSS includes: teal gradient hero, key-takeaways card (green ticks), callout boxes (orange border), tables (blue headers), CTA blocks, related reading strip, stage cards for hub page, checklists
+- Mobile nav dropdown fixed: service/resource items always visible in slide-out menu (no click toggle needed), dropdown toggle styled as non-interactive label, arrow hidden on mobile
+- sitemap.xml updated with 6 new guide URLs (hub priority 0.8, individual guides priority 0.7)
+- CSS version bumped to ?v=5 across all 17 pages (12 existing + 5 new guides + hub)
+
 **March 2026 - Resources Nav Tab Added**
 - Added "Resources" dropdown to the navigation bar on all 11 pages (7 root + 5 blog)
 - Resources sits after Services in the nav order; dropdown reveals "Guides" submenu item

@@ -50,4 +50,34 @@
     <lastmod>2026-03-04</lastmod>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://qubecatalyst.com/guides.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://qubecatalyst.com/how-to-plan-a-software-project.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qubecatalyst.com/how-to-choose-a-development-agency.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qubecatalyst.com/what-a-realistic-mvp-scope-looks-like.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qubecatalyst.com/how-to-track-progress-on-a-software-build.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qubecatalyst.com/how-to-know-if-your-app-is-ready-to-launch.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
