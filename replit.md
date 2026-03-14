@@ -6,6 +6,12 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**March 2026 - Resources Nav Tab Added**
+- Added "Resources" dropdown to the navigation bar on all 11 pages (7 root + 5 blog)
+- Resources sits after Services in the nav order; dropdown reveals "Guides" submenu item
+- Updated nav.js to v4: rewrote dropdown logic from single `querySelector` to `querySelectorAll` so both Services and Resources dropdowns work independently; clicking one closes the other
+- nav.js cache-busted to `?v=4` across all pages
+
 **March 2026 - Delivery Catalyst Programme Page Redesign**
 - Premium redesign of delivery-catalyst.html as flagship high-ticket service page
 - Deep teal gradient hero (#004d40 → #00695c) with white text, checklist card, ghost button variant
