@@ -2267,7 +2267,7 @@ font-weight: 600;
 }
 
 .guide-hero {
-  background: linear-gradient(135deg, #004d40, #00796B);
+  background: linear-gradient(135deg, var(--brand-charcoal), var(--brand-primary));
   padding: 3.5rem 0 3rem;
   color: #fff;
 }
@@ -2383,22 +2383,14 @@ font-weight: 600;
 }
 
 .guide-callout {
-  background: #fff;
+  background: var(--brand-bg);
   border-left: 4px solid #FF7043;
   border-radius: 0 8px 8px 0;
   padding: 1.25rem 1.5rem;
   margin: 1.75rem 0;
   font-style: italic;
-  color: #37474f;
+  color: var(--brand-charcoal);
   line-height: 1.7;
-}
-
-.guide-callout strong {
-  display: block;
-  font-style: normal;
-  color: #263238;
-  margin-bottom: 0.35rem;
-  font-size: 0.95rem;
 }
 
 .guide-callout p {
@@ -2430,7 +2422,7 @@ font-weight: 600;
 
 .guide-table tbody td {
   padding: 0.85rem 1rem;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--brand-border);
   vertical-align: top;
 }
 
@@ -2471,10 +2463,10 @@ font-weight: 600;
   margin-top: 1.25rem;
 }
 
-.guide-cta-buttons .btn-white {
+.guide-cta-buttons .guide-btn-white {
   display: inline-block;
   background: #fff;
-  color: #00796B;
+  color: var(--brand-primary);
   font-weight: 600;
   padding: 0.7rem 1.75rem;
   border-radius: 6px;
@@ -2483,12 +2475,12 @@ font-weight: 600;
   transition: background 0.2s, transform 0.2s;
 }
 
-.guide-cta-buttons .btn-white:hover {
-  background: #e0f2f1;
+.guide-cta-buttons .guide-btn-white:hover {
+  background: var(--brand-bg);
   transform: translateY(-1px);
 }
 
-.guide-cta-buttons .btn-ghost {
+.guide-cta-buttons .guide-btn-ghost {
   display: inline-block;
   background: transparent;
   color: #fff;
@@ -2501,7 +2493,7 @@ font-weight: 600;
   transition: border-color 0.2s, background 0.2s;
 }
 
-.guide-cta-buttons .btn-ghost:hover {
+.guide-cta-buttons .guide-btn-ghost:hover {
   border-color: #fff;
   background: rgba(255,255,255,0.1);
 }
@@ -2529,7 +2521,7 @@ font-weight: 600;
 }
 
 .guide-related {
-  background: #eeeeee;
+  background: var(--brand-bg);
   padding: 2rem 0;
   margin-top: 2rem;
 }
@@ -2573,7 +2565,7 @@ font-weight: 600;
 }
 
 .guide-related a:hover {
-  color: #004d40;
+  color: var(--brand-charcoal);
   text-decoration: underline;
 }
 
@@ -2582,7 +2574,7 @@ font-weight: 600;
   margin: 0 auto;
   padding: 1.5rem 2rem 2rem;
   font-size: 0.85rem;
-  color: #78909c;
+  color: var(--brand-muted);
   font-style: italic;
 }
 
@@ -2599,7 +2591,7 @@ font-weight: 600;
 
 .guide-stage-card {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--brand-border);
   border-radius: 10px;
   padding: 1.75rem;
   transition: box-shadow 0.2s, transform 0.2s;
@@ -2637,13 +2629,13 @@ font-weight: 600;
 }
 
 .guide-stage-card h3 a:hover {
-  color: #004d40;
+  color: var(--brand-charcoal);
   text-decoration: underline;
 }
 
 .guide-stage-card p {
   font-size: 0.95rem;
-  color: #546e7a;
+  color: var(--brand-muted);
   line-height: 1.65;
   margin-bottom: 0.75rem;
 }
@@ -2656,7 +2648,7 @@ font-weight: 600;
 
 .guide-stage-card li {
   font-size: 0.9rem;
-  color: #607d8b;
+  color: var(--brand-muted);
   padding-left: 1.25rem;
   position: relative;
   margin-bottom: 0.35rem;
@@ -2672,7 +2664,7 @@ font-weight: 600;
 
 .guide-aside {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--brand-border);
   border-radius: 8px;
   padding: 1.5rem 1.75rem;
   margin: 1.5rem 0;
