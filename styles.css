@@ -2434,6 +2434,11 @@ font-weight: 600;
   background: #fff;
 }
 
+.guide-table-link {
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+
 .guide-cta {
   background: #00796B;
   border-radius: 10px;
