@@ -2408,6 +2408,7 @@ font-weight: 600;
   border-collapse: collapse;
   font-size: 0.95rem;
   min-width: 480px;
+  border: 1px solid var(--brand-border);
 }
 
 .guide-table thead th {
@@ -2418,12 +2419,22 @@ font-weight: 600;
   padding: 0.85rem 1rem;
   font-family: var(--font-heading);
   font-size: 0.9rem;
+  border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.guide-table thead th:last-child {
+  border-right: none;
 }
 
 .guide-table tbody td {
   padding: 0.85rem 1rem;
   border-bottom: 1px solid var(--brand-border);
+  border-right: 1px solid var(--brand-border);
   vertical-align: top;
+}
+
+.guide-table tbody td:last-child {
+  border-right: none;
 }
 
 .guide-table tbody tr:nth-child(even) {
