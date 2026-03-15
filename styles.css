@@ -985,7 +985,8 @@ font-weight: 600;
 
 @media (min-width: 768px) {
   .contact-methods {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
   }
 }
 
@@ -2717,6 +2718,11 @@ font-weight: 600;
 
 .contact-form-section {
   background: var(--brand-bg);
+}
+
+.contact-form-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .contact-form {
