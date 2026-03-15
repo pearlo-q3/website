@@ -6,6 +6,14 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**March 2026 - Contact Form + Guide CTA Update**
+- Added contact form to contact.html under "Other ways to reach me" section using Formspree backend
+- Form fields: Name (required), Email (required), Phone, Company, Stage dropdown, Brief message (required)
+- Form styles use `contact-form-*` CSS prefix in styles.css (white card, box-shadow, 2-col grid rows, teal submit)
+- Removed Email card from contact-methods grid (mailto links don't work on the hosted site)
+- Replaced "Email me directly" ghost buttons on all 6 guide pages with "Tell me about your project" → contact.html
+- **ACTION REQUIRED**: Replace placeholder Formspree endpoint (`https://formspree.io/f/xyzabcde`) in contact.html with a real endpoint from formspree.io
+
 **March 2026 - Guides Section Built + Mobile Nav Fix**
 - Created guides.html hub page and 5 individual SEO guide pages at root level:
   - how-to-plan-a-software-project.html (Stage 1)
