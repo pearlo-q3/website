@@ -377,20 +377,7 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  align-items: center;
   margin-top: 2rem;
-}
-
-.hero-checklist-link {
-  font-weight: 700;
-  color: var(--brand-primary);
-  text-decoration: underline;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-
-.hero-checklist-link:hover {
-  color: #00695c;
 }
 
 .hero-image {
