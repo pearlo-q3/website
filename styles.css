@@ -1768,13 +1768,13 @@ font-weight: 600;
   margin-top: 8px;
   font-size: 1rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.85);
+  color: #FF7043 !important;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .dc-secondary-cta:hover {
-  color: #ffffff;
+  color: #ff5722 !important;
   text-decoration: underline;
 }
 
