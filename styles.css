@@ -1756,6 +1756,19 @@ font-weight: 600;
   margin-top: 0.05em;
 }
 
+.dc-secondary-cta {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-style: italic;
+}
+
+.dc-secondary-cta:hover {
+  color: rgba(255, 255, 255, 1) !important;
+
 .dc-hero-card-outcome {
   padding-top: 1.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -1813,6 +1826,20 @@ font-weight: 600;
   height: 2.5rem;
   background: #d0e0dc;
   flex-shrink: 0;
+}
+
+.dc-secondary-cta {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-style: italic;
+}
+
+.dc-secondary-cta:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 /* WHY THIS EXISTS */
@@ -2811,4 +2838,5 @@ font-weight: 600;
   .contact-form {
     padding: 1.5rem 1.25rem;
   }
+  
 }
