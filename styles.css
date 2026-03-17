@@ -1756,9 +1756,16 @@ font-weight: 600;
   margin-top: 0.05em;
 }
 
+.dc-cta-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .dc-secondary-cta {
-  display: block;
-  margin-top: 12px;
+  display: inline-block;
+  margin-top: 8px;
   font-size: 1rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.85);
@@ -1767,7 +1774,8 @@ font-weight: 600;
 }
 
 .dc-secondary-cta:hover {
-  color: rgba(255, 255, 255, 1);
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .dc-hero-card-outcome {
