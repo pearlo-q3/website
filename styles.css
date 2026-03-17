@@ -1759,15 +1759,16 @@ font-weight: 600;
 .dc-secondary-cta {
   display: block;
   margin-top: 12px;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: underline;
   text-underline-offset: 3px;
-  font-style: italic;
 }
 
 .dc-secondary-cta:hover {
-  color: rgba(255, 255, 255, 1) !important;
+  color: rgba(255, 255, 255, 1);
+}
 
 .dc-hero-card-outcome {
   padding-top: 1.25rem;
@@ -1826,20 +1827,6 @@ font-weight: 600;
   height: 2.5rem;
   background: #d0e0dc;
   flex-shrink: 0;
-}
-
-.dc-secondary-cta {
-  display: block;
-  margin-top: 12px;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-style: italic;
-}
-
-.dc-secondary-cta:hover {
-  color: rgba(255, 255, 255, 1);
 }
 
 /* WHY THIS EXISTS */
