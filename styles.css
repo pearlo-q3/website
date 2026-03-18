@@ -2826,6 +2826,27 @@ font-weight: 600;
   background: #00695c;
 }
 
+.sprint-proof-snippet {
+  border-left: 3px solid #00796B;
+  background: #f5f9f8;
+  padding: 1rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+}
+
+.sprint-proof-snippet p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #263238;
+  line-height: 1.7;
+  margin: 0 0 0.5rem;
+}
+
+.sprint-proof-snippet span {
+  font-size: 0.8rem;
+  color: #607d8b;
+}
+
 @media (max-width: 640px) {
   .contact-form-row {
     grid-template-columns: 1fr;
