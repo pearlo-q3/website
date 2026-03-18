@@ -2827,24 +2827,45 @@ font-weight: 600;
 }
 
 .sprint-proof-snippet {
-  border-left: 3px solid #00796B;
-  background: #f5f9f8;
-  padding: 1rem 1.25rem;
-  border-radius: 0 8px 8px 0;
-  margin: 1.5rem 0;
+  text-align: center;
+  padding: 2rem 0;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
-.sprint-proof-snippet p {
-  font-size: 1rem;
+.sprint-proof-snippet-label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--brand-primary);
+  margin-bottom: 1.25rem;
+}
+
+.sprint-proof-snippet blockquote {
+  font-size: 1.15rem;
   font-style: italic;
-  color: #263238;
-  line-height: 1.7;
-  margin: 0 0 0.5rem;
+  color: var(--brand-charcoal);
+  line-height: 1.75;
+  margin: 0 0 1rem;
+  quotes: "\201C" "\201D";
+}
+
+.sprint-proof-snippet blockquote::before {
+  content: open-quote;
+  font-size: 3rem;
+  line-height: 0;
+  vertical-align: -0.6rem;
+  color: var(--brand-primary);
+  margin-right: 0.15rem;
+  font-style: normal;
 }
 
 .sprint-proof-snippet span {
-  font-size: 0.8rem;
-  color: #607d8b;
+  font-size: 0.82rem;
+  color: var(--brand-muted);
+  font-style: normal;
 }
 
 @media (max-width: 640px) {
