@@ -1509,6 +1509,44 @@ font-weight: 600;
   color: var(--brand-charcoal);
 }
 
+.sprint-case-study {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-top: 4px solid var(--brand-primary);
+  border-radius: 0 0 12px 12px;
+  padding: 2rem 2.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.sprint-case-study-badge {
+  display: inline-block;
+  background: var(--brand-primary);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.sprint-case-study h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand-charcoal);
+  margin: 0 0 0.85rem;
+  line-height: 1.35;
+}
+
+.sprint-case-study p {
+  font-size: 0.97rem;
+  color: var(--brand-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
 .sprint-testimonials {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
