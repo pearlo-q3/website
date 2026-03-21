@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="styles.css?v=5" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FJNXE3M7L"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag() {dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-4FJNXE3M7L');
   </script>
@@ -153,8 +154,13 @@
     }
 
     @media (max-width: 640px) {
-      .ty-hero h1 { font-size: 1.75rem; }
-      .ty-steps-card { padding: 1.75rem 1.25rem; }
+      .ty-hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .ty-steps-card {
+        padding: 1.75rem 1.25rem;
+      }
     }
   </style>
 </head>
@@ -216,7 +222,8 @@
             <div class="ty-step-num">1</div>
             <div class="ty-step-body">
               <h3>You'll hear from Pearl within one working day</h3>
-              <p>Pearl will reach out by email to introduce herself properly and confirm your availability for the working sessions.</p>
+              <p>Pearl will reach out by email to introduce herself properly and confirm your availability for the
+                working sessions.</p>
             </div>
           </div>
 
@@ -232,7 +239,9 @@
             <div class="ty-step-num">3</div>
             <div class="ty-step-body">
               <h3>Share what you have</h3>
-              <p>Before we start, Pearl will ask you to share any relevant documents — scope, quotes, backlog, contracts, or plans. Don't worry if it's incomplete or messy — that's normal and exactly what the Sprint is here to work through.</p>
+              <p>Before we start, I will ask you to share any relevant documents: scope, quotes, backlog, contracts, or
+                plans. Don't worry if it's incomplete or messy; that's normal and exactly what the Sprint is here to
+                work through.</p>
             </div>
           </div>
 
@@ -240,15 +249,17 @@
             <div class="ty-step-num">4</div>
             <div class="ty-step-body">
               <h3>You'll receive your Clarity Pack</h3>
-              <p>By the end of day 5 you'll have a written pack covering your build summary, MVP boundary, risk list, responsibilities, and recommendations — in plain English.</p>
+              <p>By the end of day 5 you'll have a written pack covering your build summary, MVP boundary, risk list,
+                responsibilities, and recommendations... in plain English.</p>
             </div>
           </div>
 
           <hr class="ty-divider" />
 
           <div style="text-align:center;">
-            <p style="color:var(--brand-muted); font-size:0.9rem; margin-bottom:0;">Questions in the meantime? Email Pearl directly at
-              <a href="mailto:hello@qubecatalyst.com" class="ty-email">hello@qubecatalyst.com</a>
+            <p style="color:var(--brand-muted); font-size:0.9rem; margin-bottom:0;">Questions in the meantime? Email
+              Pearl directly at
+              <a href="mailto:pearlo@qubecatalyst.com" class="ty-email"><strong>pearlo@qubecatalyst.com</strong></a>
             </p>
           </div>
         </div>
@@ -258,7 +269,8 @@
     <div class="ty-contact">
       <div class="ty-contact-links">
         <a href="index.html" class="btn secondary">Back to home</a>
-        <a href="https://www.linkedin.com/in/pearl-oguchi" class="btn secondary" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a href="https://www.linkedin.com/in/pearl-oguchi" class="btn secondary" target="_blank" rel="noopener">Connect
+          on LinkedIn</a>
       </div>
     </div>
 
@@ -270,14 +282,16 @@
       <p>
         <a href="privacy.html">Privacy & Cookies</a>
         · <a href="https://www.linkedin.com/in/pearl-oguchi" target="_blank" rel="noopener">LinkedIn</a>
-        · <a href="mailto:hello@qubecatalyst.com">hello@qubecatalyst.com</a>
+        · <a href="mailto:hello@qubecatalyst.com"><strong>hello@qubecatalyst.com</strong></a>
       </p>
     </div>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 
-  <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#263238; color:#fff; padding:1rem 1.5rem; z-index:999; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
-    <p class="cookie-banner-content" style="margin:0; font-size:0.9rem;">We use cookies to improve your experience on our site. <a href="privacy.html" style="color:#80cbc4;">Learn more</a></p>
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; right:0; background:#263238; color:#fff; padding:1rem 1.5rem; z-index:999; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+    <p class="cookie-banner-content" style="margin:0; font-size:0.9rem;">We use cookies to improve your experience on
+      our site. <a href="privacy.html" style="color:#80cbc4;">Learn more</a></p>
     <div style="display:flex; gap:0.75rem; flex-shrink:0;">
       <button id="cookie-reject" class="btn secondary small">Reject</button>
       <button id="cookie-accept" class="btn primary small">Accept</button>
@@ -298,8 +312,8 @@
     if (!consent && banner) banner.style.display = 'flex';
     var acceptBtn = document.getElementById('cookie-accept');
     var rejectBtn = document.getElementById('cookie-reject');
-    if (acceptBtn) acceptBtn.addEventListener('click', function () { localStorage.setItem('cookieConsent', 'accepted'); if (banner) banner.style.display = 'none'; });
-    if (rejectBtn) rejectBtn.addEventListener('click', function () { localStorage.setItem('cookieConsent', 'rejected'); if (banner) banner.style.display = 'none'; });
+    if (acceptBtn) acceptBtn.addEventListener('click', function () {localStorage.setItem('cookieConsent', 'accepted'); if (banner) banner.style.display = 'none';});
+    if (rejectBtn) rejectBtn.addEventListener('click', function () {localStorage.setItem('cookieConsent', 'rejected'); if (banner) banner.style.display = 'none';});
   </script>
 
 </body>
