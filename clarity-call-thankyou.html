@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="styles.css?v=5" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FJNXE3M7L"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag() {dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-4FJNXE3M7L');
   </script>
@@ -147,8 +148,13 @@
     }
 
     @media (max-width: 640px) {
-      .ty-hero h1 { font-size: 1.75rem; }
-      .ty-steps-card { padding: 1.75rem 1.25rem; }
+      .ty-hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .ty-steps-card {
+        padding: 1.75rem 1.25rem;
+      }
     }
   </style>
 </head>
@@ -210,7 +216,8 @@
             <div class="ty-step-num">1</div>
             <div class="ty-step-body">
               <h3>It's 15 minutes and completely informal</h3>
-              <p>We'll have a quick conversation about where you are with your build, what decisions you're facing, and whether working together makes sense.</p>
+              <p>We'll have a quick conversation about where you are with your build, what decisions you're facing, and
+                whether working together makes sense.</p>
             </div>
           </div>
 
@@ -218,7 +225,7 @@
             <div class="ty-step-num">2</div>
             <div class="ty-step-body">
               <h3>No preparation needed</h3>
-              <p>Just come as you are — a rough sense of your situation is enough to make the call useful.</p>
+              <p>Just come as you are; a rough sense of your situation is enough to make the call useful.</p>
             </div>
           </div>
 
@@ -226,15 +233,17 @@
             <div class="ty-step-num">3</div>
             <div class="ty-step-body">
               <h3>You'll leave with clarity</h3>
-              <p>Even if we don't work together, you'll have a clearer picture of your next step by the end of the call.</p>
+              <p>Even if we don't work together, you'll have a clearer picture of your next step by the end of the call.
+              </p>
             </div>
           </div>
 
           <hr class="ty-divider" />
 
           <div style="text-align:center;">
-            <p style="color:var(--brand-muted); font-size:0.9rem; margin:0;">Questions in the meantime? Email Pearl directly at
-              <a href="mailto:hello@qubecatalyst.com" class="ty-email">hello@qubecatalyst.com</a>
+            <p style="color:var(--brand-muted); font-size:0.9rem; margin:0;">Questions in the meantime? Email Pearl
+              directly at
+              <a href="mailto:pearlo@qubecatalyst.com" class="ty-email">pearlo@qubecatalyst.com</a>
             </p>
           </div>
         </div>
@@ -244,7 +253,8 @@
     <div class="ty-contact">
       <div class="ty-contact-links">
         <a href="index.html" class="btn secondary">Back to home</a>
-        <a href="https://www.linkedin.com/in/pearl-oguchi" class="btn secondary" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a href="https://www.linkedin.com/in/pearl-oguchi" class="btn secondary" target="_blank" rel="noopener">Connect
+          on LinkedIn</a>
       </div>
     </div>
 
@@ -262,8 +272,10 @@
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 
-  <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#263238; color:#fff; padding:1rem 1.5rem; z-index:999; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
-    <p class="cookie-banner-content" style="margin:0; font-size:0.9rem;">We use cookies to improve your experience on our site. <a href="privacy.html" style="color:#80cbc4;">Learn more</a></p>
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; right:0; background:#263238; color:#fff; padding:1rem 1.5rem; z-index:999; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+    <p class="cookie-banner-content" style="margin:0; font-size:0.9rem;">We use cookies to improve your experience on
+      our site. <a href="privacy.html" style="color:#80cbc4;">Learn more</a></p>
     <div style="display:flex; gap:0.75rem; flex-shrink:0;">
       <button id="cookie-reject" class="btn secondary small">Reject</button>
       <button id="cookie-accept" class="btn primary small">Accept</button>
@@ -277,8 +289,8 @@
     if (!consent && banner) banner.style.display = 'flex';
     var acceptBtn = document.getElementById('cookie-accept');
     var rejectBtn = document.getElementById('cookie-reject');
-    if (acceptBtn) acceptBtn.addEventListener('click', function () { localStorage.setItem('cookieConsent', 'accepted'); if (banner) banner.style.display = 'none'; });
-    if (rejectBtn) rejectBtn.addEventListener('click', function () { localStorage.setItem('cookieConsent', 'rejected'); if (banner) banner.style.display = 'none'; });
+    if (acceptBtn) acceptBtn.addEventListener('click', function () {localStorage.setItem('cookieConsent', 'accepted'); if (banner) banner.style.display = 'none';});
+    if (rejectBtn) rejectBtn.addEventListener('click', function () {localStorage.setItem('cookieConsent', 'rejected'); if (banner) banner.style.display = 'none';});
   </script>
 
 </body>
