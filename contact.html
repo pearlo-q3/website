@@ -389,6 +389,16 @@
     });
   </script>
   <script src="nav.js?v=4"></script>
+  <script>
+    window.addEventListener('message', function(e) {
+      if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+        gtag('event', 'booked_call', {
+          'event_category': 'conversion',
+          'event_label': 'Calendly Booking'
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
