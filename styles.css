@@ -3113,6 +3113,13 @@ font-weight: 600;
   object-fit: cover;
 }
 
+.dcc-bio-overflow {
+  margin-top: 1.25rem;
+  color: var(--brand-charcoal);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
 .dcc-bio-label {
   font-size: 0.85rem;
   text-transform: uppercase;
