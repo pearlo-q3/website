@@ -3113,6 +3113,21 @@ font-weight: 600;
   object-fit: cover;
 }
 
+.dcc-bio-image-centre {
+  display: flex;
+  justify-content: center;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.dcc-bio-image-centre img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
 .dcc-bio-overflow {
   margin-top: 1rem;
   margin-bottom: 0;
