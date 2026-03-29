@@ -3114,7 +3114,8 @@ font-weight: 600;
 }
 
 .dcc-bio-overflow {
-  margin-top: 1rem;
+  grid-column: 2;
+  margin-top: 0;
   margin-bottom: 0;
   color: var(--brand-charcoal);
   line-height: 1.75;
@@ -3271,6 +3272,10 @@ font-weight: 600;
   .dcc-bio-inner {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .dcc-bio-overflow {
+    grid-column: auto;
   }
 
   .dcc-bio-image img {
