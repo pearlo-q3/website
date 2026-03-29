@@ -2930,6 +2930,7 @@ font-weight: 600;
   background: var(--brand-charcoal);
   color: #fff;
   padding: 4rem 0;
+  text-align: center;
 }
 
 .dcc-situation h2 {
@@ -2939,6 +2940,7 @@ font-weight: 600;
 
 .dcc-situation-body {
   max-width: 68ch;
+  margin: 0 auto;
 }
 
 .dcc-situation-body p {
@@ -2946,27 +2948,30 @@ font-weight: 600;
   font-size: 1.05rem;
   line-height: 1.75;
   margin-bottom: 1.1rem;
+  text-align: left;
 }
 
 .dcc-situation-emphasis {
   font-size: 1.15rem !important;
   color: #fff !important;
   font-weight: 600;
-  border-left: 3px solid var(--brand-accent);
-  padding-left: 1rem;
+  border-left: none !important;
+  padding-left: 0 !important;
   margin-top: 1.5rem !important;
+  text-align: center !important;
 }
 
 /* WHAT THE DCC IS */
 .dcc-what {
   max-width: 800px;
+  text-align: center;
 }
 
 .dcc-lead {
   font-size: 1.15rem;
   color: var(--brand-charcoal);
   font-weight: 500;
-  margin: 1rem 0 1.75rem;
+  margin: 1rem auto 1.75rem;
   max-width: 60ch;
 }
 
@@ -2975,6 +2980,7 @@ font-weight: 600;
   gap: 1rem;
   margin-bottom: 1.75rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .dcc-independence-card {
@@ -2984,6 +2990,7 @@ font-weight: 600;
   border-radius: 10px;
   padding: 1rem 1.25rem;
   background: var(--brand-surface);
+  text-align: center;
 }
 
 .dcc-independence-card p {
@@ -2997,6 +3004,7 @@ font-weight: 600;
   font-size: 1.05rem;
   color: var(--brand-charcoal);
   max-width: 62ch;
+  margin: 0 auto;
   line-height: 1.7;
 }
 
@@ -3058,6 +3066,8 @@ font-weight: 600;
   flex-direction: column;
   gap: 1.75rem;
   max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .dcc-step {
@@ -3147,6 +3157,11 @@ font-weight: 600;
   color: var(--brand-primary);
   font-weight: 600;
   margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.dcc-bio-section h2 {
+  text-align: center;
 }
 
 .dcc-bio-text h2 {
@@ -3158,6 +3173,13 @@ font-weight: 600;
   color: var(--brand-charcoal);
   line-height: 1.75;
   margin-bottom: 1rem;
+}
+
+.dcc-bio-overflow {
+  text-align: center;
+  max-width: 72ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* URGENCY SECTION */
@@ -3208,6 +3230,7 @@ font-weight: 600;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-top: 1.5rem;
+  text-align: left;
 }
 
 .dcc-testimonial-card {
