@@ -6,6 +6,15 @@ This is a static marketing website for Qube Catalyst, a product consulting servi
 
 ## Recent Changes
 
+**March 2026 - Decision Clarity Consultation page added**
+- Created `decision-clarity-consultation.html` as the top-of-funnel entry service page (£185, 90 min)
+- Sections: hero, situation (dark band), what the DCC is, who it's for, how it works (3 steps), Pearl bio, urgency/quote, testimonial placeholders, contact strip
+- All styles use `dcc-*` CSS prefix in styles.css
+- CTA buttons link to Stripe payment link (`https://buy.stripe.com/8x24gB3SJ6cOaxGgZ1dAk01`) and contact.html
+- Added to Services dropdown nav on all 20 HTML files (15 root + 5 blog) as first/top item
+- Added to sitemap.xml with priority 0.9
+- Testimonial cards left as placeholders for Pearl to fill in manually
+
 **March 2026 - Contact Form + Guide CTA Update**
 - Added contact form to contact.html under "Other ways to reach me" section using Formspree backend
 - Form fields: Name (required), Email (required), Phone, Company, Stage dropdown, Brief message (required)

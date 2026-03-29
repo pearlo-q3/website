@@ -2913,5 +2913,369 @@ font-weight: 600;
   .contact-form {
     padding: 1.5rem 1.25rem;
   }
-  
+}
+
+/* =====================================================
+   DECISION CLARITY CONSULTATION PAGE  (dcc-*)
+   ===================================================== */
+
+.dcc-hero {
+  background: linear-gradient(135deg,
+      rgba(0, 121, 107, 0.07),
+      rgba(0, 200, 83, 0.04));
+}
+
+/* THE SITUATION – dark band */
+.dcc-situation {
+  background: var(--brand-charcoal);
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.dcc-situation h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.dcc-situation-body {
+  max-width: 68ch;
+}
+
+.dcc-situation-body p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.1rem;
+}
+
+.dcc-situation-emphasis {
+  font-size: 1.15rem !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-left: 3px solid var(--brand-accent);
+  padding-left: 1rem;
+  margin-top: 1.5rem !important;
+}
+
+/* WHAT THE DCC IS */
+.dcc-what {
+  max-width: 800px;
+}
+
+.dcc-lead {
+  font-size: 1.15rem;
+  color: var(--brand-charcoal);
+  font-weight: 500;
+  margin: 1rem 0 1.75rem;
+  max-width: 60ch;
+}
+
+.dcc-independence-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.dcc-independence-card {
+  flex: 1;
+  min-width: 160px;
+  border: 1px solid rgba(0, 121, 107, 0.3);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  background: var(--brand-surface);
+}
+
+.dcc-independence-card p {
+  margin: 0;
+  color: var(--brand-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.dcc-what-close {
+  font-size: 1.05rem;
+  color: var(--brand-charcoal);
+  max-width: 62ch;
+  line-height: 1.7;
+}
+
+/* WHO IT'S FOR */
+.dcc-who-section {
+  background: #f4faf8;
+}
+
+.dcc-who-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.dcc-who-yes h2 {
+  margin-top: 0;
+}
+
+.dcc-who-yes p {
+  color: var(--brand-charcoal);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.dcc-who-not {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.75rem;
+  border: 1px solid var(--brand-border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.dcc-who-not h3 {
+  margin-top: 0;
+  color: var(--brand-charcoal);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.dcc-who-not p {
+  color: var(--brand-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.dcc-divider {
+  border: none;
+  border-top: 1px solid var(--brand-border);
+  margin: 1.25rem 0;
+}
+
+/* HOW IT WORKS – STEPS */
+.dcc-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 720px;
+}
+
+.dcc-step {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.dcc-step-num {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15rem;
+}
+
+.dcc-step-body h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: var(--brand-charcoal);
+}
+
+.dcc-step-body p {
+  margin: 0;
+  color: var(--brand-muted);
+  line-height: 1.7;
+}
+
+/* BIO SECTION */
+.dcc-bio-section {
+  background: #fff;
+}
+
+.dcc-bio-inner {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.dcc-bio-image img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  object-fit: cover;
+}
+
+.dcc-bio-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand-primary);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.dcc-bio-text h2 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.dcc-bio-text p {
+  color: var(--brand-charcoal);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+/* URGENCY SECTION */
+.dcc-urgency {
+  background: linear-gradient(135deg, #004d40, #00695c);
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.dcc-urgency h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.dcc-urgency p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 60ch;
+  margin: 0 auto 1rem;
+}
+
+.dcc-urgency-quote {
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #fff;
+  border: none;
+  margin: 0 auto 1.5rem;
+  max-width: 52ch;
+  padding: 0;
+  position: relative;
+}
+
+.dcc-urgency-quote::before {
+  content: '\201C';
+  font-size: 3rem;
+  color: var(--brand-accent);
+  line-height: 0;
+  vertical-align: -0.5rem;
+  margin-right: 0.15rem;
+  font-family: Georgia, serif;
+}
+
+/* TESTIMONIALS */
+.dcc-testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.dcc-testimonial-card {
+  background: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  border-radius: 14px;
+  padding: 1.75rem;
+  position: relative;
+}
+
+.dcc-quote-mark {
+  font-size: 2.5rem;
+  color: var(--brand-primary);
+  line-height: 1;
+  font-family: Georgia, serif;
+  margin-bottom: 0.5rem;
+}
+
+.dcc-testimonial-text {
+  color: var(--brand-charcoal);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+  font-style: italic;
+}
+
+.dcc-testimonial-attr {
+  margin: 0;
+  color: var(--brand-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* CONTACT STRIP */
+.dcc-contact-strip {
+  background: var(--brand-bg);
+  border-top: 1px solid var(--brand-border);
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.dcc-contact-strip p {
+  color: var(--brand-muted);
+  margin-bottom: 0.75rem;
+}
+
+.dcc-contact-links {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dcc-contact-links a {
+  color: var(--brand-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.dcc-contact-links a:hover {
+  text-decoration: underline;
+}
+
+.dcc-contact-sep {
+  color: var(--brand-border);
+}
+
+/* RESPONSIVE – DCC */
+@media (max-width: 968px) {
+  .dcc-who-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .dcc-bio-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .dcc-bio-image img {
+    max-width: 240px;
+  }
+
+  .dcc-testimonials {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dcc-independence-row {
+    flex-direction: column;
+  }
+
+  .dcc-urgency-quote {
+    font-size: 1.1rem;
+  }
 }
