@@ -3114,10 +3114,15 @@ font-weight: 600;
 }
 
 .dcc-bio-overflow {
-  margin-top: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
   color: var(--brand-charcoal);
   line-height: 1.75;
   font-size: 1rem;
+}
+
+.dcc-bio-overflow + .dcc-bio-overflow {
+  margin-top: 0.85rem;
 }
 
 .dcc-bio-label {
