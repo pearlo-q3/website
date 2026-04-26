@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FJNXE3M7L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4FJNXE3M7L');
+    gtag('config', 'AW-17927987080');
+  </script>
+
+  <title>How to Track Progress on a Software Build Without Technical Knowledge | Qube Catalyst</title>
+  <meta name="description"
+    content="If you're managing a software build but can't verify what you're being told, this guide shows you what real progress looks like, what questions to ask, and the early signs a build is going off track.">
+  <meta property="og:title" content="How to Track Progress on a Software Build Without Technical Knowledge | Qube Catalyst">
+  <meta property="og:description"
+    content="If you're managing a software build but can't verify what you're being told, this guide shows you what real progress looks like, what questions to ask, and the early signs a build is going off track.">
+  <meta property="og:url" content="https://qubecatalyst.com/how-to-track-progress-on-a-software-build.html">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://qubecatalyst.com/how-to-track-progress-on-a-software-build.html">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="assets/q3favicon.png" />
+  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+  o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+  o.onload=function(){window.trackingFunctions.onLoad({appId:"69bd3d3d3cb30e0011b789ac"})},
+  document.head.appendChild(o)}initApollo();</script>
+  
+</head>
+
+<body class="guide-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html"><img src="assets/q3Logo.png" alt="Qube Catalyst logo" /></a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle">Resources <span class="dropdown-arrow">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="guides.html">Guides</a>
+          </div>
+        </div>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://veraiq.qubecatalyst.com" target="_blank" rel="noopener">VerAIQ</a>
+      </nav>
+      <div class="nav-overlay"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="guide-hero">
+      <div class="container">
+        <div class="guide-eyebrow">Guide · Stage 4 · During development</div>
+        <h1>How to Track Progress on a Software Build</h1>
+      </div>
+    </section>
+
+    <div class="guide-body">
+      <p>After working on software projects for more than two decades, from large platforms serving billions of users to
+        early-stage builds, I've seen how often progress becomes hard for non-technical founders to judge during the
+        middle of a project.</p>
+
+      <p>If you are mid-way through a software project and you are not quite sure how it is going, you are in good
+        company. The period between signing with a developer and holding a finished product is one of the most uncertain
+        experiences in business, especially when you do not have a technical background.</p>
+
+      <p>Updates arrive. Things get ticked off. Meetings happen. And yet somehow, progress feels invisible. You are
+        spending money every week and it is difficult to know whether you are on track, ahead, or quietly drifting.</p>
+
+      <p>This guide gives you a straightforward way to follow what is happening in your project without needing to
+        understand the technical detail yourself.</p>
+
+      <div class="guide-takeaways">
+        <div class="guide-takeaways-title">Key Takeaways</div>
+        <ul>
+          <li>Feeling uncertain during a software build is normal. It does not mean something is wrong.</li>
+          <li>Real progress means working software you can see and use, not just a list of tasks with ticks next to
+            them.</li>
+          <li>A weekly written update from your developer - received without having to ask - is the baseline standard to
+            hold them to.</li>
+          <li>Asking questions does not slow a project down; it usually surfaces small problems before they become large
+            ones.</li>
+          <li>Early signs of drift include vague updates, moving deadlines, and a growing gap between what is being
+            built and what was originally agreed.</li>
+          <li>If something feels wrong, getting an independent view early is far better than waiting until the problem
+            is obvious.</li>
+        </ul>
+      </div>
+
+      <h2>Why progress becomes hard to see</h2>
+
+      <p>Software is built in layers. A developer might spend two weeks building something that is entirely invisible to
+        you - the plumbing behind the scenes that makes everything else work. From the outside, nothing appears to have
+        changed. That can feel alarming, even when it is completely normal.</p>
+
+      <p>The challenge is that most developers are better at building software than they are at explaining it. Not
+        because they are trying to be difficult, but because they live inside the detail of the work, and translating
+        that into plain English takes time and effort that is easy to deprioritise.</p>
+
+      <p>At the same time, many non-technical clients are hesitant to ask too many questions, worried about appearing
+        difficult or slowing the work down. So the gap between what is happening and what the client understands grows
+        wider.</p>
+
+      <p>Neither side is at fault. But left unaddressed, this communication gap is one of the most reliable early
+        indicators of a project that is heading off course.</p>
+
+      <div class="guide-callout">
+        <p>Asking questions does not slow a project down. In fact, regular short check-ins tend to surface small
+          problems before they become large ones. A developer who is reluctant to explain what they are doing is a
+          bigger concern than a client who asks too much.</p>
+      </div>
+
+      <h2>What actually shows real progress</h2>
+
+      <p>Not all progress updates are equal. A weekly message saying 'things are going well' is not a progress update.
+        Neither is a long list of technical tasks with green ticks next to them. If you cannot interpret what those
+        tasks mean, the list tells you nothing.</p>
+
+      <p>Real progress is visible and verifiable. Here is what to look for.</p>
+
+      <h3>Working software you can see and use</h3>
+      <p>The most reliable indicator of progress is something you can actually look at and interact with. It does not
+        need to be finished or polished, but at regular intervals you should be able to see the product taking shape. If
+        weeks go by without being shown anything, ask why.</p>
+
+      <h3>Completed features against an agreed list</h3>
+      <p>At the start of the project, or at the start of each phase, there should be an agreed list of what is being
+        built. Progress means features from that list being completed and demonstrated to you, not just worked on, but
+        finished well enough to show.</p>
+
+      <h3>Clear answers to straightforward questions</h3>
+      <p>If you ask 'where are we against the plan?' and the answer requires ten minutes of technical explanation, that
+        is a problem. A project that is on track should be easy to summarise. 'We have completed X, we are working on Y,
+        and Z comes next' is the kind of answer that shows someone has a clear grip on the work.</p>
+
+      <h3>Honest reporting on anything that has slipped</h3>
+      <p>Good developers flag problems early. If something is taking longer than planned, you should hear about it
+        before it affects the timeline, not after. Proactive honesty about delays is a sign of a well-run project.
+        Finding out about problems only when you ask is a warning sign.</p>
+
+      <h2>Questions to ask your developer each week</h2>
+
+      <p>You do not need to understand the technical detail to ask good questions. These are straightforward, reasonable
+        questions that any developer running a well-organised project should be able to answer clearly.</p>
+
+      <div class="guide-table-wrap">
+        <table class="guide-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Ask your developer this</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>What did you complete this week, and can you show me?</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>What are you working on next, and when do you expect it to be done?</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Is anything taking longer than planned? If so, what and why?</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Are there any decisions you need from me before you can move forward?</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Are we still on track to hit the agreed milestone date?</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Has anything come up that could affect the overall timeline or budget?</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Is there anything I should know about that we have not discussed yet?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>You do not need to ask all of these every week. But a short, regular check-in that covers most of them will
+        give you a much clearer picture of where the project stands than a monthly update call ever will.</p>
+
+      <p>If the answers to these questions are consistently vague, delayed, or harder to follow than they should be,
+        that is worth paying attention to.</p>
+
+      <h2>What good reporting looks like</h2>
+
+      <p>How a developer keeps you informed says a lot about how they manage their work. Good reporting does not need to
+        be elaborate but it should be consistent, clear, and arrive without you having to ask for it.</p>
+
+      <h3>A simple, regular update</h3>
+      <p>Once a week is the right frequency for most projects. The update should cover what was done, what is coming
+        next, and anything that needs your attention. It should be written in plain language, not a list of technical
+        terms you would need to look up.</p>
+
+      <h3>A clear picture of where you are in the plan</h3>
+      <p>You should always know, without having to ask, roughly where the project stands against the original timeline.
+        Whether that is a simple checklist, a visual tracker, or a short summary, some form of 'here is where we are'
+        should be part of every update.</p>
+
+      <h3>Advance notice of anything changing</h3>
+      <p>If a deadline is going to move, you should hear about it as soon as the developer knows, not on the day it was
+        supposed to be delivered. The same applies to anything that might affect cost. No surprises is the standard to
+        hold your developer to.</p>
+
+      <h3>An open channel for your questions</h3>
+      <p>You should have a clear way to reach your developer between formal updates and a reasonable expectation of how
+        quickly they will respond. For most projects, a response within one working day is a fair standard.</p>
+
+      <div class="guide-callout">
+        <p>After reading a weekly update from your developer, you should be able to answer these three questions without
+          asking a follow-up: What got done this week? What is happening next? Is the project on track? If you cannot,
+          the update is not good enough and it is entirely reasonable to say so.</p>
+      </div>
+
+      <h2>Early signs a project may be drifting</h2>
+
+      <p>Drift is gradual. Projects rarely go wrong all at once;. They slip slowly, through a series of small changes
+        that each seem manageable on their own. By the time the problem is obvious, a lot of time and money has often
+        already been spent.</p>
+
+      <p>These are the early signals worth watching for. None of them alone means something is definitely wrong. But
+        several of them together, or any one of them persisting over time, is worth taking seriously.</p>
+
+      <ul>
+        <li>Updates arrive late, or only when you chase for them</li>
+        <li>Questions get long technical answers instead of straightforward ones</li>
+        <li>Deadlines keep moving, each time with a reasonable-sounding explanation</li>
+        <li>You are being shown less and less of the actual product as work progresses</li>
+        <li>The scope has grown, but the timeline or budget has not been updated to reflect it</li>
+        <li>Your developer seems less available than they were at the start of the project</li>
+        <li>You feel like you need to prepare before conversations so you do not ask the wrong thing</li>
+        <li>Your gut tells you something is off, even if you cannot point to exactly what</li>
+      </ul>
+
+      <p>That last one matters. The people who commission software builds often notice something feels wrong before they
+        can articulate what it is. If you have a persistent sense of unease about your project, it is worth getting an
+        outside view, not to create a problem, but to either put your mind at rest or catch something early enough to
+        fix it.</p>
+
+      <div class="guide-cta">
+        <div class="guide-cta-title">Feeling unsure about where your project actually stands?</div>
+        <p>Qube Catalyst offers independent project health checks, a clear-eyed look at where your build is, whether
+          progress is real, and what, if anything, needs to change. We speak to you in plain English, with no agenda
+          other than giving you an honest picture.</p>
+        <div class="guide-cta-buttons">
+          <a href="contact.html#calendar" class="guide-btn-white">Book a call</a>
+          <a href="contact.html#contact-form" class="guide-btn-ghost">Tell me about your project</a>
+        </div>
+      </div>
+
+      <h2>A simple weekly rhythm to keep things on track</h2>
+
+      <p>You do not need a complicated system to stay on top of a software project. A consistent weekly rhythm is
+        usually enough.</p>
+
+      <ul>
+        <li>Receive a written update from your developer every week, without having to ask</li>
+        <li>Review it against your agreed list of features and milestones</li>
+        <li>Note any questions and send them in one message rather than several</li>
+        <li>Ask for a short call if anything is unclear or needs discussion</li>
+        <li>Keep a brief record of what was agreed and when; a simple document or even an email thread is fine</li>
+      </ul>
+
+      <p>The goal is not to micromanage the work. It is to stay informed enough that if something starts to slip, you
+        notice it early while there is still time and room to put it right.</p>
+
+      <div class="guide-callout">
+        <p>Feeling uncertain during a software build is not a sign that something is wrong. It is a normal part of the
+          process, especially if this is your first time commissioning one. The founders and business owners who come
+          through it well are not the ones who understood everything, they are the ones who kept asking clear questions
+          and stayed close enough to the project to notice when things needed attention.</p>
+      </div>
+    </div>
+
+    <section class="guide-related">
+      <div class="guide-related-inner">
+        <h2>Related reading</h2>
+        <ul>
+          <li><a href="what-a-realistic-mvp-scope-looks-like.html">What a Realistic MVP Scope Looks Like</a></li>
+          <li><a href="how-to-choose-a-development-agency.html">How to Choose a Development Agency</a></li>
+          <li><a href="how-to-know-if-your-app-is-ready-to-launch.html">How to Know if Your App Is Ready to Launch</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="guide-footer-note">Qube Catalyst is the independent quality and delivery layer between your team and your board.
+    We diagnose what's broken, recommend the fix in writing, and stay in the seat until what we recommended is built and shipped.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Qube Catalyst. All rights reserved.</p>
+      <p>
+        <a href="privacy.html">Privacy &amp; Cookies</a>
+        &middot; <a href="https://www.linkedin.com/in/pearl-oguchi" target="_blank" rel="noopener">LinkedIn</a>
+        &middot; <a href="mailto:hello@qubecatalyst.com">hello@qubecatalyst.com</a>
+      </p>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-banner-content">
+      <p>We use cookies to improve your experience on our site. <a href="privacy.html">Learn more</a></p>
+      <div class="cookie-banner-buttons">
+        <button id="cookie-reject" class="btn secondary small">Reject</button>
+        <button id="cookie-accept" class="btn primary small">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptButton = document.getElementById('cookie-accept');
+    const rejectButton = document.getElementById('cookie-reject');
+    if (!localStorage.getItem('cookieConsent')) {cookieBanner.style.display = 'block';}
+    acceptButton.addEventListener('click', function () {localStorage.setItem('cookieConsent', 'accepted'); cookieBanner.style.display = 'none';});
+    rejectButton.addEventListener('click', function () {localStorage.setItem('cookieConsent', 'rejected'); cookieBanner.style.display = 'none';});
+  </script>
+  <script src="nav.js?v=4"></script>
+
+  <script 
+    src="https://go.qubecatalyst.com/js/external-tracking.js"
+    data-tracking-id="tk_0f7cf857d37a477183f64c977ceaba40">
+  </script>
+</body>
+
+</html>
