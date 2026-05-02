@@ -1947,8 +1947,18 @@ font-weight: 600;
 }
 
 .dc-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dc-benefit {
+  width: 100%;
+}
+
+..dc-benefits {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;   /* single column */
   gap: 1.25rem;
   margin-top: 0;
 }
@@ -2261,10 +2271,14 @@ font-weight: 600;
     padding-top: 0;
   }
 
-  .dc-benefits {
-    grid-template-columns: 1fr 1fr;
-  }
+  @media (max-width: 968px) {
+    /* ... */
 
+    .dc-benefits {
+      grid-template-columns: 1fr;
+    }
+  }
+  
   .dc-pricing-grid {
     grid-template-columns: 1fr;
   }
