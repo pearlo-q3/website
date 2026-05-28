@@ -247,7 +247,7 @@ section {
   min-width: 44px;
   min-height: 44px;
   position: relative;
-  z-index: 210;
+  z-index: 10000;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -259,6 +259,12 @@ section {
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.25s ease;
   pointer-events: none;
+}
+
+/* Remove backdrop-filter trap when menu is open so the fixed overlay spans full screen */
+body.nav--open .nav {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 /* X animation when menu is open */
