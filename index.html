@@ -786,31 +786,6 @@
     if (rejectButton) rejectButton.addEventListener('click', function () {closeCookieBanner('rejected');});
   </script>
 
-  <style>
-    /* COOKIE BANNER */
-
-
- 
-    const acceptButton=document.getElementById('cookie-accept');
-    const rejectButton=document.getElementById('cookie-reject');
-
-    if (cookieBanner && !localStorage.getItem('cookieChoice')) {
-      cookieBanner.hidden=false;
-    }
-
-    function closeCookieBanner(choice) {
-      if (cookieBanner) cookieBanner.hidden=true;
-      localStorage.setItem('cookieChoice', choice);
-    }
-
-    if (acceptButton) acceptButton.addEventListener('click', function() {
-        closeCookieBanner('accepted');
-      });
-
-    if (rejectButton) rejectButton.addEventListener('click', function() {
-        closeCookieBanner('rejected');
-      });
-    </script>
 
   <script>
     (function () {
