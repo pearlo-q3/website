@@ -233,32 +233,50 @@ section {
   }
 }
 
-/* 📥 PASTE THE FIX DIRECTLY HERE: */
-  .nav__hamburger {
-    display: none;       
-    flex-direction: column;         
-    justify-content: space-between; 
-    width: 28px !important;         
-    height: 20px !important;        
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin-left: auto;              
-    position: relative;
-    z-index: 210;                   
-    line-height: 0 !important;      
-  }
+/* ─── HAMBURGER BUTTON (global defaults) ─── */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  position: relative;
+  z-index: 210;
+  -webkit-tap-highlight-color: transparent;
+}
 
-  .nav__hamburger span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-text); /* Uses your deep teal brand color */
-    border-radius: 2px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-} /* <--- This closes the media query safely */
+.nav__hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  pointer-events: none;
+}
+
+/* X animation when menu is open */
+body.nav--open .nav__hamburger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+body.nav--open .nav__hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+body.nav--open .nav__hamburger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Hide the mobile-only CTA link on desktop */
+.nav__cta-mobile {
+  display: none;
+}
 
 @media (max-width: 600px) {
   .navlogo-image {
@@ -275,32 +293,10 @@ section {
   letter-spacing: -0.01em;
 }
 
-/* ─── CHOOSE NAV LINKS LAYER (REPLACE PAGE 6 COMPLETELY) ─── */
 .nav__links {
-  display: flex;                /* Default flex layout container */
+  display: flex;
   align-items: center;
   gap: var(--space-8);
-}
-
-/* 📱 Mobile Specific Rules (Hides inline layout on screens under 900px) */
-@media (max-width: 900px) {
-  .nav__links {
-    display: none;              /* Stays hidden until toggled open by JavaScript */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-8);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(243, 246, 245, 0.98);
-    backdrop-filter: blur(10px);
-    z-index: 200;
-  }
 }
 
 
@@ -1079,13 +1075,6 @@ section {
     gap: var(--space-12);
   }
 
-  /* ─── INSIDE YOUR 900px RESPONSIVE MEDIA QUERY ─── */
-  @media (max-width: 900px) {
-    .nav__hamburger {
-      display: flex !important; /* 📱 Forces the icon to build into your mobile headers */
-    }
-  }
-
   .hero__image-wrap img {
     aspect-ratio: auto;
     max-height: 340px;
@@ -1118,7 +1107,7 @@ section {
 
   /* Mobile Navigation Controls */
   .nav__hamburger {
-    display: flex !important; /* Forces icon to show up on mobile screens */
+    display: flex;
   }
   .nav__cta {
     display: none;
@@ -1139,25 +1128,24 @@ section {
     background: rgba(243, 246, 245, 0.98);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    z-index: 200;
+    z-index: 9000;
     padding: var(--space-20) var(--space-8);
     overflow-y: auto;
   }
 
-  /* Fix: This opens the tray when JS adds the class to .nav */
-  .nav.nav--open .nav__links {
+  body.nav--open .nav__links {
     display: flex;
   }
-  .nav--open .nav__links a {
+  body.nav--open .nav__links a {
     font-size: clamp(1.2rem, 4vw, 1.5rem);
     color: var(--color-text);
     font-weight: 500;
-    padding: var(--space-2) 0;
+    padding: var(--space-3) 0;
     text-align: center;
     display: block;
     width: 100%;
   }
-  .nav--open .nav__links .nav__cta-mobile {
+  body.nav--open .nav__links .nav__cta-mobile {
     display: inline-block;
     margin-top: var(--space-4);
     font-size: var(--text-base);
@@ -1168,6 +1156,10 @@ section {
     border-radius: var(--radius-sm);
     text-decoration: none;
     width: auto;
+  }
+
+  body.nav--open {
+    overflow: hidden;
   }
 } /* Clean closing of 900px breakpoint */
 
@@ -1513,13 +1505,4 @@ button.cookie-btn--accept {
   background: var(--color-accent-hover);
 }
 
-/* ─── MOBILE TOGGLE ANIMATION LAYER (ADD AT THE ABSOLUTE BOTTOM OF STYLES.CSS) ─── */
-@media (max-width: 900px) {
-  /* When JavaScript injects the ".nav--open" wrapper modifier, show the navigation link tray */
-  .nav.nav--open .nav__links {
-    display: flex !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-}
 

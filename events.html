@@ -145,7 +145,7 @@
     </script>
 
   <link rel="icon" type="image/png" href="assets/q3favicon.png" />
-  <link rel="stylesheet" href="styles-(copy).css?v=6" />
+  <link rel="stylesheet" href="styles-(copy).css?v=7" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -185,10 +185,10 @@
         <a href="index.html#guarantee">Guarantee</a>
         <a href="index.html#testimonials">Testimonials</a>
         <a href="events.html">Events</a>
-      
+        <a href="https://meetings-eu1.hubspot.com/poguchi" class="nav__cta-mobile" target="_blank" rel="noopener noreferrer">Work with Pearl</a>
       </div>
       <a href="https://meetings-eu1.hubspot.com/poguchi" class="nav__cta" target="_blank" rel="noopener noreferrer">Work with Pearl</a>
-      <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <button type="button" class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -368,20 +368,17 @@
   <script>
     (function () {
       var hamburger = document.querySelector('.nav__hamburger');
-      var nav = document.querySelector('.nav');
-      if (!hamburger || !nav) return;
+      if (!hamburger) return;
       hamburger.addEventListener('click', function () {
-        var isOpen = nav.classList.toggle('nav--open');
+        var isOpen = document.body.classList.toggle('nav--open');
         hamburger.setAttribute('aria-expanded', isOpen);
         hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-        document.body.style.overflow = isOpen ? 'hidden' : '';
       });
       document.querySelectorAll('.nav__links a').forEach(function (link) {
         link.addEventListener('click', function () {
-          nav.classList.remove('nav--open');
+          document.body.classList.remove('nav--open');
           hamburger.setAttribute('aria-expanded', 'false');
           hamburger.setAttribute('aria-label', 'Open navigation menu');
-          document.body.style.overflow = '';
         });
       });
     })();
