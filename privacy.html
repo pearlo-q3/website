@@ -231,44 +231,59 @@
   </footer>
 
   <!-- Cookie Consent Banner -->
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-banner-content">
-      <p>
-        We use cookies to improve your experience on our site.
-        <a href="privacy.html">Learn more</a>
+  <div id="cookie-banner" role="region" aria-label="Cookie notice" hidden
+    style="position:fixed;bottom:0;left:0;right:0;z-index:1000;background:#173b3d;border-top:1px solid rgba(255,255,255,0.08);">
+    <div
+      style="display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 3rem;max-width:1160px;margin:0 auto;">
+      <p style="margin:0;font-size:0.875rem;color:rgba(243,246,245,0.9);">
+        <a href="privacy.html" style="color:rgba(243,246,245,0.9);text-decoration:underline;">We use cookies to improve
+          your experience on our site. Learn more</a>
       </p>
-      <div class="cookie-banner-buttons">
-        <button id="cookie-reject" class="btn secondary small">Reject</button>
-        <button id="cookie-accept" class="btn primary small">Accept</button>
+      <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0;">
+        <button id="cookie-reject" type="button"
+          style="padding:0.5rem 1.25rem;border-radius:999px;font-size:0.875rem;font-weight:500;cursor:pointer;background:#1f4d50;color:#f3f6f5;border:1px solid rgba(255,255,255,0.15);min-width:80px;">Reject</button>
+        <button id="cookie-accept" type="button"
+          style="padding:0.5rem 1.25rem;border-radius:999px;font-size:0.875rem;font-weight:500;cursor:pointer;background:#44d62c;color:#173b3d;border:none;min-width:80px;">Accept</button>
       </div>
     </div>
   </div>
 
   <script>
-
-    // Cookie banner consent functionality
     const cookieBanner = document.getElementById('cookie-banner');
     const acceptButton = document.getElementById('cookie-accept');
     const rejectButton = document.getElementById('cookie-reject');
 
-    // Check if user has already made a choice
-    if (!localStorage.getItem('cookieConsent')) {
-      cookieBanner.style.display = 'block';
+    if (cookieBanner && !localStorage.getItem('cookieChoice')) {
+      cookieBanner.hidden = false;
     }
 
-    // Accept cookies
-    acceptButton.addEventListener('click', function () {
-      localStorage.setItem('cookieConsent', 'accepted');
-      cookieBanner.style.display = 'none';
-    });
+    function closeCookieBanner(choice) {
+      if (cookieBanner) cookieBanner.hidden = true;
+      localStorage.setItem('cookieChoice', choice);
+    }
 
-    // Reject cookies
-    rejectButton.addEventListener('click', function () {
-      localStorage.setItem('cookieConsent', 'rejected');
-      cookieBanner.style.display = 'none';
-    });
+    if (acceptButton) acceptButton.addEventListener('click', function () {closeCookieBanner('accepted');});
+    if (rejectButton) rejectButton.addEventListener('click', function () {closeCookieBanner('rejected');});
   </script>
-  <script src="nav.js?v=4"></script>
-</body>
 
-</html>
+
+  <script>
+    (function () {
+      var hamburger = document.querySelector('.nav__hamburger');
+      if (!hamburger) return;
+      hamburger.addEventListener('click', function () {
+        var isOpen = document.body.classList.toggle('nav--open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+        hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      });
+      document.querySelectorAll('.nav__links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          document.body.classList.remove('nav--open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.setAttribute('aria-label', 'Open navigation menu');
+        });
+      });
+    })();
+  </script>
+      
+</body></html>
