@@ -72,7 +72,9 @@ html {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-padding-top: var(--space-20); /* matches your nav + hero spacing */
 }
+
 
 body {
   overflow-x: hidden;
