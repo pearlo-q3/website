@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FJNXE3M7L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4FJNXE3M7L');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Listening to Users Actually Looks Like | Qube Catalyst Lab</title>
+  <meta name="description" content="Many startup teams think they’re listening to users because they run surveys. The real risk lives in the gap between what users say and what they do." />
+
+  <link rel="icon" type="image/png" href="../assets/q3favicon.png" />
+  <link rel="stylesheet" href="../styles-(copy).css?v=9" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Premium Spacing & Adaptive Canvas Layout */
+    .article-layout {
+      padding-top: calc(var(--space-32) + var(--space-8));
+      padding-bottom: var(--space-24);
+      background: var(--color-bg);
+    }
+    .article-meta {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+    }
+    .article-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1.15;
+      color: var(--color-text);
+      margin-bottom: var(--space-6);
+    }
+
+    /* Full-Width Feature Banner Block */
+    .article-banner {
+      width: 100%;
+      margin-bottom: var(--space-12);
+    }
+    .article-banner img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+    }
+
+    /* Responsive Grid Split System (Left: Content, Right: Fixed Diagnostic Deck) */
+    .article-split-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--space-12);
+      align-items: start; /* Locks columns to natural heights, preventing identical height stretching */
+    }
+
+    /* Core Document Flow Styles */
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      color: var(--color-text);
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-4);
+      border-bottom: 1px dashed var(--color-border);
+      padding-bottom: var(--space-2);
+    }
+    .article-body h3 {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-2);
+    }
+    .article-body p {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-bottom: var(--space-6);
+    }
+    .article-body p em {
+      font-style: italic;
+      color: var(--color-text);
+    }
+    .article-body ul {
+      margin-bottom: var(--space-6);
+      padding-left: var(--space-6);
+    }
+    .article-body li {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--space-3);
+      position: relative;
+    }
+    .article-body li::before {
+      content: "—";
+      color: var(--color-accent);
+      font-weight: bold;
+      display: inline-block;
+      width: 1.5em;
+      margin-left: -1.5em;
+    }
+
+    /* Clean, Stable Sidebar Base Layout */
+    .lab-context-sidebar {
+      position: relative; /* Stays normal at layout calculation time */
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-8);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      width: 100%;
+      box-sizing: border-box;
+      transition: transform 0.05s linear; /* Ultra-smooth mapping */
+    }
+    .sidebar-meta-title {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text);
+      border-bottom: 2px solid var(--color-accent);
+      padding-bottom: var(--space-2);
+      margin: 0;
+    }
+    .sidebar-metric-pill {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      background: var(--color-accent-light);
+      color: var(--color-text);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      width: max-content;
+    }
+
+    /* Modern AEO Extraction Highlight Block */
+    .aeo-summary-box {
+      background: var(--color-surface-2);
+      border-left: 3px solid var(--color-accent);
+      padding: var(--space-6) var(--space-8);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: var(--space-8);
+    }
+    .aeo-summary-box p {
+      font-size: var(--text-base);
+      font-style: italic;
+      color: var(--color-text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Mobile Breakpoints & Responsive Overrides */
+    @media (max-width: 990px) {
+      .article-split-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+      }
+      .lab-context-sidebar {
+        position: static;
+        width: 100%;
+      }
+    }
+    @media (max-width: 600px) {
+      .article-layout {
+        padding-top: calc(var(--space-24) + var(--space-12));
+      }
+      .article-title {
+        font-size: var(--text-xl);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="navlogo">
+        <a href="../index.html"><img src="../assets/q3Logo.png" alt="Qube Catalyst" class="navlogo-image"></a>
+      </div>
+      <div class="nav__links">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../lab.html">Product Lab</a>
+        <a href="../index.html#testimonials">Testimonials</a>
+      </div>
+      <a href="https://meetings-eu1.hubspot.com/poguchi" class="nav__cta" target="_blank" rel="noopener noreferrer">Work with Pearl</a>
+    </div>
+  </nav>
+
+  <section class="article-layout">
+    <div class="container container--default">
+      
+      <div class="article-meta">Product Brief</div>
+      <h1 class="article-title">What listening to users actually looks like</h1>
+      
+      <div class="article-banner">
+        <img src="/assets/users-say-and-need.png" alt="What users say and do are different" loading="eager" />
+      </div>
+
+      <div class="article-split-grid">
+        
+        <div class="article-body">
+          <p>Many startup teams think they’re “listening to users” because they run surveys and interviews. The trouble starts when behaviour subtly contradicts everything users said. After 22 years building and fixing software products, including nine at Meta, I’ve learned that the real risk lives in that gap. Here’s what listening to users actually looks like in practice.</p>
+          
+          <p>At LSE Startup School this week, a facilitator said something that landed with a "boom"..for me at least:</p>
+          <p style="font-size: var(--text-lg); font-family: var(--font-display); color: var(--color-text); padding-left: var(--space-4); border-left: 2px solid var(--color-accent); margin-bottom: var(--space-6);">
+            <em>“Misunderstanding the customer need is the biggest risk to any startup.”</em>
+          </p>
+          
+          <p>The thing is, we all know this to be true. We have heard this being said many times, in many forms. So why did it land so?</p>
+          
+          <p>We care so deeply about the people we are building for. Founders are under pressure; to ship, to raise, to keep the team moving, and under that pressure, “listening to users” can quietly turn into “collecting just enough input to feel safe.”</p>
+          
+          <p>This isn’t about blame. It’s about structure. The way most teams try to listen to users makes it almost impossible to see what’s really going on. Believe me, I have fallen into this trap before.</p>
+          
+          <p>A few years ago, I worked on a product at Meta - Facebook Classrooms. The user research indicated people wanted it. The use cases were clear. But people weren’t using it. The gap between what users said they’d do and what they actually did was the whole story. The product was deprioritised.</p>
+
+          <h2>Why surveys and interviews feel like research and why they’re not enough on their own</h2>
+          <p>Surveys and user interviews play a vital role in collating research data. On their own, though, they’re not enough.</p>
+          
+          <p>Surveys tell you what people say they will do or feel i.e, their stated preferences. Recall the last time you took a survey. Do you recall stating the facts as they were or rather, how you felt, what you would usually do because that’s who you are? Behavioural research consistently shows that stated preferences often differ from what people do in real contexts. It’s not because users are dishonest; it’s because we’re all bad at predicting our own behaviour.</p>
+          
+          <p>This pattern shows up in UX: what people say and what they do can point in different directions. I can tell you “I love this feature”, but then never use it.</p>
+          
+          <p>User interviews have a similar trap. When someone close to the product leads the conversation, a few things happen almost automatically:</p>
+          <ul>
+            <li>Users try to be kind.</li>
+            <li>They soften anything that might sound too harsh.</li>
+            <li>They don’t want to let you down, so they tell you the polite version.</li>
+          </ul>
+          <p>Again, not because anyone is bad, but because we are wired for social harmony.</p>
+
+          <h2>So what does listening to users actually look like?</h2>
+          <p>In practice, it looks a lot less like “asking what they think” and a lot more like watching what they do, then joining up the dots.</p>
+          <p>Three parts, working together:</p>
+          
+          <h3>Seeing the product through truly fresh eyes</h3>
+          <p>That might mean sitting with someone who’s never seen the product and watching them try to complete a task. No coaching. No saving them when they get lost. Just notice where they hesitate, where they improvise, where they silently give up. Those first three minutes often reveal more than ten survey questions.</p>
+          
+          <h3>Reading behaviour before reading opinions</h3>
+          <p>Analytics are not the whole story, but they’re a powerful signal. Looking at where people drop, where they loop, where they stall, without a narrative already in your head, can be uncomfortable and incredibly useful. The key shift is moving from “does this data support my story?” to “what story is this data trying to tell me?”</p>
+          
+          <h3>Having conversations where users can be honest</h3>
+          <p>Interviews are still valuable, especially when the person asking has no stake in a particular answer. When someone independent runs the conversation, users tend to be a little more direct. They don’t feel like they’re criticising the person who built the thing. They’re just describing their experience. That small change in dynamic often surfaces what wasn’t said on previous calls.</p>
+          <p>None of this is flashy. It’s not a new framework or a trendy tool. It’s patient, sometimes uncomfortable observation.</p>
+
+          <h2>Why it’s hard to do this from inside your own product</h2>
+          <p>If you’re a founder, none of this is news. You already know that what users do matters more than what they say. You probably wish you had more time to dig into it properly.</p>
+          
+          <p>The hard part is structural:</p>
+          <ul>
+            <li>You’re close to the product. Your brain fills in gaps your users still fall into.</li>
+            <li>You’re carrying pressure from investors, team and runway.</li>
+            <li>You’re human; it’s difficult to want to see something that might mean painful rework.</li>
+          </ul>
+          <p>Over time, that creates a quiet gap between what the product is doing and what you think it’s doing. That gap is where most of the real risk lives.</p>
+
+          <h2>A more honest definition of “listening to users”</h2>
+          <p>So maybe “listening to users” in a startup context needs a broader definition:</p>
+          <ul>
+            <li>It’s not just sending a survey.</li>
+            <li>It’s not just running interviews.</li>
+          </ul>
+          
+          <p>It’s building a regular habit of:</p>
+          <ul>
+            <li>Watching real people try to use your product with no coaching.</li>
+            <li>Reading behaviour in your analytics before you read opinions.</li>
+            <li>Having conversations where users can be honest, ideally with someone independent.</li>
+          </ul>
+          
+          <p>Surveys and interviews still have a place inside that, as long as everyone involved understands what they can and cannot tell you. There’s a whole body of work on stated vs revealed preference that shows how often what people say diverges from what they actually do in context.</p>
+          
+          <p>If you’re a founder, and any of this feels uncomfortably familiar, you’re not alone. Every team I’ve worked with has had some version of this pattern. The good news is: once you see it, you can change it.</p>
+          
+          <p>Often, all it takes is one fresh pair of eyes, with no stake in the outcome, looking at what your users actually do and saying out loud what that behaviour is trying to tell you.</p>
+          <p>If this hits close to home, you’re the person I’m writing this newsletter for.</p>
+        </div>
+
+        <aside class="lab-context-sidebar">
+          <div>
+            <h3 class="sidebar-meta-title">Lab Analysis</h3>
+            <div style="margin-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-muted);">
+              <strong>Author:</strong> Pearl Oguchi<br>
+              <strong>Pedigree:</strong> 9 Years at Meta London<br>
+              <strong>Focus:</strong> Product-User Validation
+            </div>
+          </div>
+          
+          <div>
+            <div class="sidebar-metric-pill">P.E.A.R.L. Metric: PMF</div>
+          </div>
+
+          <div class="aeo-summary-box" style="padding: var(--space-4); border-left-width: 2px; margin: 0;">
+            <p style="font-size: var(--text-xs); line-height: 1.5;">
+              <strong>AEO Core Summary:</strong> Stated user preferences inside survey data heavily diverge from revealing live telemetry tracking.
+            </p>
+          </div>
+          
+          <a href="https://meetings-eu1.hubspot.com/poguchi" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size: var(--text-xs); justify-content: center; width: 100%;">
+            Isolate Your Product Gap →
+          </a>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-section__inner reveal">
+        <h2 class="cta-section__title">If the product is not doing what it should, the worst move is waiting.</h2>
+        <p class="cta-section__sub">Let's run an independent P.E.A.R.L. diagnostic against your live software metrics to isolate your user retention plateau immediately.</p>
+        <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
+          <a href="https://meetings-eu1.hubspot.com/poguchi" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Book a Diagnostic Call</a>
+          <a href="../lab.html" class="btn btn--ghost">Return to Product Lab</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container container--wide">
+      <div class="footer__inner">
+        <div class="footer__brand">Qube Catalyst</div>
+        <div class="footer__text">© 2026 Pearl Oguchi · Qube Catalyst · England</div>
+        <div class="footer__links">
+          <a href="mailto:pearl@qubecatalyst.com">pearl@qubecatalyst.com</a>
+          <a href="https://www.linkedin.com/in/pearl-oguchi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sidebar = document.querySelector(".lab-context-sidebar");
+      const grid = document.querySelector(".article-split-grid");
+
+      if (!sidebar || !grid || window.innerWidth <= 990) return;
+
+      // Detect original distance from the top of the webpage canvas
+      const initialSidebarTop = sidebar.getBoundingClientRect().top + window.scrollY;
+      const navOffset = 140; // Keeps it perfectly clear of your navigation bar menu
+
+      window.addEventListener("scroll", () => {
+        // Stop tracking if screen scales down to mobile layout sizes dynamically
+        if (window.innerWidth <= 990) {
+          sidebar.style.transform = "translateY(0px)";
+          return;
+        }
+
+        const currentScroll = window.scrollY;
+        const gridRect = grid.getBoundingClientRect();
+        const gridBottom = currentScroll + gridRect.bottom;
+        const sidebarHeight = sidebar.offsetHeight;
+
+        // Calculate maximum track limits so it doesn't bleed into your footer sections
+        const maxScrollTrack = gridBottom - sidebarHeight - navOffset;
+
+        if (currentScroll + navOffset > initialSidebarTop) {
+          if (currentScroll + navOffset < maxScrollTrack) {
+            // Smoothly glide the card down parallel to the viewer's eyes
+            const pullDistance = (currentScroll + navOffset) - initialSidebarTop;
+            sidebar.style.transform = `translateY(${pullDistance}px)`;
+          }
+        } else {
+          // Snap back natively to initial frame state
+          sidebar.style.transform = "translateY(0px)";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
