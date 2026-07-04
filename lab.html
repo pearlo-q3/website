@@ -200,10 +200,15 @@
     <h1>The Product Lab</h1>
     <p>Unvarnished product truths, data forensics, and interactivity built to find hidden user leaks and tracking flaws.</p>
 
-    <form class="lab-subscribe" action="/api/hubspot-subscribe" method="POST">
-      <input type="email" name="email" placeholder="Enter Email Address" required aria-label="Email address" />
-      <button type="submit">Join The Lab</button>
-    </form>
+    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+      hbspt.forms.create({
+        portalId: "148410884",
+        formId: "1775ee45-2047-4c07-a971-856f1059a4ee",
+        region: "eu1"
+      });
+    </script>
+    
     <div style="font-size: var(--text-xs); color: var(--color-text-faint);">Get my latest product briefs, strategic alerts, and interactive tool layouts as soon as they drop.</div>
   </header>
 
@@ -249,17 +254,17 @@
 
   <script>
     // 1. DIGITAL INVENTORY REGISTRY
-    // Syntactically corrected structure with proper curly braces initialization
+  // Syntactically corrected structure with proper curly braces initialization
     const incomingLabInventory = [
-      {
-        category: "brief", 
+    {
+    category: "brief", 
         metric: "Retention",
         title: "Kill the Founder",
         description: "tbd",
         time: "10 min read",
         link: "lab/kill-the-founder",
         isLocked: false
-      }, // <-- DO NOT FORGET THIS COMMA!
+      }, // <-- DO NOT FORGET THIS COMMA! -->
       
       {
         category: "brief", 
