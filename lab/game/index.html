@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FJNXE3M7L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4FJNXE3M7L');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sprint Runway Simulator | Qube Catalyst</title>
+
+  <link rel="icon" type="image/png" href="../../assets/q3favicon.png" />
+  <link rel="stylesheet" href="../../styles-(copy).css?v=9" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    .lab-game-layout {
+      padding-top: calc(var(--space-24) + var(--space-4));
+      padding-bottom: var(--space-16);
+      max-width: 960px !important;
+      margin: 0 auto;
+    }
+    
+    .lab-header {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+    .lab-header h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl) !important; 
+      color: var(--color-text);
+      margin-bottom: 0;
+    }
+    .hero__eyebrow {
+      margin-bottom: var(--space-1);
+    }
+
+    .sim-instructions {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4) var(--space-5);
+      margin: 0 auto var(--space-6) auto;
+      max-width: 680px;
+      box-sizing: border-box;
+    }
+    .sim-instructions h3 {
+      font-family: var(--font-display);
+      color: var(--color-text);
+      font-size: var(--text-sm);
+      margin-top: 0;
+      margin-bottom: var(--space-2);
+    }
+    .sim-instructions ol { margin: 0; padding-left: var(--space-4); }
+    .sim-instructions li {
+      font-size: var(--text-xs); 
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      margin-bottom: var(--space-1);
+    }
+
+    .game-viewport-frame {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: var(--space-8);
+      width: 100%;
+    }
+    #game-wrapper {
+      position: relative;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      width: 960px;
+      height: 560px;
+      background: #090d16; 
+    }
+    canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* CHURN OVERLAY RE-ENGINEERED: Moved up to 35% to fully expose running avatar room below */
+    #choice-overlay {
+      display: none;
+      position: absolute;
+      top: 35%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 76%; 
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      border: 2px solid #38bdf8;
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-5);
+      box-sizing: border-box;
+      z-index: 10;
+    }
+    .overlay-title {
+      font-family: sans-serif;
+      color: #38bdf8;
+      font-size: var(--text-sm);
+      margin-top: 0;
+      margin-bottom: var(--space-2);
+      font-weight: bold;
+    }
+    .overlay-desc {
+      color: #cbd5e1;
+      font-size: var(--text-xs);
+      line-height: 1.5;
+      margin-bottom: var(--space-4);
+    }
+    .choice-btn {
+      display: block;
+      width: 100%;
+      background: #0f172a;
+      border: 1px solid #475569;
+      color: #fff;
+      padding: var(--space-2) var(--space-4);
+      margin-bottom: var(--space-2);
+      text-align: left;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: var(--text-xs);
+      transition: all 0.2s ease-in-out;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .choice-btn:hover {
+      border-color: #38bdf8;
+      background: #1e3a8a;
+      transform: translateX(4px);
+    }
+    .feedback-pane {
+      display: none;
+      color: #e2e8f0;
+      font-size: var(--text-xs);
+      line-height: 1.5;
+    }
+    .advance-btn {
+      background: #38bdf8;
+      border: none;
+      color: #0f172a;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-sm);
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: var(--space-2);
+      width: 100%;
+      font-family: sans-serif;
+    }
+    .consequence-deck {
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 4px solid #f43f5e;
+      border-radius: var(--radius-sm);
+      padding: var(--space-3);
+      margin-bottom: var(--space-3);
+    }
+
+    @media (max-width: 768px) {
+      .choice-btn { padding: var(--space-3); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="navlogo">
+        <a href="../../index.html"><img src="../../assets/q3Logo.png" alt="Qube Catalyst" class="navlogo-image"></a>
+      </div>
+      <div class="nav__links">
+        <a href="../../index.html#home">Home</a>
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#services">Services</a>
+        <a href="../../lab.html">Product Lab</a>
+        <a href="../../index.html#guarantee">Guarantee</a>
+        <a href="../../index.html#testimonials">Testimonials</a>
+        <a href="../../events.html">Events</a>
+      </div>
+      <a href="https://meetings-eu1.hubspot.com/poguchi" class="nav__cta" target="_blank" rel="noopener noreferrer">Work with Pearl</a>
+      <button type="button" class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="lab-game-layout container">
+    <header class="lab-header">
+      <div class="hero__eyebrow">Tactical Simulation</div>
+      <h1>The Sprint Runway Simulator</h1>
+    </header>
+
+    <div class="sim-instructions">
+      <h3>📋 Tactical Rules & Mission Directives:</h3>
+      <ol>
+        <li><strong>The Mission:</strong> You are the founder of a new software company. You have 3 critical engineering sprints to fix your product before running out of cash.</li>
+        <li><strong>Watch the Dashboard:</strong> Start with <strong>£50,000</strong> cash and a modest <strong>12%</strong> Churn Rate baseline.</li>
+        <li><strong>How to Win:</strong> Finish Sprint 3 with <strong>more than £0 in cash</strong> and a Churn Rate <strong>under 20%</strong>.</li>
+        <li><strong>The Realistic Challenge:</strong> Avoid superficial fixes. Spend capital intentionally on engineering the right structural solutions.</li>
+      </ol>
+    </div>
+
+    <div class="game-viewport-frame">
+      <div id="game-wrapper">
+        <canvas id="gameCanvas" width="960" height="560"></canvas>
+
+        <div id="choice-overlay">
+          <div id="question-state">
+            <div class="overlay-title" id="q-title">Sprint Choice</div>
+            <div class="overlay-desc" id="q-desc">Scenario text...</div>
+            <button class="choice-btn" id="btn-a">Choice A</button>
+            <button class="choice-btn" id="btn-b">Choice B</button>
+          </div>
+          <div id="feedback-state" class="feedback-pane">
+            <div class="overlay-title" id="f-status">Consequence Logged</div>
+            <div class="consequence-deck" id="consequence-border">
+              <div id="f-text">Feedback details...</div>
+            </div>
+            <button class="advance-btn" id="btn-advance">Resume Operation Sprint →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-section__inner">
+        <h2 class="cta-section__title">If the product is not doing what it should, the worst move is waiting.</h2>
+        <p class="cta-section__sub">Bring independent diagnostic testing right into your deployment lifecycle to protect your retention baseline cleanly.</p>
+        <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
+          <a href="https://meetings-eu1.hubspot.com/poguchi" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Start a conversation</a>
+          <a href="../../index.html#services" class="btn btn--ghost">Review core services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container container--wide">
+      <div class="footer__inner">
+        <div class="footer__brand">Qube Catalyst</div>
+        <div class="footer__text">© 2026 Pearl Oguchi · Qube Catalyst · England</div>
+        <div class="footer__links">
+          <a href="mailto:pearl@qubecatalyst.com">pearl@qubecatalyst.com</a>
+          <a href="https://www.linkedin.com/in/pearl-oguchi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let cash = 50000;
+    let churn = 12;
+    let currentSprint = 1;
+    let isFrozen = false;
+    let gameActive = true;
+    let clickLocked = false; 
+
+    const SCENARIOS = {
+      1: {
+        title: "Sprint 1/3: Navigating Early Customer Feedback Loops",
+        desc: "Your tech-savvy early testers love your concept, but they are demanding an advanced AI data toggle and deep customization dashboards. Meanwhile, your data signals that normal, everyday traffic is signing up, getting confused by your blank interface, and dropping out immediately. How do you allocate your engineering budget?",
+        choiceA: { text: "Commit to building the AI Data Toggle and reporting dashboards. (-£16,000)", cost: 16000, churnMod: 5, isWin: false, feedback: "THE FEATURE CHASE TRAP: Mainstream churn rate goes UP by 5%. Everyday users find the app even more bloated and confusing. You spent significant capital building a complex tool that casual customers don't understand." },
+        choiceB: { text: "Re-engineer your application's setup flow to include pre-loaded dummy data and templates. (-£14,000)", cost: 14000, churnMod: -4, isWin: true, feedback: "THE TIME-TO-VALUE SUCCESS: By replacing an intimidating empty screen with active templates, normal people instantly see how your app works within 30 seconds." }
+      },
+      2: {
+        title: "Sprint 2/3: Scaling Your Onboarding Infrastructure",
+        desc: "Your software requires a complex initial setup. Right now, you are personally jumping on 30-minute video calls to hand-hold every single user through registration and fix their errors manually. It works, but you have no time left to run the actual company, and you need to pitch investors next sprint. What is your move?",
+        choiceA: { text: "Outsource technical or customer support to take over the manual setup video calls. (-£15,000)", cost: 15000, churnMod: 12, isWin: false, feedback: "THE HUMAN INSULATION CRUTCH: The contractor keeps people happy on the calls, but it creates a massive ongoing cash drain. It masks a systemic product flaw: your software is fundamentally too fragile to survive without human intervention. Churn spikes by 12%." },
+        choiceB: { text: "Rewrite the core error validation states, replacing dry error codes with actionable micro-copy. (-£12,000)", cost: 12000, churnMod: -2, isWin: true, feedback: "THE UNHAPPY PATH WIN: Instead of papering over cracks with human labor, you fixed the code mechanics. The app now retains users natively." }
+      },
+      3: {
+        title: "Sprint 3/3: Overcoming Operational Workflow Friction",
+        desc: "Your application is internally stable, but user interviews reveal a massive friction point: to get value from your tool, your customers have to manually copy data out of their CRM, paste it into your app, run a calculation, and paste it back into an email sheet. It's an exhausting chore. How do you handle it?",
+        choiceA: { text: "Invest in front-end design, UI polish, and custom animations to make data entry fast and modern. (-£14,000)", cost: 14000, churnMod: 15, isWin: false, feedback: "THE COSMETIC ILLUSION: The user interface looks gorgeous. But a beautiful chore is still a chore. The moment your customers have a chaotic work week, they stop opening your app because manual entry is too exhausting. Churn spikes by 15%." },
+        choiceB: { text: "Invest engineering capital into data portability, building bidirectional CSV engine imports and webhooks. (-£15,000)", cost: 15000, churnMod: -5, isWin: true, feedback: "THE SYSTEMIC INTEGRATION WIN: You made your software meet users exactly where they already work. Your platform becomes a vital daily utility. Churn plummets." }
+      }
+    };
+
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let player = {
+      x: 150, y: 440,
+      width: 24, height: 52,
+      vy: 0, gravity: 0.6,
+      isJumping: false, jumpForce: -12,
+      legCycle: 0, scaleY: 1, rotation: 0, color: '#38bdf8'
+    };
+
+    let cameraX = 0;
+    let stars = [];
+    for(let i=0; i<80; i++) {
+      stars.push({ x: Math.random() * 3200, y: Math.random() * 440, size: Math.random() * 2 + 1 });
+    }
+
+    let obstacles = [
+      { id: 1, x: 800, triggered: false },
+      { id: 2, x: 1600, triggered: false },
+      { id: 3, x: 2400, triggered: false }
+    ];
+
+    let particles = [];
+    let stateMode = 'normal';
+
+    function gameLoop() {
+      updateMechanics();
+      drawGraphics();
+      requestAnimationFrame(gameLoop);
+    }
+
+    function updateMechanics() {
+      if (!gameActive) return;
+
+      if (!isFrozen) {
+        player.x += 3; 
+        player.legCycle += 0.18; 
+        cameraX = player.x - 150;
+      }
+
+      player.y += player.vy;
+      if (player.y < 440) {
+        player.vy += player.gravity;
+      } else {
+        player.y = 440;
+        player.vy = 0;
+        if(player.isJumping) {
+          player.isJumping = false;
+          if (stateMode === 'normal') player.color = '#38bdf8';
+        }
+      }
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        let p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= 1;
+        if (p.life <= 0) {
+          particles.splice(i, 1);
+        }
+      }
+
+      obstacles.forEach(obs => {
+        if (!obs.triggered && player.x >= (obs.x - 20) && currentSprint === obs.id) {
+          isFrozen = true;
+          obs.triggered = true;
+          clickLocked = false; 
+          displayOverlayPanel(obs.id);
+        }
+      });
+    }
+
+    function drawGraphics() {
+      ctx.fillStyle = "#090d16";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#475569";
+      stars.forEach(s => {
+        ctx.fillRect(s.x - cameraX * 0.2, s.y, s.size, s.size);
+      });
+
+      ctx.fillStyle = "#1e293b";
+      ctx.fillRect(0, 492, canvas.width, 68);
+      ctx.strokeStyle = "#334155";
+      ctx.lineWidth = 2;
+      for (let x = - (cameraX % 40); x < canvas.width; x += 40) {
+        ctx.beginPath();
+        ctx.moveTo(x, 492);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      ctx.beginPath();
+      ctx.moveTo(0, 492);
+      ctx.lineTo(canvas.width, 492);
+      ctx.stroke();
+
+      obstacles.forEach(obs => {
+        let renderX = obs.x - cameraX;
+        if (renderX > -50 && renderX < 1010) {
+          ctx.fillStyle = "#f43f5e";
+          ctx.fillRect(renderX - 15, 452, 30, 40);
+          ctx.fillStyle = "#ef4444";
+          ctx.beginPath();
+          ctx.arc(renderX, 442, 6, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+
+      particles.forEach(p => {
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x - cameraX, p.y, p.w, p.h);
+      });
+
+      let px = player.x - cameraX;
+      let py = player.y;
+
+      ctx.save();
+      ctx.translate(px, py + 26);
+      if (stateMode === 'lose') {
+        ctx.rotate(Math.PI / 2); 
+        ctx.translate(0, -14);
+      } else {
+        ctx.rotate(player.rotation);
+      }
+      ctx.scale(1, player.scaleY);
+
+      let swing = Math.sin(player.legCycle) * 12;
+      ctx.strokeStyle = player.color;
+      ctx.lineWidth = 6;
+      ctx.lineCap = "round";
+      
+      ctx.beginPath();
+      ctx.moveTo(-6, 4);
+      ctx.lineTo(-6 + (isFrozen ? 0 : swing), 20);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(6, 4);
+      ctx.lineTo(6 - (isFrozen ? 0 : swing), 20);
+      ctx.stroke();
+
+      ctx.fillStyle = player.color;
+      ctx.fillRect(-12, -32, 24, 36);
+
+      ctx.fillStyle = "#fef08a";
+      ctx.beginPath();
+      ctx.arc(0, -42, 10, 0, Math.PI * 2);
+      ctx.fill();
+
+      if (stateMode === 'lose') {
+        ctx.strokeStyle = "#000000";
+        ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(-5, -45); ctx.lineTo(-1, -41); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(-1, -45); ctx.lineTo(-5, -41); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(2, -45); ctx.lineTo(6, -41); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(6, -45); ctx.lineTo(2, -41); ctx.stroke();
+      }
+      ctx.restore();
+
+      // FIXED METRIC COMMAND HUD: Formatted to dynamically align on 1 centralized horizontal axis line
+      ctx.textAlign = "center";
+      ctx.font = "bold 20px \"Space Grotesk\", sans-serif";
+      
+      // Left Axis Segment
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(`💰 CASH: £${cash.toLocaleString()}`, 180, 32);
+      
+      // Middle Axis Segment
+      ctx.fillStyle = churn >= 35 ? '#ef4444' : (churn <= 20 ? '#22c55e' : '#fff');
+      ctx.fillText(`📉 CHURN: ${churn}%`, 480, 32);
+      
+      // Right Axis Segment
+      ctx.fillStyle = "#94a3b8";
+      ctx.fillText(`⏳ TIMELINE: Sprint ${currentSprint <= 3 ? currentSprint : 3}/3`, 780, 32);
+      ctx.textAlign = "left"; // Reset context
+    }
+
+    const overlay = document.getElementById("choice-overlay");
+    const qState = document.getElementById("question-state");
+    const fState = document.getElementById("feedback-state");
+    const qTitle = document.getElementById("q-title");
+    const qDesc = document.getElementById("q-desc");
+    const btnA = document.getElementById("btn-a");
+    const btnB = document.getElementById("btn-b");
+    const fStatus = document.getElementById("f-status");
+    const fText = document.getElementById("f-text");
+    const btnAdvance = document.getElementById("btn-advance");
+    const consequenceBorder = document.getElementById("consequence-border");
+
+    function displayOverlayPanel(idx) {
+      let data = SCENARIOS[idx];
+      qTitle.innerText = data.title;
+      qDesc.innerText = data.desc;
+      btnA.innerText = data.choiceA.text;
+      btnB.innerText = data.choiceB.text;
+      fState.style.display = "none";
+      qState.style.display = "block";
+      overlay.style.display = "block";
+
+      btnA.onclick = () => { if(!clickLocked) evalChoice(data.choiceA); };
+      btnB.onclick = () => { if(!clickLocked) evalChoice(data.choiceB); };
+    }
+
+    function evalChoice(choice) {
+      clickLocked = true; 
+      cash -= choice.cost;
+      churn += choice.churnMod;
+      if (churn < 0) churn = 0;
+
+      qState.style.display = "none";
+      fState.style.display = "block";
+      fText.innerText = choice.feedback;
+      
+      const isPenalty = choice.churnMod > 0;
+      consequenceBorder.style.borderLeftColor = isPenalty ? '#ef4444' : '#22c55e';
+
+      if (choice.isWin) {
+        fStatus.innerText = "🏆 Optimization Logged Natively";
+        fStatus.style.color = "#22c55e";
+        
+        player.vy = player.jumpForce;
+        player.isJumping = true;
+        player.color = "#22c55e";
+        
+        for(let i=0; i<30; i++) {
+          particles.push({
+            x: player.x, y: player.y + 10,
+            vx: (Math.random() - 0.5) * 6, vy: (Math.random() - 0.5) * 6,
+            w: 6, h: 6, color: "#22c55e", life: 40
+          });
+        }
+      } else {
+        fStatus.innerText = "🚨 Structural Scaling Flaw Logged";
+        fStatus.style.color = "#ef4444";
+        
+        player.color = "#ef4444";
+        player.scaleY = 0.6;
+        player.rotation = 0.3;
+        
+        for(let i=0; i<20; i++) {
+          particles.push({
+            x: player.x + (Math.random() - 0.5) * 30, y: player.y - 20,
+            vx: (Math.random() - 0.5) * 1, vy: Math.random() * 3 + 2,
+            w: 2, h: 8, color: "#64748b", life: 35
+          });
+        }
+        
+        setTimeout(() => {
+          player.scaleY = 1;
+          player.rotation = 0;
+          player.color = "#38bdf8";
+        }, 1200);
+      }
+
+      btnAdvance.onclick = () => {
+        overlay.style.display = "none";
+        currentSprint++;
+
+        if (cash <= 0 || churn >= 45) {
+          stateMode = 'lose';
+          player.color = "#ef4444";
+          gameActive = false;
+          setTimeout(() => renderTerminalEnd(false), 1400);
+        } else if (currentSprint > 3) {
+          if (churn > 20) {
+            stateMode = 'lose';
+            player.color = "#ef4444";
+            gameActive = false;
+            setTimeout(() => renderTerminalEnd(false), 1400);
+          } else {
+            stateMode = 'win';
+            gameActive = false;
+            
+            let interval = setInterval(() => {
+              particles.push({
+                x: player.x + (Math.random() - 0.5) * 200, y: 0,
+                vx: (Math.random() - 0.5) * 2, vy: Math.random() * 4 + 3,
+                w: 8, h: 8, color: "#eab308", life: 90
+              });
+            }, 50);
+            
+            setTimeout(() => {
+              clearInterval(interval);
+              renderTerminalEnd(true);
+            }, 1500);
+          }
+        } else {
+          clickLocked = false; 
+          isFrozen = false;
+        }
+      };
+    }
+
+    function renderTerminalEnd(isWin) {
+      qState.style.display = "none";
+      fState.style.display = "block";
+      fStatus.innerText = isWin ? "🏆 SCALE READINESS SECURED" : "🚨 RUNWAY COLLAPSED";
+      fStatus.style.color = isWin ? "#22c55e" : "#ef4444";
+      consequenceBorder.style.borderLeftColor = isWin ? '#22c55e' : '#ef4444';
+      fText.innerText = isWin 
+        ? `SUCCESS! You completed all sprints with £${cash.toLocaleString()} remaining runway and a stable ${churn}% churn. Your platform is ready to scale.` 
+        : `CRASH: Your runway hit £${cash.toLocaleString()} with a toxic ${churn}% churn rate. The company has flatlined.`;
+
+      btnAdvance.innerText = "Restart Simulation 🔄";
+      btnAdvance.onclick = () => { window.location.reload(); };
+      overlay.style.display = "block";
+    }
+
+    gameLoop();
+  </script>
+
+  <script>
+    (function () {
+      var hamburger = document.querySelector('.nav__hamburger');
+      if (!hamburger) return;
+      hamburger.addEventListener('click', function () {
+        var isOpen = document.body.classList.toggle('nav--open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+        hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      });
+      document.querySelectorAll('.nav__links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          document.body.classList.remove('nav--open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.setAttribute('aria-label', 'Open navigation menu');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
