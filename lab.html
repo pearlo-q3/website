@@ -8,11 +8,52 @@
     gtag('js', new Date());
     gtag('config', 'G-4FJNXE3M7L');
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "The Product Lab by Qube Catalyst",
+      "description": "A curated, interactive diagnostic index providing software founders with tactical serious games, deployment telemetry tools, and systematic operational breakdowns to insulate conversion drops and retention flaws natively.",
+      "url": "https://qubecatalyst.com/lab.html",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Product-Market Fit (PMF)"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer Churn Optimization"
+        }
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Pearl Oguchi",
+        "jobTitle": "Product Analytics Consultant",
+        "url": "https://qubecatalyst.com"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Qube Catalyst",
+      "url": "https://qubecatalyst.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      }
+    }
+    </script>
+  
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Product Lab | Qube Catalyst</title>
-  <meta name="description" content="Unvarnished product briefs, interactive telemetry diagnostics, and tactical games for founders. Designed by Pearl Oguchi." />
+  <title>The Product Lab: Interactive Frameworks & Growth Diagnostics | Qube Catalyst</title>
+  <meta name="description" content="Access unvarnished product briefs, real-time runway simulators, and interactive retention architecture tests for early-stage software founders." />
+  <link rel="canonical" href="https://qubecatalyst.com/lab.html" />
 
   <link rel="icon" type="image/png" href="assets/q3favicon.png" />
   <link rel="stylesheet" href="styles-(copy).css?v=9" />
@@ -212,13 +253,13 @@
       });
     </script>
     
-    <div style="font-size: var(--text-xs); color: var(--color-text-faint);">Get my latest product briefs, strategic alerts, and interactive tool layouts as soon as they drop.</div>
+    <div style="font-size: var(--text-xs); color: var(--color-text-faint);">Get my latest product briefs, strategic alerts, and interactive layouts as soon as they drop.</div>
   </header>
 
   <div class="lab-filters">
     <button class="filter-tag active" onclick="applyLabFilter('all', this)">Show All Items</button>
     <button class="filter-tag" onclick="applyLabFilter('brief', this)">📝 Product Brief</button>
-    <button class="filter-tag" onclick="applyLabFilter('tool', this)">🛠️ Interactive Tools</button>
+    <button class="filter-tag" onclick="applyLabFilter('tool', this)">🛠️ Interactive</button>
     <button class="filter-tag" onclick="applyLabFilter('game', this)">🕹️ Tactical Games</button>
   </div>
 
@@ -260,11 +301,11 @@
   // Syntactically corrected structure with proper curly braces initialization
     const incomingLabInventory = [
       {
-        category: "tool", 
-        metric: "PMF",
-        title: "The Runway Simulator: Operations Deck",
-        description: "Manage your startup's runway through a real-time data dashboard terminal. Balance capital allocation against hidden market churn metrics.",
-        time: "Console Sim",
+        category: "game", 
+        metric: "Retention",
+        title: "The Runway Simulator: 2D Arcade Edition",
+        description: "Control your founder avatar in a side-scrolling platformer game. Jump obstacles, survive engineering sprints, and try not to crash your retention baseline.",
+        time: "2D Arcade Game",
         link: "/lab/game/index.html", // <-- Routes to the Dashboard view
         isLocked: false
       },
@@ -302,7 +343,7 @@
         // Assign proper layout labels and CSS theme classes automatically
         let badgeText = "📝 Product Brief";
         let badgeClass = "badge--brief";
-        if (item.category === "tool") { badgeText = "🛠️ Interactive Tool"; badgeClass = "badge--tool"; }
+        if (item.category === "tool") { badgeText = "🛠️ Interactive"; badgeClass = "badge--tool"; }
         if (item.category === "game") { badgeText = "🕹️ Tactical Game"; badgeClass = "badge--game"; }
 
         // Construct the new card element container
@@ -324,13 +365,15 @@
             <h2 class="lab-card__title">${item.title}</h2>
             <p class="lab-card__desc">${item.description}</p>
           </div>
-          <div class="lab-card__footer">
-            <span class="lab-card__time">${item.isLocked ? '🔒 ' + item.time : '⏱️ ' + item.time}</span>
-            ${item.isLocked 
-              ? `<a href="#" class="btn btn--ghost" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs); pointer-events: none; opacity: 0.5;">Locked</a>`
-              : `<a href="${item.link}" class="btn btn--primary" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs);">Read More...</a>`
-            }
-          </div>
+         <div class="lab-card__footer">
+  <span class="lab-card__time">${item.isLocked ? '🔒 ' + item.time : '⏱️ ' + item.time}</span>
+  ${item.isLocked 
+    ? `<a href="#" class="btn btn--ghost" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs); pointer-events: none; opacity: 0.5;">Locked</a>`
+    : `<a href="${item.link}" class="btn btn--primary" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs);">
+       ${item.category === 'game' ? 'Play Game...' : (item.category === 'tool' ? 'Open Tool...' : 'Read More...')}
+       </a>`
+  }
+</div>
         `;
 
         // Inserts the new tile at the very top of the grid layout box smoothly
