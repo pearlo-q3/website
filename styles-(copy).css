@@ -14,7 +14,7 @@
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
-  --space-3: 0.75rem;
+  --space-3: 0.75rem:
   --space-4: 1rem;
   --space-5: 1.25rem;
   --space-6: 1.5rem;
@@ -516,7 +516,6 @@ body.nav--open .nav__hamburger span:nth-child(3) {
   padding-top: var(--space-2);
 }
 
-.statement__body {}
 
 .statement__quote {
   font-family: var(--font-display);
