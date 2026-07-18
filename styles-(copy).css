@@ -1063,7 +1063,7 @@ body.nav--open .nav__hamburger span:nth-child(3) {
 /* Crisp White Solid Button */
 .btn.cases__btn-white {
   display: inline-flex;
-  background: #ffffff !important;
+  background: #FF7043 !important;
   color: var(--color-surface-dark) !important;
   margin-top: var(--space-4);
 }
