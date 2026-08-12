@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Code, But Make It Make Sense | Qube Catalyst</title>
+  <meta name="description"
+    content="A practical one-page reality check for founders who are vibe coding an app and want to clarify the user journey, feature logic, and next step." />
+  <link rel="canonical" href="https://qubecatalyst.com/lab/vibe-coding-reality-check.html" />
+  <link rel="icon" type="image/png" href="../assets/q3favicon.png" />
+  <link rel="stylesheet" href="../styles-(copy).css?v=9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FJNXE3M7L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4FJNXE3M7L');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Vibe Code, But Make It Make Sense",
+    "description":"A practical worksheet for founders who are vibe coding an app and need clarity on the user journey, feature logic, and next step.",
+    "url":"https://qubecatalyst.com/lab/vibe-coding-reality-check.html",
+    "inLanguage":"en",
+    "author":{"@type":"Person","name":"Pearl Oguchi","url":"https://qubecatalyst.com"},
+    "publisher":{"@type":"Organization","name":"Qube Catalyst","logo":{"@type":"ImageObject","url":"https://qubecatalyst.com/assets/q3Logo.png"}}
+  }
+  </script>
+  <style>
+    /* CSS Resets & Variables */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --ink: #17262b;
+      --muted: #617074;
+      --paper: #fbfaf5;
+      --panel: #f1eee5;
+      --teal: #0b706b;
+      --deep: #073f42;
+      --coral: #e97960;
+      --gold: #edc768;
+      --line: #d7d9d2;
+      --white: #fff;
+    }
+
+    /* Outer Page Alignment */
+    .vibe-page {
+      background: var(--paper);
+      padding: 8rem 0 6rem;
+      width: 100%;
+    }
+
+    .vibe-page__intro {
+      max-width: 1200px;
+      margin: 0 auto 1rem;
+      padding: 0 1.5rem;
+    }
+
+    .vibe-page__meta {
+      margin: 0 0 0.75rem;
+      color: var(--teal);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .vibe-page__title {
+      max-width: 760px;
+      margin: 0 0 1rem;
+      color: var(--ink);
+      font-family: Poppins, sans-serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .vibe-page__lead {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Container Card Alignment */
+    .vibe-sheet-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .vibe-sheet {
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 18px 60px rgba(23, 38, 43, 0.13);
+      color: var(--ink);
+      font-family: "Open Sans", Arial, sans-serif;
+    }
+
+    /* Header Alignment */
+    .vibe-sheet__header {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+      min-height: 190px;
+      padding: 2.25rem 3rem 2rem;
+      overflow: hidden;
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    @media (min-width: 768px) {
+      .vibe-sheet__header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: flex-end;
+      }
+    }
+
+    .vibe-sheet__header::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      top: -150px;
+      right: 90px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 24px rgba(255, 255, 255, 0.05), 0 0 0 48px rgba(255, 255, 255, 0.035);
+      pointer-events: none;
+    }
+
+    .vibe-sheet__brand {
+      position: absolute;
+      z-index: 2;
+      top: 1.25rem;
+      right: 3rem;
+      width: 115px;
+      height: 34px;
+      object-fit: contain;
+      object-position: right center;
+    }
+
+    .vibe-sheet__eyebrow,
+    .vibe-sheet__headline,
+    .vibe-sheet__subtitle,
+    .vibe-sheet__app-name {
+      position: relative;
+      z-index: 2;
+    }
+
+    .vibe-sheet__eyebrow {
+      margin: 0 0 0.7rem;
+      color: #bce5dc;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .vibe-sheet__headline {
+      max-width: 700px;
+      margin: 0 0 0.5rem;
+      color: #fff;
+      font-family: Poppins, sans-serif;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .vibe-sheet__subtitle {
+      max-width: 720px;
+      margin: 0;
+      color: #e6f4ef;
+      font-size: 0.85rem;
+      line-height: 1.45;
+    }
+
+    .vibe-sheet__app-name {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.1rem;
+      color: #d9f0ea;
+      font-size: 0.72rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Generic Controls */
+    .vibe-sheet input,
+    .vibe-sheet textarea,
+    .vibe-sheet select {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid #aeb8b5;
+      border-radius: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font: 400 0.72rem/1.25 "Open Sans", Arial, sans-serif;
+    }
+
+    .vibe-sheet input:focus,
+    .vibe-sheet textarea:focus,
+    .vibe-sheet select:focus {
+      border-bottom: 2px solid var(--coral);
+    }
+
+    .vibe-sheet__app-name input {
+      width: 170px;
+      height: 25px;
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Body Layout */
+    .vibe-sheet__body {
+      padding: 1.25rem 2rem 1.25rem;
+    }
+
+    .vibe-sheet__reassurance {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .vibe-sheet__reassurance p {
+      max-width: 790px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+
+    .vibe-sheet__reassurance strong {
+      color: var(--ink);
+    }
+
+    .vibe-sheet__tag {
+      flex: 0 0 auto;
+      padding: 0.45rem 0.6rem;
+      border: 1px solid rgba(233, 121, 96, 0.6);
+      color: #aa4c39;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Columns Layout */
+    .vibe-sheet__columns {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 1.25rem;
+      margin-top: -2rem;
+      align-items: start;
+    }
+
+    .vibe-sheet__section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin: 0 0 0.5rem;
+      color: var(--deep);
+      font-family: Poppins, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.2;
+    }
+
+    .vibe-sheet__section-title span {
+      color: var(--coral);
+      font-family: "Open Sans", Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    /* Panels */
+    .vibe-sheet__panel {
+      padding: 0.85rem 0.95rem;
+      background: var(--panel);
+    }
+
+    .vibe-sheet__panel--gold {
+      border-top: 3px solid var(--gold);
+    }
+
+    .vibe-sheet__panel--teal {
+      border-top: 3px solid var(--teal);
+    }
+
+    .vibe-sheet__panel--coral {
+      border-top: 3px solid var(--coral);
+    }
+
+    .vibe-sheet__prompt {
+      margin: 0 0 0.3rem;
+      color: var(--muted);
+      font-size: 0.65rem;
+      line-height: 1.35;
+    }
+
+    .vibe-sheet__formula-label {
+      margin-top: 0.45rem;
+      color: var(--muted);
+      font-size: 0.65rem;
+    }
+
+    .vibe-sheet__short-input {
+      height: 24px;
+      padding: 0.15rem 0.2rem;
+    }
+
+    .vibe-sheet__fmo {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.6rem;
+      align-items: end;
+      margin-top: 0.65rem;
+    }
+
+    .vibe-sheet__options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .vibe-sheet__choice,
+    .vibe-sheet__check {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--muted);
+      font-size: 0.62rem;
+      line-height: 1.25;
+      cursor: pointer;
+    }
+
+    .vibe-sheet__choice input,
+    .vibe-sheet__check input {
+      width: 12px;
+      height: 12px;
+      margin: 0;
+      accent-color: var(--teal);
+    }
+
+    /* Reflection Grid */
+    .vibe-sheet__reflection {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 0.9rem;
+    }
+
+    .vibe-sheet__reflection h3 {
+      margin: 0 0 0.25rem;
+      color: var(--deep);
+      font-family: Poppins, sans-serif;
+      font-size: 0.7rem;
+    }
+
+    .vibe-sheet__reflection p {
+      margin: 0 0 0.25rem;
+      color: var(--muted);
+      font-size: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .vibe-sheet__write-lines {
+      height: 62px;
+      background: repeating-linear-gradient(to bottom,
+          transparent 0,
+          transparent 18px,
+          rgba(25, 36, 43, 0.18) 19px,
+          transparent 20px);
+    }
+
+    /* Activation Section */
+    .vibe-sheet__activation {
+      padding: 0.85rem 0.95rem;
+      background: var(--panel);
+      border-top: 3px solid var(--teal);
+    }
+
+    .vibe-sheet__activation-intro {
+      margin: 0 0 0.3rem;
+      color: var(--muted);
+      font-size: 0.62rem;
+    }
+
+    .vibe-sheet__step {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 0.4rem;
+      align-items: center;
+      min-height: 27px;
+      border-top: 1px solid rgba(215, 217, 210, 0.9);
+    }
+
+    .vibe-sheet__step-number {
+      color: var(--coral);
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .vibe-sheet__step input {
+      height: 22px;
+    }
+
+    .vibe-sheet__check-note {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.6rem;
+      line-height: 1.3;
+    }
+
+    /* Table Alignment Fixes */
+    .vibe-sheet__feature-title {
+      margin-top: 0.9rem;
+    }
+
+    .vibe-sheet__feature-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .vibe-sheet__feature-table th {
+      padding: 0.38rem 0.25rem;
+      background: #e7ebe5;
+      color: var(--deep);
+      font-size: 0.52rem;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+    }
+
+    .vibe-sheet__feature-table th:first-child {
+      text-align: left;
+      padding-left: 0.4rem;
+    }
+
+    .vibe-sheet__feature-table td {
+      padding: 0.18rem 0.25rem;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .vibe-sheet__feature-table td:first-child {
+      width: 44%;
+      text-align: left;
+    }
+
+    .vibe-sheet__feature-table input[type="text"] {
+      height: 22px;
+      font-size: 0.62rem;
+      padding: 0 0.2rem;
+    }
+
+    .vibe-sheet__feature-table input[type="radio"] {
+      width: 12px;
+      height: 12px;
+      margin: 0 auto;
+      accent-color: var(--teal);
+    }
+
+    .vibe-sheet__feature-signal {
+      min-height: 25px;
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-size: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .vibe-sheet__feature-signal strong {
+      color: var(--coral);
+    }
+
+    /* Confidence Section */
+    .vibe-sheet__confidence {
+      padding: 0.85rem 0.95rem;
+      background: var(--panel);
+      border-top: 3px solid var(--coral);
+    }
+
+    .vibe-sheet__range-row {
+      display: grid;
+      grid-template-columns: 1fr 25px;
+      gap: 0.45rem;
+      align-items: center;
+    }
+
+    .vibe-sheet input[type="range"] {
+      height: 16px;
+      padding: 0;
+      accent-color: var(--coral);
+      border: 0;
+    }
+
+    .vibe-sheet__range-value {
+      color: var(--deep);
+      font-family: Poppins, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .vibe-sheet__range-ends {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.55rem;
+    }
+
+    .vibe-sheet__confidence-message {
+      min-height: 34px;
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .vibe-sheet__confidence-message strong {
+      color: var(--deep);
+    }
+
+    .vibe-sheet__needs {
+      margin-top: 0.85rem;
+      padding: 0.85rem 0.95rem;
+      background: var(--panel);
+      border-top: 3px solid var(--coral);
+    }
+
+    .vibe-sheet__needs .vibe-sheet__check {
+      margin-bottom: 0.42rem;
+    }
+
+    .vibe-sheet__needs .vibe-sheet__check:last-child {
+      margin-bottom: 0;
+    }
+
+    .vibe-sheet__second-eyes {
+      margin-top: 0.85rem;
+    }
+
+    .vibe-sheet__second-eyes textarea {
+      height: 52px;
+      padding: 0.3rem 0.2rem;
+      resize: vertical;
+    }
+
+    /* CTA Section Alignment */
+    .vibe-sheet__cta {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr auto;
+      gap: 1.2rem;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--deep);
+      color: #fff;
+    }
+
+    .vibe-sheet__cta h2 {
+      margin: 0 0 0.3rem;
+      color: #fff;
+      font-family: Poppins, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.1;
+    }
+
+    .vibe-sheet__cta p {
+      margin: 0;
+      color: #cbe7df;
+      font-size: 0.62rem;
+      line-height: 1.35;
+    }
+
+    .vibe-sheet__cta ul {
+      margin: 0;
+      padding-left: 1rem;
+      color: #e1f2ed;
+      font-size: 0.62rem;
+      line-height: 1.55;
+    }
+
+    .vibe-sheet__contact {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.5rem;
+      min-width: 170px;
+    }
+
+    .vibe-sheet__contact a {
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .vibe-sheet__contact a:first-child {
+      padding: 0.45rem 0.6rem;
+      background: var(--coral);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .vibe-sheet__contact a:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+      padding-bottom: 0.15rem;
+    }
+
+    .vibe-sheet__actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .vibe-sheet__print-button {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 4px;
+      padding: 0.45rem 0.6rem;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font: 600 0.62rem "Open Sans", Arial, sans-serif;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .vibe-sheet__print-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #fff;
+    }
+
+    .vibe-sheet__footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.65rem 3rem;
+      background: #10272c;
+      color: #c5e3db;
+      font-size: 0.62rem;
+      letter-spacing: 0.02em;
+    }
+
+    .vibe-sheet__footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 990px) {
+      .vibe-sheet__header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2rem 1.5rem 1.5rem;
+      }
+
+      .vibe-sheet__brand {
+        top: 1rem;
+        right: 1.5rem;
+      }
+
+      .vibe-sheet__app-name {
+        max-width: 300px;
+      }
+
+      .vibe-sheet__body {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .vibe-sheet__columns,
+      .vibe-sheet__cta {
+        grid-template-columns: 1fr;
+      }
+
+      .vibe-sheet__cta {
+        gap: 0.9rem;
+      }
+
+      .vibe-sheet__footer {
+        padding: 0.65rem 1.5rem;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .vibe-page {
+        padding-top: 5rem;
+      }
+
+      .vibe-sheet__reassurance {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .vibe-sheet__fmo,
+      .vibe-sheet__reflection {
+        grid-template-columns: 1fr;
+      }
+
+      .vibe-sheet__headline {
+        font-size: 2.3rem;
+      }
+    }
+
+    /* Single-Page A4 Landscape Print Engine */
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 297mm !important;
+        height: 210mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        overflow: hidden !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .nav,
+      .vibe-page__intro,
+      .vibe-sheet__actions,
+      .vibe-sheet__print-button,
+      .footer,
+      .cta-section {
+        display: none !important;
+      }
+
+      .vibe-page {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #fff !important;
+        width: 297mm !important;
+        height: 210mm !important;
+      }
+
+      .vibe-sheet-wrap {
+        max-width: none !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .vibe-sheet {
+        width: 297mm !important;
+        height: 210mm !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        font-size: 6.5pt !important;
+      }
+
+      /* Header Block */
+      .vibe-sheet__header {
+        display: block !important;
+        position: relative !important;
+        background-color: #0b706b !important;
+        color: #ffffff !important;
+        padding: 3mm 8mm 2.5mm !important;
+        min-height: 22mm !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .vibe-sheet__eyebrow {
+        color: #bce5dc !important;
+        font-size: 5pt !important;
+        margin-bottom: 0.3mm !important;
+      }
+
+      .vibe-sheet__headline {
+        color: #ffffff !important;
+        font-size: 13.5pt !important;
+        margin-bottom: 0.3mm !important;
+      }
+
+      .vibe-sheet__subtitle {
+        color: #e6f4ef !important;
+        font-size: 6pt !important;
+        max-width: 200mm !important;
+      }
+
+      .vibe-sheet__brand {
+        display: block !important;
+        position: absolute !important;
+        top: 2.5mm !important;
+        right: 8mm !important;
+        width: 80px !important;
+        height: 20px !important;
+      }
+
+      .vibe-sheet__app-name {
+        position: absolute !important;
+        bottom: 2.5mm !important;
+        right: 8mm !important;
+        font-size: 6pt !important;
+        color: #d9f0ea !important;
+      }
+
+      .vibe-sheet__app-name input {
+        height: 14px !important;
+        font-size: 6pt !important;
+        color: #ffffff !important;
+        border-bottom-color: rgba(255, 255, 255, 0.65) !important;
+      }
+
+      /* Body & Section Spacing for PDF Height */
+      .vibe-sheet__body {
+        padding: 2mm 8mm 0 !important;
+        flex-grow: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+      }
+
+      .vibe-sheet__reassurance {
+        padding-bottom: 1mm !important;
+      }
+
+      .vibe-sheet__reassurance p {
+        font-size: 6pt !important;
+        line-height: 1.2 !important;
+      }
+
+      .vibe-sheet__tag {
+        padding: 0.8mm 2mm !important;
+        font-size: 4.8pt !important;
+      }
+
+      .vibe-sheet__columns {
+        margin-top: 1mm !important;
+        gap: 2.5mm !important;
+        grid-template-columns: 1fr 1.15fr 1fr !important;
+      }
+
+      .vibe-sheet__section-title {
+        font-size: 7pt !important;
+        margin-bottom: 0.8mm !important;
+      }
+
+      .vibe-sheet__panel,
+      .vibe-sheet__activation,
+      .vibe-sheet__confidence,
+      .vibe-sheet__needs {
+        padding: 1.5mm 2mm !important;
+      }
+
+      .vibe-sheet__prompt,
+      .vibe-sheet__formula-label,
+      .vibe-sheet__activation-intro,
+      .vibe-sheet__check-note,
+      .vibe-sheet__feature-signal,
+      .vibe-sheet__confidence-message {
+        font-size: 5pt !important;
+        line-height: 1.15 !important;
+      }
+
+      .vibe-sheet input,
+      .vibe-sheet textarea,
+      .vibe-sheet select {
+        font-size: 5.5pt !important;
+      }
+
+      .vibe-sheet__short-input {
+        height: 14px !important;
+      }
+
+      .vibe-sheet__choice,
+      .vibe-sheet__check {
+        font-size: 5.2pt !important;
+      }
+
+      .vibe-sheet__reflection {
+        margin-top: 1mm !important;
+        gap: 2mm !important;
+      }
+
+      .vibe-sheet__reflection h3 {
+        font-size: 6pt !important;
+      }
+
+      .vibe-sheet__reflection p {
+        font-size: 5pt !important;
+      }
+
+      .vibe-sheet__write-lines {
+        height: 6mm !important;
+      }
+
+      .vibe-sheet__step {
+        min-height: 15px !important;
+      }
+
+      .vibe-sheet__step input {
+        height: 12px !important;
+      }
+
+      .vibe-sheet__feature-title {
+        margin-top: 1mm !important;
+      }
+
+      .vibe-sheet__feature-table th {
+        font-size: 4.5pt !important;
+        padding: 0.6mm 0.4mm !important;
+      }
+
+      .vibe-sheet__feature-table td input[type="text"] {
+        height: 12px !important;
+        font-size: 5pt !important;
+      }
+
+      .vibe-sheet__second-eyes {
+        margin-top: 1mm !important;
+      }
+
+      .vibe-sheet__second-eyes textarea {
+        height: 6mm !important;
+      }
+
+      .vibe-sheet__cta {
+        margin-top: 1mm !important;
+        padding: 1.5mm 2.5mm !important;
+      }
+
+      .vibe-sheet__cta h2 {
+        font-size: 7.5pt !important;
+      }
+
+      .vibe-sheet__cta p,
+      .vibe-sheet__cta ul,
+      .vibe-sheet__contact a {
+        font-size: 5pt !important;
+        line-height: 1.2 !important;
+      }
+
+      /* Explicit Printable Footer */
+      .vibe-sheet__footer {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background-color: #10272c !important;
+        color: #c5e3db !important;
+        padding: 1.2mm 8mm !important;
+        margin-top: 1mm !important;
+        font-size: 5.2pt !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .vibe-sheet__footer strong {
+        color: #ffffff !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="navlogo">
+        <a href="../index.html"><img src="../assets/q3Logo.png" alt="Qube Catalyst" class="navlogo-image"></a>
+      </div>
+      <div class="nav__links">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#cases">Case Studies</a>
+        <a href="../lab.html">Product Lab</a>
+        <a href="../index.html#testimonials">Testimonials</a>
+        <a href="../events.html">Events</a>
+      </div>
+      <a href="https://meetings-eu1.hubspot.com/poguchi" class="nav__cta" target="_blank" rel="noopener noreferrer"
+        data-track-cta="nav_booking">Work with Pearl</a>
+      <button type="button" class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="vibe-page">
+    <header class="vibe-page__intro">
+      <p class="vibe-page__meta">Interactive founder resource</p>
+      <h1 class="vibe-page__title">Vibe code, but make it make sense.</h1>
+      <p class="vibe-page__lead">A practical worksheet for founders who have built something real but are not yet sure
+        whether the app is ready for real users.</p>
+    </header>
+
+    <div class="vibe-sheet-wrap">
+      <section class="vibe-sheet" aria-label="Vibe coding reality check worksheet">
+        <header class="vibe-sheet__header">
+          <img class="vibe-sheet__brand" src="../assets/q3Logo-black.png" alt="Qube Catalyst logo" />
+          <div>
+            <p class="vibe-sheet__eyebrow">Qube Catalyst · A practical founder resource</p>
+            <h2 class="vibe-sheet__headline">Vibe code, but make it make sense.</h2>
+            <p class="vibe-sheet__subtitle">A one-page reality check for the app you’re building right now — so you can
+              see what is working, what needs simplifying, and what deserves a second pair of eyes.</p>
+          </div>
+          <label class="vibe-sheet__app-name">
+            App / idea name
+            <input type="text" placeholder="Name it here" aria-label="App or idea name" />
+          </label>
+        </header>
+
+        <div class="vibe-sheet__body">
+          <div class="vibe-sheet__reassurance">
+            <p><strong>You have already done something difficult:</strong> you turned an idea into something real. This
+              is not a test of whether you are a “real” builder. It helps you decide whether your next move is
+              <strong>build, test, simplify, or ask for help.</strong>
+            </p>
+            <span class="vibe-sheet__tag">Think before you add</span>
+          </div>
+
+          <div class="vibe-sheet__columns">
+            <!-- Column 1 -->
+            <section>
+              <h3 class="vibe-sheet__section-title"><span>01</span> What does your app actually do?</h3>
+              <div class="vibe-sheet__panel vibe-sheet__panel--gold">
+                <p class="vibe-sheet__prompt"><strong>Complete the sentence in the simplest way possible.</strong></p>
+                <div class="vibe-sheet__formula-label">My app helps</div>
+                <input class="vibe-sheet__short-input" type="text" placeholder="specific users with…" />
+                <div class="vibe-sheet__formula-label">so they can</div>
+                <input class="vibe-sheet__short-input" type="text" placeholder="achieve this useful outcome…" />
+
+                <div class="vibe-sheet__fmo">
+                  <div>
+                    <p class="vibe-sheet__prompt"><strong>First meaningful outcome (FMO)</strong></p>
+                    <input class="vibe-sheet__short-input" type="text"
+                      placeholder="The first real thing a user can achieve is…" />
+                  </div>
+                  <div class="vibe-sheet__options">
+                    <label class="vibe-sheet__choice"><input type="radio" name="fmo" /> I know it</label>
+                    <label class="vibe-sheet__choice"><input type="radio" name="fmo" /> Not fully sure</label>
+                    <label class="vibe-sheet__choice"><input type="radio" name="fmo" /> Need help</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="vibe-sheet__reflection">
+                <div>
+                  <h3>What is working well?</h3>
+                  <p>Name three things you are proud of.</p>
+                  <div class="vibe-sheet__write-lines"></div>
+                </div>
+                <div>
+                  <h3>What feels fragile?</h3>
+                  <p>Note what feels confusing, unstable, or unfinished.</p>
+                  <div class="vibe-sheet__write-lines"></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Column 2 -->
+            <section>
+              <h3 class="vibe-sheet__section-title"><span>02</span> Map the activation path</h3>
+              <div class="vibe-sheet__activation">
+                <p class="vibe-sheet__activation-intro">List the exact steps a new user takes to reach the FMO.</p>
+                <label class="vibe-sheet__step"><span class="vibe-sheet__step-number">1</span><input type="text"
+                    placeholder="The user starts by…" /></label>
+                <label class="vibe-sheet__step"><span class="vibe-sheet__step-number">2</span><input type="text"
+                    placeholder="Then they…" /></label>
+                <label class="vibe-sheet__step"><span class="vibe-sheet__step-number">3</span><input type="text"
+                    placeholder="Then they…" /></label>
+                <label class="vibe-sheet__step"><span class="vibe-sheet__step-number">4</span><input type="text"
+                    placeholder="Then they…" /></label>
+                <label class="vibe-sheet__step"><span class="vibe-sheet__step-number">5</span><input type="text"
+                    placeholder="They reach the useful outcome when…" /></label>
+                <p class="vibe-sheet__check-note">Check: Is any step confusing? Does the order feel natural? Does value
+                  arrive quickly?</p>
+              </div>
+
+              <h3 class="vibe-sheet__section-title vibe-sheet__feature-title"><span>03</span> Feature reality check</h3>
+              <table class="vibe-sheet__feature-table">
+                <thead>
+                  <tr>
+                    <th>Feature / idea</th>
+                    <th>Works reliably</th>
+                    <th>Works sometimes</th>
+                    <th>Not sure</th>
+                    <th>Needs rework</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="text" placeholder="Feature 1" /></td>
+                    <td><input type="radio" name="feature1" value="reliable" /></td>
+                    <td><input type="radio" name="feature1" value="sometimes" /></td>
+                    <td><input type="radio" name="feature1" value="unsure" /></td>
+                    <td><input type="radio" name="feature1" value="rework" /></td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" placeholder="Feature 2" /></td>
+                    <td><input type="radio" name="feature2" value="reliable" /></td>
+                    <td><input type="radio" name="feature2" value="sometimes" /></td>
+                    <td><input type="radio" name="feature2" value="unsure" /></td>
+                    <td><input type="radio" name="feature2" value="rework" /></td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" placeholder="Feature 3" /></td>
+                    <td><input type="radio" name="feature3" value="reliable" /></td>
+                    <td><input type="radio" name="feature3" value="sometimes" /></td>
+                    <td><input type="radio" name="feature3" value="unsure" /></td>
+                    <td><input type="radio" name="feature3" value="rework" /></td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" placeholder="Feature 4" /></td>
+                    <td><input type="radio" name="feature4" value="reliable" /></td>
+                    <td><input type="radio" name="feature4" value="sometimes" /></td>
+                    <td><input type="radio" name="feature4" value="unsure" /></td>
+                    <td><input type="radio" name="feature4" value="rework" /></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="vibe-sheet__feature-signal"><strong>Look for the pattern:</strong> “Sometimes” and “Not sure”
+                are useful signals, not failures.</p>
+            </section>
+
+            <!-- Column 3 -->
+            <section>
+              <h3 class="vibe-sheet__section-title"><span>04</span> How confident are you?</h3>
+              <div class="vibe-sheet__confidence">
+                <p class="vibe-sheet__prompt">How confident are you that a new user can reach the FMO without confusion?
+                </p>
+                <div class="vibe-sheet__range-row">
+                  <input id="confidence" type="range" min="1" max="10" value="5"
+                    aria-label="Confidence score from 1 to 10" />
+                  <output class="vibe-sheet__range-value" id="confidenceValue">5</output>
+                </div>
+                <div class="vibe-sheet__range-ends">
+                  <span>1 · not confident</span>
+                  <span>10 · fully confident</span>
+                </div>
+                <p class="vibe-sheet__confidence-message" id="confidenceMessage">
+                  <strong>That is a useful signal, not a verdict.</strong> A focused diagnostic can help you find the
+                  confusion before you put the app in front of more people.
+                </p>
+              </div>
+
+              <h3 class="vibe-sheet__section-title" style="margin-top:.85rem"><span>05</span> What do you need next?
+              </h3>
+              <div class="vibe-sheet__needs">
+                <label class="vibe-sheet__check"><input type="checkbox" /> I need help tightening the logic</label>
+                <label class="vibe-sheet__check"><input type="checkbox" /> I need an end-to-end test</label>
+                <label class="vibe-sheet__check"><input type="checkbox" /> I need clarity on what to fix first</label>
+                <label class="vibe-sheet__check"><input type="checkbox" /> I need a second pair of eyes</label>
+                <label class="vibe-sheet__check"><input type="checkbox" /> I am not sure yet</label>
+              </div>
+
+              <h3 class="vibe-sheet__section-title vibe-sheet__second-eyes"><span>06</span> The bit I want help thinking
+                through</h3>
+              <textarea placeholder="What keeps feeling almost right, but not quite clear?"
+                aria-label="The part I want help thinking through"></textarea>
+            </section>
+          </div>
+
+          <section class="vibe-sheet__cta">
+            <div>
+              <h2>Found a gap? That is useful.</h2>
+              <p>If this sheet shows that the app needs more than another build prompt, a Half-Day Product Reality
+                Review can help you see what to fix first.</p>
+            </div>
+            <ul>
+              <li>Full end-to-end test of the app</li>
+              <li>Risks, contradictions, and fragile logic</li>
+              <li>Clear next steps you can act on</li>
+              <li>More confidence before testers or investors see it</li>
+            </ul>
+            <div class="vibe-sheet__contact">
+              <a href="https://meetings-eu1.hubspot.com/poguchi" target="_blank" rel="noopener noreferrer"
+                data-track-cta="worksheet_booking">Book a review</a>
+              <button class="vibe-sheet__print-button" type="button" id="printWorksheet">Print / save as PDF</button>
+              <a href="mailto:pearlo@qubecatalyst.com" data-track-cta="worksheet_email">Email Pearl ·
+                pearlo@qubecatalyst.com</a>
+            </div>
+          </section>
+
+          <footer class="vibe-sheet__footer">
+            <span><strong>Qube Catalyst</strong> · Product logic · UX friction · Build direction</span>
+            <span>You are not behind. You may just need a clearer next move.</span>
+          </footer>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var resourceName = 'vibe_coding_reality_check', printTrackedAt = 0;
+      function track(name, params) {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', name, Object.assign({resource_name: resourceName}, params || {}));
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        track('resource_view', {resource_type: 'interactive_worksheet'});
+        var confidence = document.getElementById('confidence'),
+          value = document.getElementById('confidenceValue'),
+          message = document.getElementById('confidenceMessage'),
+          printButton = document.getElementById('printWorksheet');
+
+        if (confidence) {
+          confidence.addEventListener('input', function () {
+            value.textContent = confidence.value;
+            if (Number(confidence.value) < 7) {
+              message.innerHTML = '<strong>That is a useful signal, not a verdict.</strong> A focused diagnostic can help you find the confusion before you put the app in front of more people.';
+            } else {
+              message.innerHTML = '<strong>Promising — now verify it with a first-time user.</strong> Confidence is strongest when someone else can reach the outcome without your help.';
+            }
+            if (!confidence.dataset.tracked) {
+              track('resource_interaction', {interaction_type: 'confidence_slider'});
+              confidence.dataset.tracked = 'true';
+            }
+          });
+        }
+
+        document.querySelectorAll('.vibe-sheet__feature-table input[type="radio"]').forEach(function (radio) {
+          radio.addEventListener('change', function () {
+            track('resource_interaction', {interaction_type: 'feature_reality_check'});
+          }, {once: true});
+        });
+
+        document.querySelectorAll('[data-track-cta]').forEach(function (link) {
+          link.addEventListener('click', function () {
+            track('resource_cta_click', {cta_type: link.getAttribute('data-track-cta')});
+          });
+        });
+
+        function trackPrint() {
+          var now = Date.now();
+          if (now - printTrackedAt < 2000) return;
+          printTrackedAt = now;
+          track('resource_print', {print_method: 'browser_print_or_pdf'});
+        }
+
+        if (printButton) {
+          printButton.addEventListener('click', function () {
+            trackPrint();
+            window.print();
+          });
+        }
+
+        window.addEventListener('beforeprint', trackPrint);
+        if (window.matchMedia) {
+          var media = window.matchMedia('print');
+          if (media.addEventListener) {
+            media.addEventListener('change', function (e) {if (e.matches) trackPrint();});
+          } else if (media.addListener) {
+            media.addListener(function (e) {if (e.matches) trackPrint();});
+          }
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var hamburger = document.querySelector('.nav__hamburger');
+      if (!hamburger) return;
+      hamburger.addEventListener('click', function () {
+        var open = document.body.classList.toggle('nav--open');
+        hamburger.setAttribute('aria-expanded', open);
+        hamburger.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      });
+      document.querySelectorAll('.nav__links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          document.body.classList.remove('nav--open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.setAttribute('aria-label', 'Open navigation menu');
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

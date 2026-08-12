@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FJNXE3M7L"></script>
   <script>
@@ -34,7 +35,7 @@
     }
     </script>
 
-    <script type="application/ld+json">
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -47,12 +48,13 @@
       }
     }
     </script>
-  
+
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Product Lab: Interactive Frameworks & Growth Diagnostics | Qube Catalyst</title>
-  <meta name="description" content="Access unvarnished product briefs, real-time runway simulators, and interactive retention architecture tests for early-stage software founders." />
+  <meta name="description"
+    content="Access unvarnished product briefs, real-time runway simulators, and interactive retention architecture tests for early-stage software founders." />
   <link rel="canonical" href="https://qubecatalyst.com/lab.html" />
 
   <link rel="icon" type="image/png" href="assets/q3favicon.png" />
@@ -60,7 +62,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet" />
 
   <style>
     /* Custom layout layer specifically for the Product Lab Grid UI */
@@ -69,12 +72,14 @@
       padding-bottom: var(--space-12);
       text-align: center;
     }
+
     .lab-header h1 {
       font-family: var(--font-display);
       font-size: var(--text-3xl);
       color: var(--color-text);
       margin-bottom: var(--space-4);
     }
+
     .lab-header p {
       margin: 0 auto var(--space-8) auto;
       font-size: var(--text-lg);
@@ -88,20 +93,24 @@
       margin: var(--space-8) auto 0 auto;
       text-align: left;
     }
+
     p.sprints-intro {
-      font-size: 15px !important; /* Slightly larger than card body but smaller than subtitles to bridge the layout smoothly */
+      font-size: 15px !important;
+      /* Slightly larger than card body but smaller than subtitles to bridge the layout smoothly */
       line-height: 1.65 !important;
       color: var(--color-text-muted) !important;
       max-width: 80ch;
       margin-bottom: var(--space-8) !important;
       text-align: left;
     }
+
     .sprints-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--space-6);
       margin-bottom: var(--space-8);
     }
+
     .sprint-block {
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
@@ -111,6 +120,7 @@
       flex-direction: column;
       justify-content: space-between;
     }
+
     .sprint-block h3 {
       font-family: var(--font-display);
       font-size: var(--text-xl) !important;
@@ -122,11 +132,13 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .sprint-block h3 span {
       font-size: var(--text-sm);
       font-weight: 500;
       color: var(--color-text-muted);
     }
+
     .sprint-meta {
       font-size: var(--text-xs);
       font-weight: 700;
@@ -135,16 +147,19 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
+
     p.sprint-detail {
       font-size: 14px !important;
       color: var(--color-text-muted) !important;
       line-height: 1.65 !important;
       margin-bottom: var(--space-4);
     }
+
     p.sprint-detail strong {
       color: var(--color-text) !important;
       font-weight: 500;
     }
+
     .sprint-cta-container {
       text-align: center;
       margin-top: var(--space-6);
@@ -165,11 +180,13 @@
       padding: var(--space-4);
       background: rgba(243, 246, 245, 0.95);
       position: sticky;
-      top: 104px; /* Sits perfectly under nav bar height */
+      top: 104px;
+      /* Sits perfectly under nav bar height */
       z-index: 90;
       border-bottom: 1px solid var(--color-border);
       margin-bottom: var(--space-12);
     }
+
     .filter-tag {
       background: var(--color-surface-2);
       border: 1px solid var(--color-border);
@@ -181,7 +198,9 @@
       cursor: pointer;
       transition: all var(--transition);
     }
-    .filter-tag.active, .filter-tag:hover {
+
+    .filter-tag.active,
+    .filter-tag:hover {
       background: var(--color-text);
       color: var(--color-text-inverse);
       border-color: var(--color-text);
@@ -194,8 +213,11 @@
       gap: var(--space-8);
       margin-bottom: var(--space-20);
     }
+
     @media (max-width: 850px) {
-      .lab-grid { grid-template-columns: 1fr; }
+      .lab-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Lab Module Card UI Styles matching original Service Cards */
@@ -209,15 +231,18 @@
       justify-content: space-between;
       transition: box-shadow var(--transition);
     }
+
     .lab-card:hover {
       box-shadow: var(--shadow-md);
     }
+
     .lab-card__header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: var(--space-4);
     }
+
     .lab-card__badge {
       font-size: var(--text-xs);
       font-weight: 500;
@@ -226,10 +251,22 @@
       padding: var(--space-1) var(--space-3);
       border-radius: var(--radius-sm);
     }
+
     /* Intentional Category Palette Colors */
-    .badge--brief { background: rgba(68, 214, 44, 0.15); color: #1f7d0b; }
-    .badge--tool { background: #EBF5FF; color: #0066CC; }
-    .badge--game { background: #FFEBEB; color: #D93838; }
+    .badge--brief {
+      background: rgba(68, 214, 44, 0.15);
+      color: #1f7d0b;
+    }
+
+    .badge--tool {
+      background: #EBF5FF;
+      color: #0066CC;
+    }
+
+    .badge--game {
+      background: #FFEBEB;
+      color: #D93838;
+    }
 
     .lab-card__title {
       font-family: var(--font-display);
@@ -238,12 +275,14 @@
       color: var(--color-text);
       margin-bottom: var(--space-3);
     }
+
     .lab-card__desc {
       font-size: var(--text-sm);
       color: var(--color-text-muted);
       line-height: 1.65;
       margin-bottom: var(--space-6);
     }
+
     .lab-card__footer {
       display: flex;
       justify-content: space-between;
@@ -251,12 +290,14 @@
       padding-top: var(--space-4);
       border-top: 1px solid var(--color-border);
     }
+
     .lab-card__time {
       font-size: var(--text-xs);
       color: var(--color-text-faint);
     }
   </style>
 </head>
+
 <body>
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -269,12 +310,13 @@
         <a href="index.html#about">About</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#cases">Case Studies</a>
-        <a href="lab.html" >Product Lab</a>
+        <a href="lab.html">Product Lab</a>
         <!-- <a href="index.html#guarantee">Guarantee</a> -->
         <a href="index.html#testimonials">Testimonials</a>
         <a href="events.html">Events</a>
       </div>
-      <a href="https://meetings-eu1.hubspot.com/poguchi" class="nav__cta" target="_blank" rel="noopener noreferrer">Work with Pearl</a>
+      <a href="https://meetings-eu1.hubspot.com/poguchi" class="nav__cta" target="_blank" rel="noopener noreferrer">Work
+        with Pearl</a>
       <button type="button" class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -284,28 +326,41 @@
   <header class="lab-header container container--wide reveal">
     <div class="hero__eyebrow">Interactive Diagnostics</div>
     <h1>The Q³ Product Lab</h1>
-    <p>Where ideas get tested, decisions get made, and builds get started right. Practical resources and hands-on services for founders who are ready to move.</p>
+    <p>Where ideas get tested, decisions get made, and builds get started right. Practical resources and hands-on
+      services for founders who are ready to move.</p>
 
     <!-- Pre-Build Founder Micro-Services Columns -->
     <div class="sprints-container">
 
       <!-- New Introductory Paragraph -->
       <p class="sprints-intro">
-        You have an idea. You're not sure where to start, or you're ready to build but don't want to get it wrong. These two services exist for that exact moment. Or perhaps you are procrastinating because you haven’t had the time to take your idea from your head onto paper. Use the specialised app sprints below to extract your vision, lock down your operational boundaries, and map out a lean, definitive path to launch.  Don't let analysis paralysis rob you of your idea that could change the world
+        You have an idea. You're not sure where to start, or you're ready to build but don't want to get it wrong. These
+        two services exist for that exact moment. Or perhaps you are procrastinating because you haven’t had the time to
+        take your idea from your head onto paper. Use the specialised app sprints below to extract your vision, lock
+        down your operational boundaries, and map out a lean, definitive path to launch. Don't let analysis paralysis
+        rob you of your idea that could change the world
       </p>
-      
+
       <div class="sprints-grid">
-        
+
         <!-- Service 1 -->
         <div class="sprint-block">
           <div>
             <h3>The App Idea Catalyst <span>£149</span></h3>
             <div class="sprint-meta">60-Min Strategy Shaping Sprint</div>
-            <p class="sprint-detail"><strong>You have an app idea you've been thinking for a while.</strong> You've spoken to potential users. You know there's a real problem. But every time you try to define what to build, it gets complicated and you're not sure what version one actually needs to be.
-</p>
-            <p class="sprint-detail"><strong>In 60 minutes, </strong> I'll work through your idea with you. We'll pull apart your vision to validate what you've already learned; Get clear on the problem you're solving and for who; and map out what your app actually needs to do for the people using it. You leave with a 1-page map that reflects your users, not just your assumptions.</p>
+            <p class="sprint-detail"><strong>You have an app idea you've been thinking for a while.</strong> You've
+              spoken to potential users. You know there's a real problem. But every time you try to define what to
+              build, it gets complicated and you're not sure what version one actually needs to be.
+            </p>
+            <p class="sprint-detail"><strong>In 60 minutes, </strong> I'll work through your idea with you. We'll pull
+              apart your vision to validate what you've already learned; Get clear on the problem you're solving and for
+              who; and map out what your app actually needs to do for the people using it. You leave with a 1-page map
+              that reflects your users, not just your assumptions.</p>
           </div>
-          <p class="sprint-detail" style="margin-bottom:0;"><strong>Stop overthinking.</strong> Analysis paralysis kills more app ideas than bad technology ever will. This 60-minute sprint exists to make sure yours isn't one of them. You'll walk away knowing exactly what you're building, who it's for, and what matters in version one. Not someday. Today.</p>
+          <p class="sprint-detail" style="margin-bottom:0;"><strong>Stop overthinking.</strong> Analysis paralysis kills
+            more app ideas than bad technology ever will. This 60-minute sprint exists to make sure yours isn't one of
+            them. You'll walk away knowing exactly what you're building, who it's for, and what matters in version one.
+            Not someday. Today.</p>
         </div>
 
         <!-- Service 2 -->
@@ -313,19 +368,29 @@
           <div>
             <h3>The Developer-Ready MVP Blueprint <span>£399</span></h3>
             <div class="sprint-meta">2.5 Hours Deep Dive Sprint</div>
-            <p class="sprint-detail"><strong>You've shaped the idea,</strong> and are getting ready to build, but it's still vague. Vague requirements cause scope creep and poorly built features, blowing past deadlines and burning through your budget before you've even launched. Turn your idea into something you can actually build, whether that's with a developer, a no-code platform like Lovable, Bubble or Base44, or any other platform.
+            <p class="sprint-detail"><strong>You've shaped the idea,</strong> and are getting ready to build, but it's
+              still vague. Vague requirements cause scope creep and poorly built features, blowing past deadlines and
+              burning through your budget before you've even launched. Turn your idea into something you can actually
+              build, whether that's with a developer, a no-code platform like Lovable, Bubble or Base44, or any other
+              platform.
 
-</p>
-            <p class="sprint-detail"><strong>In 2.5 hours</strong> I'll take what you know and produce a build-ready specification matrix. Scope locked with no ambiguity. Whether you're handing this to a developer or building it yourself, you'll know exactly what to build first, what to leave for later, and what to cut entirely.</p>
+            </p>
+            <p class="sprint-detail"><strong>In 2.5 hours</strong> I'll take what you know and produce a build-ready
+              specification matrix. Scope locked with no ambiguity. Whether you're handing this to a developer or
+              building it yourself, you'll know exactly what to build first, what to leave for later, and what to cut
+              entirely.</p>
           </div>
-          <p class="sprint-detail" style="margin-bottom:0;"><strong>You get a complete, unambiguous blueprint, </strong>whether you're working with a developer or building it yourself on any no-code tool, you know exactly what to build, in what order, and why. No surprises or rework. Just build.</p>
+          <p class="sprint-detail" style="margin-bottom:0;"><strong>You get a complete, unambiguous blueprint,
+            </strong>whether you're working with a developer or building it yourself on any no-code tool, you know
+            exactly what to build, in what order, and why. No surprises or rework. Just build.</p>
         </div>
 
       </div>
 
       <!-- Unified Master Call to Action Link -->
       <div class="sprint-cta-container">
-        <a href="https://meetings-eu1.hubspot.com/poguchi" class="btn btn--primary" target="_blank" rel="noopener noreferrer" style="padding: var(--space-3) var(--space-8);">Book a Strategy Call</a>
+        <a href="https://meetings-eu1.hubspot.com/poguchi" class="btn btn--primary" target="_blank"
+          rel="noopener noreferrer" style="padding: var(--space-3) var(--space-8);">Book a Strategy Call</a>
       </div>
     </div>
   </header>
@@ -340,7 +405,7 @@
   <main class="container container--wide">
     <div class="lab-grid" id="labWorkbenchGrid">
 
-      
+
     </div>
   </main>
 
@@ -348,9 +413,11 @@
     <div class="container">
       <div class="cta-section__inner reveal">
         <h2 class="cta-section__title">If the product is not doing what it should, the worst move is waiting.</h2>
-        <p class="cta-section__sub">Bring independent diagnostic testing right into your deployment lifecycle to protect your retention baseline cleanly.</p>
+        <p class="cta-section__sub">Bring independent diagnostic testing right into your deployment lifecycle to protect
+          your retention baseline cleanly.</p>
         <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
-          <a href="https://meetings-eu1.hubspot.com/poguchi" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Start a conversation</a>
+          <a href="https://meetings-eu1.hubspot.com/poguchi" class="btn btn--primary" target="_blank"
+            rel="noopener noreferrer">Start a conversation</a>
           <a href="index.html#services" class="btn btn--ghost">Review core services</a>
         </div>
       </div>
@@ -373,38 +440,49 @@
   <script>
     // 1. DIGITAL INVENTORY REGISTRY
     const incomingLabInventory = [
+
       {
-      category: "brief", 
-          metric: "Retention",
-          title: "Preventative Retention: How to Fix Churn Before You Launch Your App",
-          description: "Stop chasing 1,000 users if your app has structural drop-off points. Learn how to audit your onboarding flow, eliminate cognitive friction, and fix retention before launch.",
-          time: "5 min read",
-          link: "lab/fix-churn.html",
-          isLocked: false
-        }, 
-      
+        category: "Interactive",
+        metric: "Product Logic",
+        title: "Vibe Code, But Make It Make Sense",
+        description: "A practical one-page reality check for founders who are vibe coding an app they wish to sell and want to clarify the user journey, feature logic, and next step.",
+        time: "Interactive",
+        link: "lab/vibe-coding-reality-check.html",
+        isLocked: false
+      },
+
       {
-        category: "game", 
+        category: "brief",
+        metric: "Retention",
+        title: "Preventative Retention: How to Fix Churn Before You Launch Your App",
+        description: "Stop chasing 1,000 users if your app has structural drop-off points. Learn how to audit your onboarding flow, eliminate cognitive friction, and fix retention before launch.",
+        time: "5 min read",
+        link: "lab/fix-churn.html",
+        isLocked: false
+      },
+
+      {
+        category: "game",
         metric: "Retention",
         title: "The Runway Simulator: 2D Arcade Edition",
         description: "Control your founder avatar in a side-scrolling platformer game. Jump obstacles, survive engineering sprints, and try not to crash your retention baseline.",
         time: "2D Arcade Game",
-        link: "/lab/game/index.html", 
+        link: "/lab/game/index.html",
         isLocked: false
       },
-      
-    {
-    category: "brief", 
+
+      {
+        category: "brief",
         metric: "Retention",
         title: "Kill the Founder",
         description: "If growth relies on high-touch management, it isn’t product traction; it’s a consulting firm disguised as a SaaS company. Your code must onboard, retain, and fix human error entirely on its own merits before you push for scale.",
         time: "10 min read",
         link: "lab/kill-the-founder.html",
         isLocked: false
-      }, 
-      
+      },
+
       {
-        category: "brief", 
+        category: "brief",
         metric: "PMF",
         title: "What listening to users actually looks like",
         description: "A look at how what users say and do can be the difference between what your customers want and what they need. Explore ideas to consider when researching your customer base.",
@@ -424,8 +502,8 @@
 
         let badgeText = "📝 Product Brief";
         let badgeClass = "badge--brief";
-        if (item.category === "tool") { badgeText = "🛠️ Interactive"; badgeClass = "badge--tool"; }
-        if (item.category === "game") { badgeText = "🕹️ Tactical Game"; badgeClass = "badge--game"; }
+        if (item.category === "tool") {badgeText = "🛠️ Interactive"; badgeClass = "badge--tool";}
+        if (item.category === "game") {badgeText = "🕹️ Tactical Game"; badgeClass = "badge--game";}
 
         const newTile = document.createElement("article");
         newTile.className = "lab-card";
@@ -447,12 +525,12 @@
           </div>
          <div class="lab-card__footer">
   <span class="lab-card__time">${item.isLocked ? '🔒 ' + item.time : '⏱️ ' + item.time}</span>
-  ${item.isLocked 
-    ? `<a href="#" class="btn btn--ghost" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs); pointer-events: none; opacity: 0.5;">Locked</a>`
-    : `<a href="${item.link}" class="btn btn--primary" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs);">
+  ${item.isLocked
+            ? `<a href="#" class="btn btn--ghost" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs); pointer-events: none; opacity: 0.5;">Locked</a>`
+            : `<a href="${item.link}" class="btn btn--primary" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs);">
        ${item.category === 'game' ? 'Play Game...' : (item.category === 'tool' ? 'Open Tool...' : 'Read More...')}
        </a>`
-  }
+          }
 </div>
         `;
 
@@ -501,6 +579,7 @@
       });
     })();
   </script>
-  
+
 </body>
+
 </html>
