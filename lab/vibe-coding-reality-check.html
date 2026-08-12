@@ -2,6 +2,9 @@
 <html lang="en" data-theme="light">
 
 <head>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148410884.js"></script>
+  <!-- End of HubSpot Embed Code -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vibe Code, But Make It Make Sense | Qube Catalyst</title>
@@ -387,15 +390,163 @@
       line-height: 1.3;
     }
 
-    .vibe-sheet__write-lines {
-      height: 62px;
-      background: repeating-linear-gradient(to bottom,
-          transparent 0,
-          transparent 18px,
-          rgba(25, 36, 43, 0.18) 19px,
-          transparent 20px);
+    textarea.vibe-sheet__write-lines {
+      width: 100%;
+      height: 85px; /* Fills empty space in Column 1 without forcing layout shifts */
+      border: 0;
+      outline: 0;
+      resize: vertical;
+      color: var(--ink);
+      font: 400 0.72rem/20px "Open Sans", Arial, sans-serif;
+      padding: 0 0.2rem;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 19px,
+        rgba(25, 36, 43, 0.18) 20px
+      );
     }
+    /* Minimalist 1-Page PDF Print Engine */
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
 
+      /* 1. Hide web navigation & action buttons */
+      .nav,
+      .vibe-page__intro,
+      .vibe-sheet__actions,
+      .vibe-sheet__print-button {
+        display: none !important;
+      }
+
+      /* 2. Preserve background colors & fill PDF canvas */
+      html, body {
+        background: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .vibe-page, 
+      .vibe-sheet-wrap {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        background: #fff !important;
+      }
+
+      .vibe-sheet {
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+      }
+
+      /* 3. Compress header spacing */
+      .vibe-sheet__header {
+        padding: 12px 24px 8px !important;
+        min-height: auto !important;
+        background-color: var(--teal) !important;
+      }
+
+      .vibe-sheet__headline {
+        font-size: 1.5rem !important;
+        margin-bottom: 2px !important;
+      }
+
+      .vibe-sheet__subtitle {
+        font-size: 0.72rem !important;
+      }
+
+      /* 4. Compact main body & 3-column section */
+      .vibe-sheet__body {
+        padding: 8px 24px 0 !important;
+      }
+
+      .vibe-sheet__reassurance {
+        padding-bottom: 4px !important;
+      }
+
+      .vibe-sheet__reassurance p {
+        font-size: 0.65rem !important;
+      }
+
+      .vibe-sheet__columns {
+        margin-top: 6px !important;
+        gap: 12px !important;
+      }
+
+      .vibe-sheet__section-title {
+        font-size: 0.78rem !important;
+        margin-bottom: 3px !important;
+      }
+
+      .vibe-sheet__panel,
+      .vibe-sheet__activation,
+      .vibe-sheet__confidence,
+      .vibe-sheet__needs {
+        padding: 6px 8px !important;
+      }
+
+      .vibe-sheet__prompt,
+      .vibe-sheet__formula-label,
+      .vibe-sheet__activation-intro,
+      .vibe-sheet__check-note,
+      .vibe-sheet__feature-signal,
+      .vibe-sheet__confidence-message {
+        font-size: 0.58rem !important;
+        line-height: 1.2 !important;
+      }
+
+      /* 5. Fluid input heights for typed text */
+      .vibe-sheet input,
+      .vibe-sheet select {
+        font-size: 0.62rem !important;
+      }
+
+      .vibe-sheet__short-input,
+      .vibe-sheet__step input,
+      .vibe-sheet__feature-table input[type="text"] {
+        height: 16px !important;
+      }
+
+      textarea.vibe-sheet__write-lines {
+        height: 42px !important;
+        font-size: 0.62rem !important;
+        line-height: 14px !important;
+      }
+
+      .vibe-sheet__second-eyes textarea {
+        height: 32px !important;
+        font-size: 0.62rem !important;
+      }
+
+      /* 6. Compact CTA Banner & Printable Footer */
+      .vibe-sheet__cta {
+        margin-top: 6px !important;
+        padding: 6px 12px !important;
+      }
+
+      .vibe-sheet__cta h2 {
+        font-size: 0.82rem !important;
+      }
+
+      .vibe-sheet__cta p,
+      .vibe-sheet__cta ul,
+      .vibe-sheet__contact a {
+        font-size: 0.58rem !important;
+        line-height: 1.2 !important;
+      }
+
+      .vibe-sheet__footer {
+        padding: 4px 24px !important;
+        font-size: 0.58rem !important;
+        background-color: #10272c !important;
+      }
+    }
     /* Activation Section */
     .vibe-sheet__activation {
       padding: 0.85rem 0.95rem;
@@ -986,6 +1137,184 @@
         color: #ffffff !important;
       }
     }
+
+    body.download-modal-open {
+      overflow: hidden;
+    }
+
+    .download-modal[hidden] {
+      display: none;
+    }
+
+    .download-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+    }
+
+    .download-modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 63, 66, 0.72);
+      backdrop-filter: blur(3px);
+    }
+
+    .download-modal__dialog {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 540px);
+      max-height: min(90vh, 720px);
+      overflow: auto;
+      padding: 2rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+      box-shadow: 0 24px 80px rgba(23, 38, 43, 0.3);
+      color: var(--ink);
+    }
+
+    .download-modal__close {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      width: 2rem;
+      height: 2rem;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .download-modal__close:hover,
+    .download-modal__close:focus-visible {
+      background: var(--panel);
+      color: var(--ink);
+    }
+
+    .download-modal__eyebrow {
+      margin: 0 0 0.45rem;
+      color: var(--teal);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .download-modal__dialog h2 {
+      max-width: 420px;
+      margin: 0 2rem 0.65rem 0;
+      color: var(--deep);
+      font-family: Poppins, sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      line-height: 1.08;
+    }
+
+    .download-modal__intro {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    #hubspot-download-form {
+      margin-top: 1.25rem;
+    }
+
+    /* These apply when HubSpot renders the form as HTML on the page. */
+    #hubspot-download-form .hs-form-field {
+      margin-bottom: 0.9rem;
+    }
+
+    #hubspot-download-form label {
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    #hubspot-download-form input[type="text"],
+    #hubspot-download-form input[type="email"] {
+      width: 100%;
+      min-height: 44px;
+      margin-top: 0.3rem;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: #fff;
+      color: var(--ink);
+      font: 400 0.9rem/1.3 "Open Sans", Arial, sans-serif;
+    }
+
+    #hubspot-download-form input:focus {
+      border-color: var(--teal);
+      outline: 2px solid rgba(11, 112, 107, 0.18);
+    }
+
+    #hubspot-download-form .hs-button {
+      min-height: 44px;
+      padding: 0.65rem 1rem;
+      border: 0;
+      border-radius: 5px;
+      background: var(--coral);
+      color: #fff;
+      cursor: pointer;
+      font: 700 0.85rem/1.2 "Open Sans", Arial, sans-serif;
+    }
+
+    #hubspot-download-form .hs-button:hover,
+    #hubspot-download-form .hs-button:focus-visible {
+      background: #c95f49;
+    }
+
+    #hubspot-download-form .hs-error-msgs,
+    #hubspot-download-form .hs-error-msg {
+      color: #aa4c39;
+      font-size: 0.72rem;
+    }
+
+    #hubspot-download-form .hs-richtext,
+    #hubspot-download-form .legal-consent-container {
+      color: var(--muted);
+      font-size: 0.7rem;
+      line-height: 1.45;
+    }
+
+    .download-modal__status {
+      margin: 0.8rem 0 0;
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .download-modal {
+        padding: 0.65rem;
+      }
+
+      .download-modal__dialog {
+        padding: 1.5rem;
+      }
+    }
+
+    @media print {
+      .download-modal {
+        display: none !important;
+      }
+
+      body.download-modal-open {
+        overflow: visible !important;
+      }
+
+      #hubspot-messages-iframe-container {
+        display: none !important;
+      }
+    }
+    
   </style>
 </head>
 
@@ -1074,12 +1403,12 @@
                 <div>
                   <h3>What is working well?</h3>
                   <p>Name three things you are proud of.</p>
-                  <div class="vibe-sheet__write-lines"></div>
+                  <textarea class="vibe-sheet__write-lines" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
                 </div>
                 <div>
                   <h3>What feels fragile?</h3>
                   <p>Note what feels confusing, unstable, or unfinished.</p>
-                  <div class="vibe-sheet__write-lines"></div>
+                  <textarea class="vibe-sheet__write-lines" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
                 </div>
               </div>
             </section>
@@ -1202,7 +1531,13 @@
             <div class="vibe-sheet__contact">
               <a href="https://meetings-eu1.hubspot.com/poguchi" target="_blank" rel="noopener noreferrer"
                 data-track-cta="worksheet_booking">Book a review</a>
-              <button class="vibe-sheet__print-button" type="button" id="printWorksheet">Print / save as PDF</button>
+              <button class="vibe-sheet__print-button"
+                      type="button"
+                      id="downloadWorksheet"
+                      data-track-cta="worksheet_download">
+                Download / save as PDF
+              </button>
+
               <a href="mailto:pearlo@qubecatalyst.com" data-track-cta="worksheet_email">Email Pearl ·
                 pearlo@qubecatalyst.com</a>
             </div>
@@ -1217,72 +1552,255 @@
     </div>
   </main>
 
+  <script charset="utf-8"
+    type="text/javascript"
+    src="//js.hsforms.net/forms/embed/v2.js"></script>
+
   <script>
     (function () {
-      var resourceName = 'vibe_coding_reality_check', printTrackedAt = 0;
+      var resourceName = 'vibe_coding_reality_check';
+      var printTrackedAt = 0;
+
+      /*
+        Leave this blank to keep the current browser Print / Save as PDF flow.
+        If you have uploaded a finished PDF, set for example:
+        var resourceDownloadUrl = '../assets/vibe-coding-reality-check.pdf';
+      */
+      var resourceDownloadUrl = '';
+      var resourceFilename = 'vibe-coding-reality-check.pdf';
+
+      /* Replace this with the form ID from HubSpot's generated embed code. */
+      var hubspotFormId = '15ae6e5e-3d3d-4b60-a4b7-bfced91f12fe';
+      var hubspotPortalId = '148410884';
+      var hubspotRegion = 'eu1';
+
+      var downloadButton;
+      var modal;
+      var modalDialog;
+      var closeButton;
+      var statusMessage;
+      var successPanel;
+      var successMessage;
+      var resourceDownloadLink;
+      var resourcePrintButton;
+      var lastFocusedElement;
+      var resourceReleased = false;
+
       function track(name, params) {
         if (typeof window.gtag === 'function') {
-          window.gtag('event', name, Object.assign({resource_name: resourceName}, params || {}));
+          window.gtag(
+            'event',
+            name,
+            Object.assign({ resource_name: resourceName }, params || {})
+          );
         }
       }
-      document.addEventListener('DOMContentLoaded', function () {
-        track('resource_view', {resource_type: 'interactive_worksheet'});
-        var confidence = document.getElementById('confidence'),
-          value = document.getElementById('confidenceValue'),
-          message = document.getElementById('confidenceMessage'),
-          printButton = document.getElementById('printWorksheet');
+
+      function trackPrint() {
+        var now = Date.now();
+        if (now - printTrackedAt < 2000) return;
+        printTrackedAt = now;
+        track('resource_print', { print_method: 'browser_print_or_pdf' });
+      }
+
+      function openModal() {
+        lastFocusedElement = document.activeElement;
+        modal.hidden = false;
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('download-modal-open');
+        modalDialog.focus();
+        track('resource_download_gate_open', { gate_type: 'hubspot_form' });
+      }
+
+      function closeModal() {
+        modal.hidden = true;
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('download-modal-open');
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+        }
+      }
+
+      function releaseResource() {
+        if (resourceReleased) return;
+        resourceReleased = true;
+
+        /* Keep the modal open and show a clear next step. */
+        document.getElementById('hubspot-download-form').hidden = true;
+        successPanel.hidden = false;
+
+        if (resourceDownloadUrl) {
+          resourceDownloadLink.href = resourceDownloadUrl;
+          resourceDownloadLink.download = resourceFilename;
+          resourceDownloadLink.hidden = false;
+          resourcePrintButton.hidden = true;
+          successMessage.textContent =
+            'Thanks — your worksheet is ready to download.';
+        } else {
+          resourceDownloadLink.hidden = true;
+          resourcePrintButton.hidden = false;
+          successMessage.textContent =
+            'The interactive worksheet is ready. Use Print / save as PDF below';
+        }
+
+        statusMessage.textContent = '';
+        successPanel.focus();
+        track('resource_form_submitted', { form_type: 'download_gate' });
+      }
+
+      function handleSuccessfulSubmission(event) {
+        /* Ignore unrelated HubSpot forms if another form is added later. */
+        var submittedFormId = event.detail && event.detail.formId;
+        if (
+          hubspotFormId !== 'REPLACE_WITH_YOUR_FORM_ID' &&
+          submittedFormId &&
+          submittedFormId !== hubspotFormId
+        ) {
+          return;
+        }
+        releaseResource();
+      }
+
+      function handleFailedSubmission() {
+        statusMessage.textContent =
+          'The form could not be submitted. Please check the required fields and try again.';
+      }
+
+      function initializeDownloadGate() {
+        downloadButton = document.getElementById('downloadWorksheet');
+        modal = document.getElementById('downloadModal');
+        modalDialog = modal.querySelector('.download-modal__dialog');
+        closeButton = document.getElementById('closeDownloadModal');
+        statusMessage = document.getElementById('downloadFormStatus');
+        successPanel = document.getElementById('downloadSuccess');
+        successMessage = document.getElementById('downloadSuccessMessage');
+        resourceDownloadLink = document.getElementById('resourceDownloadLink');
+        resourcePrintButton = document.getElementById('resourcePrintButton');
+
+        track('resource_view', { resource_type: 'interactive_worksheet' });
+
+        var confidence = document.getElementById('confidence');
+        var value = document.getElementById('confidenceValue');
+        var message = document.getElementById('confidenceMessage');
 
         if (confidence) {
           confidence.addEventListener('input', function () {
             value.textContent = confidence.value;
             if (Number(confidence.value) < 7) {
-              message.innerHTML = '<strong>That is a useful signal, not a verdict.</strong> A focused diagnostic can help you find the confusion before you put the app in front of more people.';
+              message.innerHTML =
+                '<strong>That is a useful signal, not a verdict.</strong> A focused diagnostic can help you find the confusion before you put the app in front of more people.';
             } else {
-              message.innerHTML = '<strong>Promising — now verify it with a first-time user.</strong> Confidence is strongest when someone else can reach the outcome without your help.';
+              message.innerHTML =
+                '<strong>Promising — now verify it with a first-time user.</strong> Confidence is strongest when someone else can reach the outcome without your help.';
             }
             if (!confidence.dataset.tracked) {
-              track('resource_interaction', {interaction_type: 'confidence_slider'});
+              track('resource_interaction', { interaction_type: 'confidence_slider' });
               confidence.dataset.tracked = 'true';
             }
           });
         }
 
-        document.querySelectorAll('.vibe-sheet__feature-table input[type="radio"]').forEach(function (radio) {
-          radio.addEventListener('change', function () {
-            track('resource_interaction', {interaction_type: 'feature_reality_check'});
-          }, {once: true});
-        });
+        document
+          .querySelectorAll('.vibe-sheet__feature-table input[type="radio"]')
+          .forEach(function (radio) {
+            radio.addEventListener(
+              'change',
+              function () {
+                track('resource_interaction', {
+                  interaction_type: 'feature_reality_check'
+                });
+              },
+              { once: true }
+            );
+          });
 
-        document.querySelectorAll('[data-track-cta]').forEach(function (link) {
-          link.addEventListener('click', function () {
-            track('resource_cta_click', {cta_type: link.getAttribute('data-track-cta')});
+        document.querySelectorAll('[data-track-cta]').forEach(function (element) {
+          element.addEventListener('click', function () {
+            track('resource_cta_click', {
+              cta_type: element.getAttribute('data-track-cta')
+            });
           });
         });
 
-        function trackPrint() {
-          var now = Date.now();
-          if (now - printTrackedAt < 2000) return;
-          printTrackedAt = now;
-          track('resource_print', {print_method: 'browser_print_or_pdf'});
-        }
+        downloadButton.addEventListener('click', function (event) {
+          event.preventDefault();
+          openModal();
+        });
 
-        if (printButton) {
-          printButton.addEventListener('click', function () {
-            trackPrint();
-            window.print();
+        closeButton.addEventListener('click', closeModal);
+        modal.querySelector('[data-close-download-modal]').addEventListener(
+          'click',
+          closeModal
+        );
+
+        resourceDownloadLink.addEventListener('click', function () {
+          track('resource_download', { download_method: 'pdf_file' });
+        });
+
+        resourcePrintButton.addEventListener('click', function () {
+          track('resource_download', {
+            download_method: 'browser_print_or_pdf'
           });
+          trackPrint();
+          window.print();
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && !modal.hidden) {
+            closeModal();
+          }
+        });
+
+        /* Current HubSpot form events. */
+        window.addEventListener(
+          'hs-form-event:on-submission:success',
+          handleSuccessfulSubmission
+        );
+        window.addEventListener(
+          'hs-form-event:on-submission:failed',
+          handleFailedSubmission
+        );
+
+          if (hubspotFormId === 'REPLACE_WITH_YOUR_FORM_ID') {
+          statusMessage.textContent =
+            'Add the form ID from HubSpot before publishing, unless the form is already embedded on this page.';
+        } else if (window.hbspt && window.hbspt.forms) {
+          window.hbspt.forms.create({
+            region: hubspotRegion,
+            portalId: hubspotPortalId,
+            formId: hubspotFormId,
+            target: '#hubspot-download-form',
+
+            /* Compatibility callback for older HubSpot form embeds. */
+            onFormSubmitted: function () {
+              releaseResource();
+            }
+          });
+        } else {
+          statusMessage.textContent =
+            'The download form could not load. Please try again shortly.';
         }
 
         window.addEventListener('beforeprint', trackPrint);
         if (window.matchMedia) {
           var media = window.matchMedia('print');
           if (media.addEventListener) {
-            media.addEventListener('change', function (e) {if (e.matches) trackPrint();});
+            media.addEventListener('change', function (event) {
+              if (event.matches) trackPrint();
+            });
           } else if (media.addListener) {
-            media.addListener(function (e) {if (e.matches) trackPrint();});
+            media.addListener(function (event) {
+              if (event.matches) trackPrint();
+            });
           }
         }
-      });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeDownloadGate);
+      } else {
+        initializeDownloadGate();
+      }
     })();
   </script>
   <script>
@@ -1303,6 +1821,66 @@
       });
     })();
   </script>
+
+  <div class="download-modal"
+       id="downloadModal"
+       hidden
+       aria-hidden="true">
+    <div class="download-modal__backdrop"
+         data-close-download-modal
+         aria-hidden="true"></div>
+
+    <section class="download-modal__dialog"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="downloadModalTitle"
+             tabindex="-1">
+      <button class="download-modal__close"
+              type="button"
+              id="closeDownloadModal"
+              aria-label="Close download form">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <p class="download-modal__eyebrow">Qube Catalyst · Free resource</p>
+      <h2 id="downloadModalTitle">Thank you for using the Vibe Coding resource</h2>
+
+      <div id="hubspot-download-form"></div>
+
+      <div id="downloadSuccess"
+           class="download-modal__success"
+           hidden
+           tabindex="-1"
+           aria-live="polite">
+        <h3>You can now download and save your worksheet. Your worksheet answers
+        stay in your browser and are not sent to us.</h3>
+        <p id="downloadSuccessMessage">
+          Use the Print" button below to get your copy.
+        </p>
+        <a id="resourceDownloadLink"
+           class="download-modal__download-link"
+           href="#"
+           download
+           hidden>
+          Download the worksheet PDF
+        </a>
+        <button id="resourcePrintButton"
+                class="download-modal__download-link"
+                type="button"
+                hidden>
+          Print / save as PDF
+        </button>
+      </div>
+
+      <p id="downloadFormStatus"
+         class="download-modal__status"
+         role="status"
+         aria-live="polite"></p>
+    </section>
+  </div>
+
+    
+  
 </body>
 
 </html>
