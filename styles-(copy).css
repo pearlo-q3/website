@@ -1565,10 +1565,11 @@ body.nav--open .nav__hamburger span:nth-child(3) {
 }
 
 .contact-panel__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(var(--space-10), 5vw, var(--space-20));
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--space-10), 5vw, var(--space-16));
+  align-items: stretch;
+  max-width: 760px;
 }
 
 .contact-panel .section-eyebrow {
@@ -1593,6 +1594,18 @@ body.nav--open .nav__hamburger span:nth-child(3) {
   margin-top: var(--space-8);
 }
 
+.contact-panel__form {
+  border-top: 1px solid var(--color-border);
+  padding-top: clamp(var(--space-8), 4vw, var(--space-12));
+}
+
+.contact-panel__form h3 {
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  line-height: 1.4;
+  margin: 0 0 var(--space-8);
+}
+
 .contact-panel .btn--primary {
   background: var(--color-text);  /* dark teal button on light background */
   color: var(--color-text-inverse);
@@ -1604,7 +1617,7 @@ body.nav--open .nav__hamburger span:nth-child(3) {
 
 @media (max-width: 900px) {
   .contact-panel__inner {
-    grid-template-columns: 1fr;
+    max-width: none;
   }
 }
 
@@ -1615,9 +1628,6 @@ body.nav--open .nav__hamburger span:nth-child(3) {
   }
   .activity-card--two-images .activity-card__images {
     grid-template-columns: 1fr 1fr;
-  }
-  .contact-panel__inner {
-    grid-template-columns: 1fr;
   }
 }
 
