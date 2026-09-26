@@ -1169,6 +1169,55 @@ body.nav--open .nav__hamburger span:nth-child(3) {
 /* ─── TESTIMONIALS ─── */
 .testimonials {}
 
+.partners {
+  background: var(--color-surface-2);
+}
+
+.partners__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.partners__item {
+  min-width: 0;
+  min-height: 118px;
+  padding: var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.partners__item img {
+  display: block;
+  width: 100%;
+  max-width: 190px;
+  max-height: 62px;
+  object-fit: contain;
+}
+
+.partners__item .partners__logo--compact {
+  width: auto;
+  max-width: 120px;
+  max-height: 86px;
+}
+
+.partners__item--shadow {
+  background: #050518;
+  border-color: #050518;
+  padding: var(--space-4);
+}
+
+.partners__item--shadow img {
+  max-height: 70px;
+}
+
 .testimonials__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1363,6 +1412,9 @@ body.nav--open .nav__hamburger span:nth-child(3) {
   }
   .testimonials__grid {
     grid-template-columns: 1fr;
+  }
+  .partners__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .testi--featured {
     grid-column: span 1;
@@ -1632,6 +1684,15 @@ body.nav--open .nav__hamburger span:nth-child(3) {
 }
 
 @media (max-width: 600px) {
+  .partners__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+  .partners__item {
+    min-height: 104px;
+    padding: var(--space-4);
+  }
+
   .hero--secondary {
     padding-top: calc(var(--space-24) + var(--space-8));
     padding-bottom: var(--space-12);
