@@ -1561,6 +1561,10 @@ body.nav--open .nav__hamburger span:nth-child(3) {
     min-width: 0;
   }
 
+  .activity-card--she-scales {
+    align-items: stretch;
+  }
+
   .activity-card--she-scales .activity-card__images .activity-card__image--half-size {
     width: 50%;
     max-width: 100%;
