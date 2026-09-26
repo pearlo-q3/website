@@ -1552,9 +1552,15 @@ body.nav--open .nav__hamburger span:nth-child(3) {
     object-fit: cover;
   }
 
-  .activity-card--two-images .activity-card__images .activity-card__image--half-size {
+  .activity-card--she-scales .activity-card__images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .activity-card--she-scales .activity-card__images .activity-card__image--half-size {
     width: 50%;
-    justify-self: center;
+    align-self: center;
   }
 
   /* ── Content side ── */
