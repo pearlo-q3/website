@@ -502,7 +502,7 @@ body.nav--open .nav__hamburger span:nth-child(3) {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(var(--space-8), 4vw, var(--space-12));
-  align-items: start;
+  align-items: center;
 }
 
 .home-secondary__list {
