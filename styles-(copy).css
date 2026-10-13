@@ -494,6 +494,101 @@ body.nav--open .nav__hamburger span:nth-child(3) {
 
 
 
+.growth-problem {
+  background: var(--color-surface);
+}
+
+.growth-problem__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(var(--space-8), 4vw, var(--space-12));
+  align-items: start;
+}
+
+.growth-problem__title {
+  margin-bottom: var(--space-6);
+}
+
+.growth-problem__intro p {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.growth-problem__intro p:last-child {
+  margin-bottom: 0;
+}
+
+.growth-problem__list-panel {
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+}
+
+.growth-problem__list-heading {
+  margin-bottom: var(--space-5);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.growth-problem__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.growth-problem__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 100%;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.growth-problem__list li::before {
+  content: '';
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  margin-top: 0.58em;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.growth-problem__closing {
+  grid-column: 1 / -1;
+  max-width: 72ch;
+  margin: 0;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .growth-problem__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 600px) {
+  .growth-problem__list-panel {
+    padding: var(--space-5);
+  }
+
+  .growth-problem__list {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ─── STATEMENT ─── */
 .statement {
   background: var(--color-surface-dark);
