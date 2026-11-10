@@ -489,6 +489,19 @@ body.nav--open .nav__hamburger span:nth-child(3) {
   align-items: stretch;
 }
 
+#home .hero__image-wrap {
+  align-items: center;
+}
+
+#home .hero__image-wrap img {
+  width: 75%;
+  max-width: 420px;
+}
+
+#home .hero__image-quote {
+  align-self: center;
+}
+
 .hero__image-quote {
   margin: var(--space-5) 0 0;
   max-width: 22rem;
