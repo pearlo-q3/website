@@ -18,12 +18,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Qube Catalyst | Fractional CPO for Deep Tech & Emerging Startups</title>
+  <title>Qube Catalyst | Product &amp; Traction Help for Tech Startups — Pearl Oguchi</title>
 
 
   <!-- Primary Meta Tags -->
   <meta name="description"
-    content="Pearl Oguchi is a Fractional Chief Product Officer for deep tech, AI, and emerging tech startups. She helps founders figure out what to build, prove real user value, and stop users from dropping off. 22 years in tech, 9 at Meta. Product growth and traction" />
+    content="You built the product. So why isn't anyone using it? Pearl Oguchi helps tech founders and programmes find what's stopping growth and fix it together." />
 
 
   <!-- Author & Business Info -->
@@ -34,21 +34,21 @@
 
   <!-- Open Graph -->
   <meta property="og:description"
-    content="Fractional Chief Product Officer for deep tech, health tech, AI, and new categories. Pearl Oguchi helps founders turn complex ideas into simple products that users love and keep using. 22 years in tech, 9 at Meta." />
+    content="You built the product. So why isn't anyone using it? Pearl Oguchi helps tech founders and programmes find what's stopping growth and fix it together." />
   <meta property="og:url" content="https://qubecatalyst.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://qubecatalyst.com/assets/headshot.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Qube Catalyst | Fractional CPO & Product Leadership for Deep Tech" />
+  <meta name="twitter:title" content="Qube Catalyst | Product &amp; Traction Help for Tech Startups — Pearl Oguchi" />
   <meta name="twitter:description"
-    content="For tech founders building complex products. Pearl Oguchi provides part-time Chief Product Officer leadership to guide what to build, fix retention leaks, and build real user trust. Product growth and traction. 22 years in tech, 9 at Meta." />
+    content="You built the product. So why isn't anyone using it? Pearl Oguchi helps tech founders and programmes find what's stopping growth and fix it together." />
 
   <meta name="twitter:image" content="https://qubecatalyst.com/assets/headshot.png" />
 
   <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
+  <script type="application/ld+json" data-site-schema>
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -63,6 +63,7 @@
         },
         "image": "https://qubecatalyst.com/assets/headshot.png",
         "email": "mailto:pearl@qubecatalyst.com",
+        "telephone": "__SITE_PHONE__",
         "founder": {
           "@id": "https://qubecatalyst.com/#person"
         },
@@ -76,7 +77,8 @@
           "name": "United Kingdom"
         },
         "sameAs": [
-          "https://www.linkedin.com/in/pearl-oguchi"
+          "https://www.linkedin.com/in/pearl-oguchi",
+          "__GOOGLE_REVIEWS__"
         ],
         "description": "Qube Catalyst provides Product growth and traction services and fractional Chief Product Officer leadership for deep tech, AI, precision health, and complex software startups. Pearl Oguchi helps founders define clear product plans, test real user needs, and fix retention issues. 22 years in tech, 9 at Meta."
 
@@ -141,54 +143,29 @@
       },
       {
         "@type": "Service",
-        "@id": "https://qubecatalyst.com/#service-readiness-review",
-        "name": "Startup Traction Review",
-        "serviceType": "Product and strategy review",
-        "provider": {
-          "@id": "https://qubecatalyst.com/#organization"
-        },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Founders and technology leaders"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "United Kingdom"
-        },
-        "url": "https://qubecatalyst.com/#services",
-        "offers": {
-          "@type": "Offer",
-          "price": "1999",
-          "priceCurrency": "GBP",
-          "url": "https://qubecatalyst.com/#services"
-        },
-        "description": "A practical review for founders who have built a product but aren't seeing the growth, engagement, or adoption they expected."
+        "name": "Founder Hour",
+        "provider": {"@id": "https://qubecatalyst.com/#organization"},
+        "offers": {"@type": "Offer", "price": "299", "priceCurrency": "GBP"},
+        "description": "One hour of focused product help for a founder."
       },
-      
       {
         "@type": "Service",
-        "@id": "https://qubecatalyst.com/#service-readiness-programme",
-        "name": "Fractional CPO & Ecosystem Alignment",
-        "serviceType": "Fractional Chief Product Officer engagement",
-        "provider": {
-          "@id": "https://qubecatalyst.com/#organization"
-        },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Founders and technology leaders"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "United Kingdom"
-        },
-        "url": "https://qubecatalyst.com/#services",
-        "offers": {
-          "@type": "Offer",
-          "price": "15000",
-          "priceCurrency": "GBP",
-          "url": "https://qubecatalyst.com/#services"
-        },
-        "description": "A 3 to 6-month part-time Chief Product Officer engagement to align team goals, build dev-ready specifications, set clear product rules, and lead user adoption."
+        "name": "Traction Workshop",
+        "provider": {"@id": "https://qubecatalyst.com/#organization"},
+        "offers": {"@type": "Offer", "price": "500", "priceCurrency": "GBP"},
+        "description": "A half-day workshop to identify product and traction priorities."
+      },
+      {
+        "@type": "Service",
+        "name": "Fractional CPO",
+        "provider": {"@id": "https://qubecatalyst.com/#organization"},
+        "description": "Senior product leadership, 1–2 days a week, from £1,000 a day."
+      },
+      {
+        "@type": "Service",
+        "name": "Cohort Product Package",
+        "provider": {"@id": "https://qubecatalyst.com/#organization"},
+        "description": "Product workshops and one-to-one founder sessions for programmes."
       }
     ]
   }
@@ -196,7 +173,9 @@
 
 
   <link rel="icon" type="image/png" href="assets/q3favicon.png" />
-  <link rel="stylesheet" href="styles-(copy).css?v=16" />
+  <link rel="stylesheet" href="styles-(copy).css?v=18" />
+  <script src="site-config.js" defer></script>
+  <script src="site-shell.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -214,7 +193,7 @@
           var cs = d.createElement(s);
           cs.src = src;
           cs.async = 1;
-          cs.parentNode.insertBefore(cs, fs);
+          (d.head || d.body).appendChild(cs);
         }
         ce('https://sc.lfeeder.com/lftracker_v1_' + ss + (ex ? '_' + ex : '') + '.js');
       })(document, 'script');
@@ -262,34 +241,24 @@
     <div class="container container--wide">
       <div class="hero__grid">
         <div class="hero__content reveal">
-          <div class="hero__eyebrow">Product Growth & Traction Support</div>
-          <h1 class="hero__title">
-            Products don't grow when users get stuck. <br>
-             <em>Have you built the product but not getting enough users, engagement, or traction?</em><br>
-          </h1>
-          <p class="hero__sub">
-          <p class="hero__sub">
-            I'm Pearl Oguchi. I help deep, emerging tech, AI, health tech, and complex software startups get clear on what their products should do, who it is for, and how their users understand it. 
-
-            Many products look good on the surface but hide problems that stop users from getting value.
-            I find the gaps between your product, your users, and your evidence, and show you the simplest way to fix them.
-            With 22 years building software, including 9 at Meta, I know how to spot unclear journeys, weak activation, trust issues, and missing evidence before they become expensive.
-          </p>
-
-          </p>
+          <div class="hero__eyebrow">Product and traction help for tech startups · UK-based, working with founders everywhere</div>
+          <h1 class="hero__title">You built the product. So why isn't anyone using it?</h1>
+          <p class="hero__sub">I'm Pearl Oguchi. I help tech founders, and the programmes that back them, work out what's actually stopping growth. Then we fix it together. 22 years building software, 9 at Meta.</p>
 
           
           <div class="hero__actions">
-            <a href="#services" class="btn btn--primary">Explore Services</a>
+            <a href="#" data-site-booking data-site-booking-label class="btn btn--primary">Book a free 30-minute call</a>
+            <a href="#" data-site-phone data-phone-label="Call [phone]" class="btn btn--ghost">Call [phone]</a>
             <button type="button" class="hero__quiz-button" data-sa-url="https://25f81234-0be7-41d6-ab10-5e81cf37d7c1.scoreapp.com/?sa_target=_top" data-sa-view="popup" data-sa-size="full">
               <span>Take The Product Traction Quiz</span>
             </button>
-            <!-- <a href="#guarantee" class="btn btn--ghost">See the Guarantee</a> -->
           </div>
+          <a class="hero__reviews" href="#" data-site-reviews>★★★★★ <span>Read what founders say on Google →</span></a>
+          <!-- Add the approved Google rating and review count here when available. -->
         </div>
         <div class="hero__image-wrap reveal">
-          <img src="assets/pearl-oguchi-headshot.JPG" alt="Pearl Oguchi Fractional CPO" width="560" height="700"
-            loading="eager" />
+          <img src="assets/pearl-oguchi-headshot.webp" alt="Pearl Oguchi, founder of Qube Catalyst" width="800" height="800"
+            loading="eager" fetchpriority="high" decoding="async" />
 
           <blockquote class="hero__image-quote">
             <p class="hero__image-quote-text">
@@ -305,7 +274,127 @@
     </div>
   </section>
 
-  <section class="growth-problem" id="growth-problem">
+  <section class="audience-selector">
+    <div class="container">
+      <h2 class="section-title">Which one sounds like you?</h2>
+      <div class="audience-selector__grid">
+        <a href="#founders">We've launched, but people aren't signing up, or they sign up and disappear.</a>
+        <a href="#scaling">Every product decision still goes through me, and it's slowing us down.</a>
+        <a href="#programmes">My founders need specialist product help our programme can't give them.</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="lead-section" id="founders">
+    <div class="container lead-section__inner">
+      <div>
+        <h2 class="section-title">You launched. A few sign-ups trickled in. Then nothing.</h2>
+        <div class="pain-quotes">
+          <blockquote>“People say it's a great idea, but they don't sign up.”</blockquote>
+          <blockquote>“They sign up, look around and never come back.”</blockquote>
+          <blockquote>“We've rewritten the homepage three times and nothing has moved.”</blockquote>
+          <blockquote>“Investors keep asking about traction and I haven't got a good answer.”</blockquote>
+        </div>
+        <p>There are two very different problems hiding under “we need more users”. If people who find you understand it and some stay, you have a distribution problem — stop changing the product. If people arrive and don't convert or don't come back, more traffic just burns money. The first job is knowing which one you've got. That's what I find.</p>
+        <p class="vision-line">Picture next month: you know exactly where people drop off and why. You've fixed the one thing that matters most. When an investor asks about traction, you answer with real usage, not hope.</p>
+      </div>
+      <aside class="offer-card">
+        <h3>Founder Hour — £299</h3>
+        <p>One hour on one problem. You leave with a decision, your next three actions, and whatever we've built together on the call.</p>
+        <p class="offer-card__small">Need more? Traction Workshop — half a day, £500.</p>
+        <a href="#" data-site-booking data-site-booking-label class="btn btn--primary">Book a free 30-minute call</a>
+        <a href="#" data-site-phone data-phone-label="Call [phone]" class="btn btn--ghost">Call [phone]</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="lead-section lead-section--alt" id="scaling">
+    <div class="container lead-section__inner">
+      <div>
+        <h2 class="section-title">Every product decision still goes through you. And it's slowing everything down.</h2>
+        <div class="pain-quotes">
+          <blockquote>“The team waits for me before they can ship anything.”</blockquote>
+          <blockquote>“Sales promises one thing, engineering builds another, and I'm the referee.”</blockquote>
+          <blockquote>“Customers want more than we can build, and I'm the only one deciding what matters.”</blockquote>
+          <blockquote>“I need a head of product, but I can't justify a full-time hire yet.”</blockquote>
+        </div>
+        <p class="vision-line">Imagine a roadmap the team follows without you in the room. Priorities everyone agrees on. Decisions made on evidence, not on who pushed hardest. And your week back for customers, investors and hiring.</p>
+      </div>
+      <aside class="offer-card">
+        <h3>Fractional CPO</h3>
+        <p>1–2 days a week, from £1,000 a day. Senior product leadership that works to your sprint rhythm, without the full-time hire.</p>
+        <a href="#" data-site-booking data-site-booking-label class="btn btn--primary">Book a free 30-minute call</a>
+        <a href="#" data-site-phone data-phone-label="Call [phone]" class="btn btn--ghost">Call [phone]</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="lead-section" id="programmes">
+    <div class="container lead-section__inner">
+      <div>
+        <h2 class="section-title">Your founders need specialist product help. Your programme can't give it to them on its own.</h2>
+        <div class="pain-quotes">
+          <blockquote>“Half the cohort has built something nobody's using yet, and Demo Day is coming.”</blockquote>
+          <blockquote>“Our mentors are generous, but nobody's going through the products properly.”</blockquote>
+          <blockquote>“Our funders want to see outcomes, not attendance.”</blockquote>
+          <blockquote>“I need a specialist I can trust in front of my founders.”</blockquote>
+        </div>
+        <p class="vision-line">Picture a cohort walking into Demo Day with real usage and clear answers to the questions investors ask. And a programme report that shows exactly what changed.</p>
+        <p class="trusted-line">Already trusted by: Venture Community · Fresh Mango · NatWest Accelerator · Innovate Cambridge</p>
+      </div>
+      <aside class="offer-card">
+        <h3>Cohort Product Package</h3>
+        <p>A workshop plus one-to-one founder sessions, priced per programme. Fund platform teams can book a 2-day Product Risk Review for portfolio companies.</p>
+        <a href="#" data-site-phone data-phone-label="Call to talk about your next cohort" class="btn btn--primary">Call to talk about your next cohort</a>
+        <a href="#" data-site-booking data-site-booking-label class="btn btn--ghost">Book a free 30-minute call</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="cases lead-cases" id="case-studies">
+    <div class="container">
+      <h2 class="section-title">A few examples of the work</h2>
+      <div class="lead-cases__grid">
+        <article class="case-card">
+          <h3>Preparing a live guidance platform for a high-stakes demonstration</h3>
+          <h4>What was broken</h4><p>New users could land on an empty dashboard, and key guidance was hard to find.</p>
+          <h4>What I found</h4><p>Unclear roles and modes, a risky Cancel button, countdown pressure, and a video-call flow that could stall.</p>
+          <h4>What changed</h4><p>The team got a clear order of priorities for onboarding, notifications, and the core call flow before demo and beta.</p>
+        </article>
+        <article class="case-card">
+          <h3>Improving trust and consistency in an AI compatibility platform</h3>
+          <h4>What was broken</h4><p>Compatibility scores contradicted each other, and key account flows could leave users stuck.</p>
+          <h4>What I found</h4><p>Inconsistent score rules, an early facial-scan step, prompts that returned after refresh, and an incomplete password reset.</p>
+          <h4>What changed</h4><p>The team got practical priorities for consistent scores, clearer authentication, and safer activation.</p>
+        </article>
+      </div>
+      <p class="lead-cases__cta">Seeing something similar? <a href="#" data-site-booking data-site-booking-label>Book a free 30-minute call</a></p>
+    </div>
+  </section>
+
+  <section class="about-short" id="about">
+    <div class="container">
+      <h2 class="section-title">About Pearl</h2>
+      <p>I spent 22 years building software, 9 of them at Meta. I've seen how products behave when real people use them, and how small gaps quietly kill growth. I'll tell you what's actually wrong, even when it's not what you want to hear.</p>
+      <p class="about-short__signature"><strong>Pearl Oguchi</strong><br>Founder, Qube Catalyst</p>
+    </div>
+  </section>
+
+  <section class="contact-panel lead-contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Not sure which one you need? Call me. Thirty minutes, and you'll know.</h2>
+      <div class="contact-routes">
+        <a href="#" data-site-phone data-phone-label="Call [phone]" class="btn btn--primary">Call [phone]</a>
+        <a href="#" data-site-whatsapp class="btn btn--ghost">WhatsApp</a>
+        <a href="#" data-site-booking data-site-booking-label class="btn btn--primary">Book a free 30-minute call</a>
+        <button type="button" class="hero__quiz-button" data-sa-url="https://25f81234-0be7-41d6-ab10-5e81cf37d7c1.scoreapp.com/?sa_target=_top" data-sa-view="popup" data-sa-size="full"><span>Take The Product Traction Quiz</span></button>
+      </div>
+      <h3>Or send a quick message</h3>
+      <div class="contact-panel__form"><div id="hubspot-contact-form"></div></div>
+    </div>
+  </section>
+
+  <section class="growth-problem" id="growth-problem" hidden>
     <div class="container container--wide">
       <div class="growth-problem__inner reveal">
         <div class="growth-problem__intro">
@@ -333,7 +422,7 @@
     </div>
   </section>
 
-  <section class="home-secondary" id="home-secondary">
+  <section class="home-secondary" id="home-secondary" hidden>
     <div class="container">
       <div class="home-secondary__inner reveal">
         <div class="home-secondary__intro">
@@ -353,7 +442,7 @@
   </section>
 
   <!-- STATEMENT FROM PEARL -->
-  <section class="statement" id="about">
+  <section class="statement" id="about-legacy" hidden>
     <div class="container container--wide">
       <div class="statement__inner reveal">
         <div class="statement__label">From Pearl</div>
@@ -389,7 +478,7 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="services" id="services">
+  <section class="services" id="services" hidden>
     <div class="container reveal">
       <div class="section-header" style="margin-bottom: 0;">
         <div class="section-eyebrow">Services</div>
@@ -514,7 +603,7 @@
 
 
   <!-- CASE STUDIES -->
-  <section class="cases" id="cases">
+  <section class="cases" id="cases-legacy" hidden>
     <div class="container reveal">
 
       <div class="section-header">
@@ -622,7 +711,7 @@
 
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials" id="testimonials">
+  <section class="testimonials" id="reviews">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-eyebrow">Client Voices</div>
@@ -639,9 +728,9 @@
             like Pearl's are how we make sure we hit that mark. If you're looking for someone to help coach you through
             those product gaps, she's your person."</p>
           <div class="testi__author">
-            <div class="testi__name">Founder, Social cohesion platform 
-            </div>
-            <!--<div class="testi__role">Product Readiness Cycle</div> -->
+            <!-- Add the reviewer's name here when approved. -->
+            <div class="testi__name"></div>
+            <div class="testi__role">Founder, Social cohesion platform</div>
           </div>
         </div>
         <div class="testi">
@@ -653,8 +742,8 @@
             Her approach was professional, efficient and incredibly helpful. Thanks to Pearl's input, we went into
             testing with confidence and clarity. I highly recommend ...</p>
           <div class="testi__author">
-            <div class="testi__name">Founder, Trades market place app</div>
-            <!--<div class="testi__role">Pre-launch Readiness Review</div> -->
+            <!-- Add the reviewer's name here when approved. -->
+            <div class="testi__name"></div><div class="testi__role">Founder, Trades market place app</div>
           </div>
         </div>
 
@@ -665,7 +754,8 @@
             rare. Building FieldNote has required me to get uncomfortable every single day. Grateful to have connected
             with someone who understands exactly why that is necessary.</p>
           <div class="testi__author">
-            <div class="testi__name">Founder, On the go AI note taker</div>
+            <!-- Add the reviewer's name here when approved. -->
+            <div class="testi__name"></div><div class="testi__role">Founder, On the go AI note taker</div>
 
           </div>
         </div>
@@ -677,8 +767,8 @@
             in every area. Pearl's contributions played a major role in helping us deliver a stable, polished, and
             user-friendly experience across both platforms.</p>
           <div class="testi__author">
-            <div class="testi__name">Founder, Digital agency</div>
-            <!--<div class="testi__role">Focus Sprint</div> -->
+            <!-- Add the reviewer's name here when approved. -->
+            <div class="testi__name"></div><div class="testi__role">Founder, Digital agency</div>
           </div>
         </div>
         <div class="testi">
@@ -688,16 +778,17 @@
             improvements, highlighted strengths, and delivered feedback that was both constructive and immediately
             actionable.</p>
           <div class="testi__author">
-            <div class="testi__name">Founder, Mediation services</div>
-            <!--<div class="testi__role">Pre-launch Readiness Review</div> -->
+            <!-- Add the reviewer's name here when approved. -->
+            <div class="testi__name"></div><div class="testi__role">Founder, Mediation services</div>
           </div>
         </div>
       </div>
+      <p class="reviews-google"><a class="btn btn--ghost" href="#" data-site-reviews>See all reviews on Google →</a></p>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section" hidden>
     <div class="container">
       <div class="cta-section__inner reveal">
         <h2 class="cta-section__title">Tell me where your product needs clarity.</h2>
@@ -713,7 +804,7 @@
   </section>
 
   <!-- CONTACT FORM -->
-  <section class="contact-panel" id="contact">
+  <section class="contact-panel" id="contact-legacy" hidden>
     <div class="container container--wide">
       <div class="contact-panel__inner reveal">
         <div class="contact-panel__intro">
@@ -722,15 +813,7 @@
           <p class="contact-panel__text">Get updates on what's happening in the tech ecosystem</p>
         </div>
         <div class="contact-panel__form">
-          <div id="hubspot-contact-form"></div>
-          <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-          <script>
-            hbspt.forms.create({
-              portalId: "148410884",
-              formId: "adaeafc0-d254-4957-8de8-d446f39fe91f",
-              region: "eu1"
-            });
-          </script>
+          <div id="legacy-hubspot-contact-form"></div>
         </div>
       </div>
     </div>
@@ -801,7 +884,7 @@
 
 
         <!-- WHY / MISSION -->
-        <section class="why">
+        <section class="why" hidden>
           <div class="container">
             <div class="why__grid">
               <div class="reveal">
@@ -879,9 +962,6 @@
           <img src="assets/partners/act.png" alt="ACT logo" loading="lazy" decoding="async">
         </li>
         <li class="partners__item">
-          <img src="assets/partners/avline-health.png" alt="Avline Health logo" loading="lazy" decoding="async">
-        </li>
-        <li class="partners__item">
           <img src="assets/partners/innovate-cambridge.png" alt="Innovate Cambridge logo" loading="lazy"
             decoding="async">
         </li>
@@ -907,6 +987,8 @@
         <div class="footer__text">© 2026 Pearl Oguchi · Qube Catalyst · England</div>
         <div class="footer__links">
           <a href="privacy.html">Privacy & Cookies</a>
+          <a href="#" aria-label="Newsletter">Newsletter</a><!-- Newsletter link placeholder; replace when signup is ready. -->
+          <a href="#" data-site-phone></a>
           <a href="mailto:pearl@qubecatalyst.com">pearlo@qubecatalyst.com</a>
           <a href="https://www.linkedin.com/in/pearl-oguchi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
@@ -974,7 +1056,8 @@
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148410884.js"></script>
   <!-- End of HubSpot Embed Code -->
 
-  <script src="https://static.scoreapp.com/js/integration/v1/embedding.js?v=SaJvyM"></script>
+  <script src="https://static.scoreapp.com/js/integration/v1/embedding.js?v=SaJvyM" async defer></script>
+  <script async src="https://js-eu1.hsforms.net/forms/embed/v2.js" onload="hbspt.forms.create({portalId:'148410884',formId:'adaeafc0-d254-4957-8de8-d446f39fe91f',region:'eu1',target:'#hubspot-contact-form'})"></script>
 
 </body>
 
