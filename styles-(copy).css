@@ -2126,10 +2126,14 @@ html { scroll-padding-top: 150px; }
 .nav { top: 56px; }
 .contact-topbar__booking { line-height: 1.2; }
 .contact-topbar__phone { white-space: nowrap; }
+.contact-topbar__or { color: rgba(243, 246, 245, .8); font-size: .9rem; font-weight: 600; }
+.navlogo > a { display: inline-flex; }
 .contact-topbar__whatsapp svg { width: 24px; height: 24px; }
 .floating-whatsapp { bottom: 1rem; }
 .hero--secondary { padding-top: max(210px, calc(var(--space-32) + var(--space-12))); }
 
+body.homepage { padding-top: 136px; }
+body.homepage > section:not([hidden]) { padding-block: 72px; }
 .audience-selector,
 .lead-section,
 .lead-cases,
@@ -2191,6 +2195,14 @@ html { scroll-padding-top: 150px; }
 .offer-card h3 { font: 600 1.6rem/1.25 var(--font-display); }
 .offer-card__small { font-size: .95rem; color: var(--color-text-muted); }
 .offer-card .btn { justify-content: center; min-height: 48px; }
+.offer-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cta-or { color: var(--color-text-muted); font-size: .8rem; font-weight: 700; letter-spacing: .08em; }
 .trusted-line { margin-top: 24px; font-weight: 600; }
 .lead-cases__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin-top: 28px; }
 .lead-cases .case-card {
@@ -2227,9 +2239,12 @@ html { scroll-padding-top: 150px; }
   .contact-topbar__phone { gap: 6px; font-size: 18px; }
   .contact-topbar__phone svg { width: 18px; height: 18px; }
   .contact-topbar__whatsapp { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 28px; }
-  .contact-topbar__booking { max-width: 148px; min-height: 48px; padding: 5px 8px; font-size: 13px; }
+  .contact-topbar__or { font-size: 12px; }
+  .contact-topbar__booking { max-width: 136px; min-height: 48px; padding: 5px 7px; font-size: 13px; }
   .nav { top: 56px; }
-  #home.hero { padding-top: 138px; padding-bottom: 36px; }
+  body.homepage { padding-top: 136px; }
+  body.homepage > section:not([hidden]) { padding-block: 40px; }
+  body.homepage > #home.hero { padding-block: 40px; }
   #home .hero__grid { gap: 22px; }
   #home .hero__title { font-size: clamp(2.35rem, 10vw, 3rem); line-height: 1.02; margin-bottom: 14px; }
   #home .hero__sub { margin-bottom: 18px; font-size: 16px; line-height: 1.45; }
@@ -2244,6 +2259,11 @@ html { scroll-padding-top: 150px; }
   .lead-section__inner { gap: 26px; }
   .contact-routes { flex-direction: column; align-items: stretch; }
   .contact-routes > * { justify-content: center; width: 100%; }
+  .contact-routes .cta-or { width: auto; min-height: 0; }
+  .offer-card__actions { flex-direction: column; }
+  .offer-card__actions > * { width: 100%; }
+  .offer-card__actions .cta-or { min-height: 0; }
+  .offer-card__actions .cta-or, .contact-routes .cta-or { text-align: center; }
   .floating-whatsapp { width: 50px; height: 50px; right: 12px; }
   #cookie-banner > div {
     display: flex !important;
@@ -2256,5 +2276,11 @@ html { scroll-padding-top: 150px; }
   #cookie-banner > div > div { justify-content: center; }
   #cookie-banner button { min-height: 44px; }
   .hero--secondary { padding-top: 190px; }
+}
+
+@media (max-width: 375px) {
+  .contact-topbar__inner { gap: 4px; padding-inline: 8px; }
+  .contact-topbar__whatsapp { flex-basis: 24px; }
+  .contact-topbar__booking { max-width: 124px; font-size: 12px; }
 }
 

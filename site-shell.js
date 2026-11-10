@@ -22,14 +22,16 @@
   topbar.className = "contact-topbar";
   topbar.innerHTML = `<div class="contact-topbar__inner">
     <a class="contact-topbar__phone" href="${telHref}">${svg(phoneIcon, "Phone")}<span>${config.phone}</span></a>
-    <a class="contact-topbar__whatsapp" href="${whatsappHref}" aria-label="WhatsApp Pearl">${svg(whatsappIcon, "WhatsApp")}</a>
+    <span class="contact-topbar__or" aria-hidden="true">OR</span>
     <a class="contact-topbar__booking" href="${config.bookingUrl}" target="_blank" rel="noopener noreferrer">${config.bookingLabel}</a>
+    <a class="contact-topbar__whatsapp" href="${whatsappHref}" aria-label="WhatsApp Pearl">${svg(whatsappIcon, "WhatsApp")}</a>
   </div>`;
   nav.before(topbar);
 
   const onHome = /(?:^|\/)(?:index\.html)?$/.test(location.pathname);
   const home = onHome ? "" : "index.html";
   const links = [
+    ["Home", onHome ? "#home" : "index.html#home"],
     ["For founders", home + "#founders"],
     ["For scaling teams", home + "#scaling"],
     ["For programmes", home + "#programmes"],
@@ -46,13 +48,6 @@
       a.textContent = label;
       navLinks.append(a);
     });
-    const mobileBooking = document.createElement("a");
-    mobileBooking.className = "nav__cta-mobile";
-    mobileBooking.href = config.bookingUrl;
-    mobileBooking.target = "_blank";
-    mobileBooking.rel = "noopener noreferrer";
-    mobileBooking.textContent = config.bookingLabel;
-    navLinks.append(mobileBooking);
     navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
       document.body.classList.remove("nav--open");
       const button = nav.querySelector(".nav__hamburger");
@@ -63,12 +58,18 @@
     }));
   }
 
-  const navBooking = nav.querySelector(".nav__cta");
-  if (navBooking) {
-    navBooking.href = config.bookingUrl;
-    navBooking.textContent = config.bookingLabel;
-    navBooking.target = "_blank";
-    navBooking.rel = "noopener noreferrer";
+  nav.querySelector(".nav__cta")?.remove();
+  nav.querySelector(".nav__cta-mobile")?.remove();
+  const logo = nav.querySelector(".navlogo");
+  if (logo) {
+    let logoLink = logo.querySelector("a");
+    if (!logoLink) {
+      logoLink = document.createElement("a");
+      logoLink.append(...Array.from(logo.childNodes));
+      logo.append(logoLink);
+    }
+    logoLink.href = onHome ? "#home" : "index.html#home";
+    logoLink.setAttribute("aria-label", "Qube Catalyst home");
   }
 
   document.querySelectorAll("[data-site-booking]").forEach(link => {
