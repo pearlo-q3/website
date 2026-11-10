@@ -311,13 +311,12 @@
         <a href="index.html"><img src="assets/q3Logo.png" alt="Qube Catalyst" class="navlogo-image"></a>
       </div>
       <div class="nav__links">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#cases">Case Studies</a>
+        <a href="index.html">Home</a>
+        <a href="index.html#founders">For founders</a>
+        <a href="index.html#scaling">For scaling teams</a>
+        <a href="index.html#programmes">For programmes</a>
+        <a href="index.html#reviews">Reviews</a>
         <a href="lab.html">Product Lab</a>
-        <!-- <a href="index.html#guarantee">Guarantee</a> -->
-        <a href="index.html#testimonials">Testimonials</a>
         <a href="events.html">Events</a>
       </div>
       <button type="button" class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false">
@@ -422,7 +421,7 @@
         <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
           <a href="https://meetings-eu1.hubspot.com/poguchi/discovery" class="btn btn--primary" target="_blank"
             rel="noopener noreferrer">Book a free discovery call</a>
-          <a href="index.html#services" class="btn btn--ghost">Review core services</a>
+        <a href="index.html#founders" class="btn btn--ghost">Explore founder support</a>
         </div>
       </div>
     </div>
@@ -554,7 +553,7 @@
          <div class="lab-card__footer">
   <span class="lab-card__time">${item.isLocked ? '🔒 ' + item.time : '⏱️ ' + item.time}</span>
   ${item.isLocked
-            ? `<a href="#" class="btn btn--ghost" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs); pointer-events: none; opacity: 0.5;">Locked</a>`
+            ? `<span class="btn btn--ghost" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs); opacity: 0.5;">Locked</span>`
             : `<a href="${item.link}" class="btn btn--primary" style="padding: var(--space-2) var(--space-4); font-size: var(--text-xs);">
        ${item.category === 'game' ? 'Play Game...' : (item.category === 'tool' ? 'Open Tool...' : 'Read More...')}
        </a>`

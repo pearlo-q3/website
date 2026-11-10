@@ -24,20 +24,22 @@
     <a class="contact-topbar__phone" href="${telHref}">${svg(phoneIcon, "Phone")}<span>Call us</span></a>
     <span class="contact-topbar__or" aria-hidden="true">OR</span>
     <a class="contact-topbar__booking" href="${config.bookingUrl}" target="_blank" rel="noopener noreferrer">${config.bookingLabel}</a>
-    <a class="contact-topbar__whatsapp" href="${whatsappHref}" aria-label="WhatsApp Pearl">${svg(whatsappIcon, "WhatsApp")}<span class="contact-topbar__whatsapp-label">WhatsApp</span></a>
   </div>`;
   nav.before(topbar);
 
-  const onHome = /(?:^|\/)(?:index\.html)?$/.test(location.pathname);
-  const home = onHome ? "" : "index.html";
+  const pathParts = location.pathname.split("/").filter(Boolean);
+  const directoryDepth = location.pathname.endsWith("/")
+    ? pathParts.length
+    : Math.max(0, pathParts.length - 1);
+  const home = "../".repeat(directoryDepth) + "index.html";
   const links = [
-    ["Home", onHome ? "#home" : "index.html#home"],
+    ["Home", home],
     ["For founders", home + "#founders"],
     ["For scaling teams", home + "#scaling"],
     ["For programmes", home + "#programmes"],
     ["Reviews", home + "#reviews"],
-    ["Product Lab", "lab.html"],
-    ["Events", "events.html"]
+    ["Product Lab", "../".repeat(directoryDepth) + "lab.html"],
+    ["Events", "../".repeat(directoryDepth) + "events.html"]
   ];
   const navLinks = nav.querySelector(".nav__links");
   if (navLinks) {
@@ -68,7 +70,7 @@
       logoLink.append(...Array.from(logo.childNodes));
       logo.append(logoLink);
     }
-    logoLink.href = onHome ? "#home" : "index.html#home";
+    logoLink.href = home;
     logoLink.setAttribute("aria-label", "Qube Catalyst home");
   }
 
@@ -94,6 +96,18 @@
     if (node.matches("a")) node.href = telHref;
   });
 
+  document.querySelectorAll("a[href]").forEach(link => {
+    try {
+      const destination = new URL(link.href, location.href);
+      if (destination.protocol.startsWith("http") && destination.origin !== location.origin) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+    } catch (_) {
+      // Leave malformed or non-web links unchanged.
+    }
+  });
+
   document.querySelectorAll('script[type="application/ld+json"][data-site-schema]').forEach(script => {
     script.textContent = script.textContent
       .replaceAll("__SITE_PHONE__", config.phone)
@@ -104,6 +118,8 @@
     const floating = document.createElement("a");
     floating.className = "floating-whatsapp";
     floating.href = whatsappHref;
+    floating.target = "_blank";
+    floating.rel = "noopener noreferrer";
     floating.setAttribute("aria-label", "Message Pearl on WhatsApp");
     floating.innerHTML = svg(whatsappIcon, "WhatsApp");
     document.body.append(floating);
