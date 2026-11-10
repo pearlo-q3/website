@@ -24,7 +24,7 @@
     <a class="contact-topbar__phone" href="${telHref}">${svg(phoneIcon, "Phone")}<span>Call us</span></a>
     <span class="contact-topbar__or" aria-hidden="true">OR</span>
     <a class="contact-topbar__booking" href="${config.bookingUrl}" target="_blank" rel="noopener noreferrer">${config.bookingLabel}</a>
-    <a class="contact-topbar__whatsapp" href="${whatsappHref}" aria-label="WhatsApp Pearl">${svg(whatsappIcon, "WhatsApp")}</a>
+    <a class="contact-topbar__whatsapp" href="${whatsappHref}" aria-label="WhatsApp Pearl">${svg(whatsappIcon, "WhatsApp")}<span class="contact-topbar__whatsapp-label">WhatsApp</span></a>
   </div>`;
   nav.before(topbar);
 
@@ -78,7 +78,11 @@
   });
   document.querySelectorAll("[data-site-phone]").forEach(link => {
     link.href = telHref;
-    link.textContent = "Call us";
+    if (link.classList.contains("btn")) {
+      link.innerHTML = `${svg(phoneIcon, "Phone")}<span>Call us</span>`;
+    } else {
+      link.textContent = "Call us";
+    }
   });
   document.querySelectorAll("[data-site-whatsapp]").forEach(link => {
     link.href = whatsappHref;
