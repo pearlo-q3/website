@@ -21,7 +21,7 @@
   const topbar = document.createElement("div");
   topbar.className = "contact-topbar";
   topbar.innerHTML = `<div class="contact-topbar__inner">
-    <a class="contact-topbar__phone" href="${telHref}">${svg(phoneIcon, "Phone")}<span>${config.phone}</span></a>
+    <a class="contact-topbar__phone" href="${telHref}">${svg(phoneIcon, "Phone")}<span>Call us</span></a>
     <span class="contact-topbar__or" aria-hidden="true">OR</span>
     <a class="contact-topbar__booking" href="${config.bookingUrl}" target="_blank" rel="noopener noreferrer">${config.bookingLabel}</a>
     <a class="contact-topbar__whatsapp" href="${whatsappHref}" aria-label="WhatsApp Pearl">${svg(whatsappIcon, "WhatsApp")}</a>
@@ -78,16 +78,17 @@
   });
   document.querySelectorAll("[data-site-phone]").forEach(link => {
     link.href = telHref;
-    link.textContent = link.dataset.phoneLabel
-      ? link.dataset.phoneLabel.replace("[phone]", config.phone)
-      : config.phone;
+    link.textContent = "Call us";
   });
   document.querySelectorAll("[data-site-whatsapp]").forEach(link => {
     link.href = whatsappHref;
     if (link.hasAttribute("data-whatsapp-label")) link.textContent = "WhatsApp";
   });
   document.querySelectorAll("[data-site-reviews]").forEach(link => link.href = config.googleReviewsUrl);
-  document.querySelectorAll("[data-site-phone-number]").forEach(node => node.textContent = config.phone);
+  document.querySelectorAll("[data-site-phone-number]").forEach(node => {
+    node.textContent = config.phone;
+    if (node.matches("a")) node.href = telHref;
+  });
 
   document.querySelectorAll('script[type="application/ld+json"][data-site-schema]').forEach(script => {
     script.textContent = script.textContent
