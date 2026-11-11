@@ -1194,6 +1194,18 @@ body.nav--open .nav__hamburger span:nth-child(3) {
   max-height: 70px;
 }
 
+.partners__item--holoplan {
+  min-height: 136px;
+  padding: var(--space-3);
+  background: #070700;
+  border-color: #070700;
+}
+
+.partners__item--holoplan img {
+  max-width: 190px;
+  max-height: 100px;
+}
+
 .testimonials__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
