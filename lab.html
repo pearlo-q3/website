@@ -10,6 +10,11 @@
       "name": "The Product Lab by Qube Catalyst",
       "description": "Pearl Oguchi helps tech founders, scaling teams and the programmes that back them find what's stopping product growth, and fix it. 22 years building software, 9 at Meta.",
       "url": "https://qubecatalyst.com/lab.html",
+      "hasPart": {
+        "@type": "Article",
+        "headline": "Why is no one using your app?",
+        "url": "https://qubecatalyst.com/lab/why-is-no-one-using-your-app.html"
+      },
       "about": [
         {
           "@type": "Thing",
@@ -232,6 +237,48 @@
       font-size: var(--text-xs);
       color: var(--color-text-faint);
     }
+    .lab-featured-guide {
+      display: block;
+      margin: 0 auto var(--space-8);
+      padding: clamp(var(--space-6), 5vw, var(--space-12));
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(125deg, #173b3d, #1f4d50);
+      color: var(--color-text-inverse);
+      text-decoration: none;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .lab-featured-guide:hover, .lab-featured-guide:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .lab-featured-guide__label {
+      display: inline-block;
+      margin-bottom: var(--space-3);
+      color: #9bfa8e;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .lab-featured-guide h2 {
+      max-width: 18ch;
+      margin-bottom: var(--space-3);
+      color: inherit;
+      font: 700 var(--text-2xl)/1.12 var(--font-display);
+    }
+    .lab-featured-guide p { max-width: 58ch; margin-bottom: var(--space-4); color: rgba(243,246,245,.88); }
+    .lab-featured-guide__meta { font-size: var(--text-sm); }
+    .lab-featured-guide__button {
+      display: inline-block;
+      margin-top: var(--space-2);
+      padding: .8rem 1.25rem;
+      border-radius: 999px;
+      background: var(--color-accent);
+      color: var(--color-surface-dark);
+      font-weight: 700;
+    }
   </style>
 </head>
 
@@ -262,10 +309,17 @@
     <h1>The Q³ Product Lab</h1>
     <p>Where ideas get tested, decisions get made, and builds get started right. Practical resources and hands-on
       services for founders who are ready to move.</p>
-    <div class="lab-quiz-button"><button type="button" class="hero__quiz-button" data-sa-url="https://25f81234-0be7-41d6-ab10-5e81cf37d7c1.scoreapp.com/?sa_target=_top" data-sa-view="popup" data-sa-size="full"><span>Take The Product Traction Quiz</span></button></div>
+    <div class="lab-quiz-button"><button type="button" class="hero__quiz-button" data-sa-url="https://tractiongrowthwithpearl.scoreapp.com/?utm_source=website&amp;utm_medium=lab-sidebar&amp;sa_target=_top" data-sa-view="popup" data-sa-size="full"><span>Take The Product Traction Quiz</span></button></div>
 
   </header>
 
+  <a class="lab-featured-guide container container--wide" href="lab/why-is-no-one-using-your-app.html" aria-label="Read the guide: Why is no one using your app?">
+    <span class="lab-featured-guide__label">The Guide</span>
+    <h2>Why is no one using your app?</h2>
+    <p>The two problems hiding under "we need more users", and how to fix yours.</p>
+    <p class="lab-featured-guide__meta">6 chapters · new chapter every week</p>
+    <span class="lab-featured-guide__button">Read the guide <span aria-hidden="true">→</span></span>
+  </a>
 
   <div class="lab-filters">
     <button class="filter-tag active" onclick="applyLabFilter('all', this)">Show All Items</button>

@@ -1,6 +1,7 @@
 /* Shared quiz placement and ScoreApp loader. Include this before </body> on pages with a footer. */
 (function () {
-  const quizUrl = "https://25f81234-0be7-41d6-ab10-5e81cf37d7c1.scoreapp.com/?sa_target=_top";
+  const medium = document.body.classList.contains("guide-page") ? "guide" : "footer-band";
+  const quizUrl = `https://tractiongrowthwithpearl.scoreapp.com/?utm_source=website&utm_medium=${medium}&sa_target=_top`;
   const makeButton = () => {
     const button = document.createElement("button");
     button.type = "button";
@@ -12,7 +13,7 @@
     return button;
   };
 
-  if (!document.querySelector(".quiz-footer-band")) {
+  if (!document.querySelector(".quiz-footer-band") && !document.body.classList.contains("guide-page")) {
     const band = document.createElement("section");
     band.className = "quiz-footer-band";
     band.id = "quiz-footer";

@@ -2,6 +2,9 @@
 
 > Pearl Oguchi helps tech founders work out why nobody is using their app, and fix it. She has 22 years in software, starting as a QA tester, including 9 years at Meta working on product quality. She works with early-stage and newly funded founders, and with accelerators and venture programmes that support them. Based in England, working with founders everywhere.
 
+## Main resource
+- [Why is no one using your app?](https://qubecatalyst.com/lab/why-is-no-one-using-your-app.html): Pearl Oguchi's guide for founders whose app isn't getting users: how to tell a distribution problem from a product problem, and what to fix first. Six chapters, added weekly.
+
 ## What she helps with
 - Why no one is using an app: whether it's a distribution problem (not enough of the right people know it exists) or a product problem (people arrive and leave)
 - Users who sign up but don't come back
