@@ -266,7 +266,7 @@
         <div class="hero__content reveal">
           <div class="hero__eyebrow">Product and traction help for tech startups · UK-based, working with founders everywhere</div>
           <h1 class="hero__title">You built the product. So why isn't anyone using it?</h1>
-          <p class="hero__sub">I'm Pearl Oguchi. I help tech startups and scale-ups in making right the product decisions that drive adoption, retention and growth, from MVP to scale. With over 22 years in technology, I’ve worked across startups, scale-ups, established firms and big tech, including 9 years at Meta leading product quality on Facebook, Messenger, Instagram and Meta Quest features used by billions. That gives me engineering-grade judgement on the question every founder faces: why isn’t this getting traction?</p>
+          <p class="hero__sub">I'm Pearl Oguchi. I help tech startups and scale-ups make the right product decisions that drive adoption, retention and growth, from MVP to scale. With over 22 years in technology, I’ve worked across startups, scale-ups, established firms and big tech, including 9 years at Meta leading product quality on Facebook, Messenger, Instagram and Meta Quest features used by billions. That gives me engineering-grade judgement on the question every founder faces: why isn’t this getting traction?</p>
 
           
           <div class="hero__actions">
@@ -647,8 +647,45 @@
     (function () {
       var toggle = document.querySelector('[data-contact-form-toggle]');
       var panel = document.getElementById('contact-message-panel');
+      var formContainer = document.getElementById('hubspot-contact-form');
       if (!toggle || !panel) return;
       var closeButton = panel.querySelector('[data-contact-form-close]');
+      var formLoading = false;
+      var formCreated = false;
+
+      function createContactForm() {
+        if (formCreated || !window.hbspt || !window.hbspt.forms) return;
+        formCreated = true;
+        window.hbspt.forms.create({
+          portalId: '148410884',
+          formId: 'a9988348-2b93-4285-9941-4bb6f8364a87',
+          region: 'eu1',
+          target: '#hubspot-contact-form',
+          onFormSubmitted: function (_form, data) {
+            window.QUBE_FORM_SUCCESS(data && data.formId || 'a9988348-2b93-4285-9941-4bb6f8364a87');
+          }
+        });
+      }
+
+      function loadContactForm() {
+        if (formCreated || formLoading) return;
+        if (window.hbspt && window.hbspt.forms) {
+          createContactForm();
+          return;
+        }
+        formLoading = true;
+        var script = document.createElement('script');
+        script.src = 'https://js-eu1.hsforms.net/forms/embed/v2.js';
+        script.async = true;
+        script.onload = function () {
+          formLoading = false;
+          createContactForm();
+        };
+        script.onerror = function () {
+          formLoading = false;
+        };
+        document.body.appendChild(script);
+      }
 
       function closePanel() {
         panel.hidden = true;
@@ -664,6 +701,7 @@
         panel.hidden = false;
         toggle.setAttribute('aria-expanded', 'true');
         closeButton.focus();
+        loadContactForm();
       });
 
       closeButton.addEventListener('click', closePanel);
@@ -672,8 +710,6 @@
       });
     })();
   </script>
-  <script async src="https://js-eu1.hsforms.net/forms/embed/v2.js"
-    onload="hbspt.forms.create({portalId:'148410884',formId:'a9988348-2b93-4285-9941-4bb6f8364a87',region:'eu1',target:'#hubspot-contact-form',onFormSubmitted:function(_form,data){window.QUBE_FORM_SUCCESS(data&&data.formId||'a9988348-2b93-4285-9941-4bb6f8364a87')}})"></script>
   <script src="quiz-placements.js"></script>
 
 </body>
