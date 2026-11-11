@@ -76,7 +76,7 @@
       node.address = businessAddress;
     }
     if (types.includes("WebPage") && /^https:\/\/qubecatalyst\.com\/(?:index\.html)?$/.test(node.url || "")) {
-      node.name = "Qube Catalyst | Product & Traction Help for Tech Startups";
+      node.name = "Why Is No One Using Your App? | Pearl Oguchi, Qube Catalyst";
     }
     return node;
   };
@@ -115,7 +115,7 @@
       {
         "@type": "WebPage",
         "name": location.pathname === "/" || /\/index\.html$/.test(location.pathname)
-          ? "Qube Catalyst | Product & Traction Help for Tech Startups" : pageTitle,
+          ? "Why Is No One Using Your App? | Pearl Oguchi, Qube Catalyst" : pageTitle,
         "description": pageDescription,
         "url": canonicalUrl,
         "publisher": { "@id": "https://qubecatalyst.com/#organization" },

@@ -1907,6 +1907,37 @@ body.homepage > section:not([hidden]) { padding-block: 72px; }
   background: var(--color-surface);
   box-shadow: var(--shadow-md);
 }
+
+.founder-faq__list {
+  display: grid;
+  gap: var(--space-4);
+}
+.founder-faq__item {
+  padding: clamp(20px, 3vw, 30px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+}
+.founder-faq__item h3 {
+  margin-bottom: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  line-height: 1.3;
+}
+.founder-faq__item p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+.founder-faq__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+.founder-faq__cta p { margin: 0; }
 .offer-card h3 { font: 600 1.6rem/1.25 var(--font-display); }
 .offer-card__small { font-size: .95rem; color: var(--color-text-muted); }
 .offer-card .btn { justify-content: center; min-height: 48px; }
