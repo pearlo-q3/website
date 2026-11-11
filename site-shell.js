@@ -184,10 +184,10 @@
       window.gtag?.("event", name, { ...details, page: location.pathname });
     } catch (_) {}
   };
-  let homepageLeadSent = false;
+  let contactFormLeadSent = false;
   window.QUBE_FORM_SUCCESS = formId => {
-    if (homepageLeadSent || formId !== "adaeafc0-d254-4957-8de8-d446f39fe91f") return;
-    homepageLeadSent = true;
+    if (contactFormLeadSent || formId !== "adaeafc0-d254-4957-8de8-d446f39fe91f") return;
+    contactFormLeadSent = true;
     trackLeadAction("generate_lead", { form_id: formId, location: "contact_form" });
   };
   const actionLocation = element => {
@@ -210,15 +210,15 @@
       trackLeadAction("whatsapp_click", { location: locationName });
     } else if (element.hasAttribute("data-sa-url") || element.classList.contains("hero__quiz-button")) {
       trackLeadAction("quiz_open", { location: locationName });
+    } else if (element.hasAttribute("data-contact-form-toggle")) {
+      trackLeadAction("contact_form_open", { location: locationName });
     }
   });
   window.addEventListener("hs-form-event:on-submission:success", event => {
     const detail = event.detail || {};
     const formId = detail.formId || detail.form_id || detail.id || detail.data?.formId;
-    if (formId !== "adaeafc0-d254-4957-8de8-d446f39fe91f") return;
-    window.QUBE_FORM_SUCCESS(formId);
+    if (formId === "adaeafc0-d254-4957-8de8-d446f39fe91f") window.QUBE_FORM_SUCCESS(formId);
   });
-
   const topbar = document.createElement("div");
   topbar.className = "contact-topbar";
   topbar.innerHTML = `<div class="contact-topbar__inner">

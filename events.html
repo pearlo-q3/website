@@ -449,10 +449,7 @@
             Want to talk about your product or invite me into the room?
           </h2>
           <p class="contact-panel__text">
-            If something here connects with what you are working on, send me a note or book time directly.
-          </p>
-          <p class="contact-panel__text">
-            Fill out the form or book directly below.
+            If something here connects with what you are working on, book a discovery call to talk it through.
           </p>
           <div class="hero__actions">
             <a href="https://meetings-eu1.hubspot.com/poguchi/discovery" class="btn btn--primary" target="_blank"
@@ -461,23 +458,22 @@
             </a>
           </div>
         </div>
-
         <div class="contact-panel__form">
-          <h3>Sign up to our newsletter and get updates on what's happening in the tech ecosystem.</h3>
-          <div id="hubspot-contact-form"></div>
-          <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+          <h3>Or send a message</h3>
+          <div id="hubspot-events-contact-form"></div>
+          <script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js"></script>
           <script>
             hbspt.forms.create({
               portalId: "148410884",
               formId: "adaeafc0-d254-4957-8de8-d446f39fe91f",
               region: "eu1",
-              target: "#hubspot-contact-form"
+              target: "#hubspot-events-contact-form",
+              onFormSubmitted: function () {
+                window.QUBE_FORM_SUCCESS("adaeafc0-d254-4957-8de8-d446f39fe91f");
+              }
             });
           </script>
         </div>
-
-
-
       </div>
     </div>
   </section>
