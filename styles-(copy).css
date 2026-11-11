@@ -2020,7 +2020,11 @@ body.homepage > section:not([hidden]) { padding-block: 72px; }
 .contact-form-panel__close:hover,
 .contact-form-panel__close:focus-visible {
   border-color: var(--color-text);
-  outline: 2px solid transparent;
+}
+.contact-form-panel__close:focus-visible,
+.contact-routes [data-contact-form-toggle]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 .contact-form-panel iframe { display: block; max-width: 100%; }
 .reviews-google { margin-top: 28px; text-align: center; }
