@@ -186,7 +186,7 @@
   };
   let contactFormLeadSent = false;
   window.QUBE_FORM_SUCCESS = formId => {
-    if (contactFormLeadSent || formId !== "adaeafc0-d254-4957-8de8-d446f39fe91f") return;
+    if (contactFormLeadSent || formId !== "1qZiDSCuTQoWZQUu2") return;
     contactFormLeadSent = true;
     trackLeadAction("generate_lead", { form_id: formId, location: "contact_form" });
   };
@@ -217,7 +217,7 @@
   window.addEventListener("hs-form-event:on-submission:success", event => {
     const detail = event.detail || {};
     const formId = detail.formId || detail.form_id || detail.id || detail.data?.formId;
-    if (formId === "adaeafc0-d254-4957-8de8-d446f39fe91f") window.QUBE_FORM_SUCCESS(formId);
+    if (formId === "1qZiDSCuTQoWZQUu2") window.QUBE_FORM_SUCCESS(formId);
   });
   const topbar = document.createElement("div");
   topbar.className = "contact-topbar";
