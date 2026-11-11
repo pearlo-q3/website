@@ -268,6 +268,49 @@
       background: #e95e33 !important;
       color: #0b282a !important;
     }
+    .guide-return-row {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-8);
+      padding-top: var(--space-6);
+      border-top: 1px solid rgba(23, 59, 61, .28);
+    }
+    .guide-return-row .article-return-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem;
+      min-height: 52px;
+      padding: .8rem 1.5rem;
+      border: 2px solid #ff7043;
+      border-radius: 999px;
+      background: var(--color-surface-2);
+      color: var(--color-surface-dark);
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 3px 0 rgba(23, 59, 61, .18);
+      transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .guide-return-row .article-return-link::before {
+      content: "←";
+      color: #ff7043;
+      font-size: 1.2em;
+    }
+    .guide-return-row .article-return-link:hover,
+    .guide-return-row .article-return-link:focus-visible {
+      background: #ff7043;
+      color: #0f2c2e;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 0 rgba(23, 59, 61, .2);
+    }
+    .guide-return-row .article-return-link:hover::before,
+    .guide-return-row .article-return-link:focus-visible::before {
+      color: #0f2c2e;
+    }
+    .guide-return-row .article-return-link:focus-visible {
+      outline: 3px solid var(--color-surface-dark);
+      outline-offset: 4px;
+    }
     @media (max-width: 990px) {
       .article-split-grid { grid-template-columns: 1fr; gap: var(--space-10); }
       .lab-context-sidebar { position: static; }
@@ -434,6 +477,8 @@
           <a href="#" data-site-phone class="btn btn--primary">Call us</a>
           <span class="cta-or">OR</span>
           <a href="#" data-site-booking data-site-booking-label class="btn btn--primary" target="_blank" rel="noopener noreferrer">Book A Discovery Call</a>
+        </div>
+        <div class="guide-return-row">
           <a href="../lab.html" class="article-return-link">Return to Product Lab</a>
         </div>
       </div>
