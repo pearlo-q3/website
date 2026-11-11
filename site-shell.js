@@ -21,7 +21,7 @@
   const topbar = document.createElement("div");
   topbar.className = "contact-topbar";
   topbar.innerHTML = `<div class="contact-topbar__inner">
-    <a class="contact-topbar__phone" href="${telHref}">${svg(phoneIcon, "Phone")}<span>Call us</span></a>
+    <a class="contact-topbar__phone" href="${telHref}">${svg(phoneIcon, "Phone")}<span>Call us <span class="contact-topbar__number">${config.phone}</span></span></a>
     <span class="contact-topbar__or" aria-hidden="true">OR</span>
     <a class="contact-topbar__booking" href="${config.bookingUrl}" target="_blank" rel="noopener noreferrer">${config.bookingLabel}</a>
   </div>`;
@@ -37,7 +37,7 @@
     ["For founders", home + "#founders"],
     ["For scaling teams", home + "#scaling"],
     ["For programmes", home + "#programmes"],
-    ["Reviews", home + "#reviews"],
+    ["Testimonials", home + "#testimonials"],
     ["Product Lab", "../".repeat(directoryDepth) + "lab.html"],
     ["Events", "../".repeat(directoryDepth) + "events.html"]
   ];
