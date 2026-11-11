@@ -205,7 +205,18 @@
     .guide-toc h2 { margin: 0 0 var(--space-3); font-size: var(--text-lg); }
     .guide-toc ul { columns: 2; margin: 0; padding-left: 1.25rem; }
     .guide-toc li { break-inside: avoid; margin: 0 0 .45rem; }
-    .guide-toc a { color: var(--color-text); text-decoration-color: var(--color-accent); }
+    .guide-toc a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-decoration-color: var(--color-accent);
+      text-underline-offset: .18em;
+    }
+    .guide-toc a:hover { text-decoration-thickness: 2px; }
+    .guide-toc a:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
     .guide-chapter-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
