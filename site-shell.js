@@ -43,6 +43,7 @@
   setMeta('meta[name="twitter:image"]', "name", "https://qubecatalyst.com/assets/headshot.png");
 
   const businessDescription = "Pearl Oguchi helps tech founders, scaling teams and the programmes that back them find what's stopping product growth, and fix it. 22 years building software, 9 at Meta.";
+  const personDescription = "Pearl Oguchi helps tech founders and the programmes that back them work out why nobody is using their app, and fix it. She started as a software tester, has 22 years in software including nine years at Meta working on product quality across Facebook and Messenger, and founded Black Women in Tech, a community of more than 52,000 members.";
   const businessAddress = {
     "@type": "PostalAddress",
     "addressLocality": "Leighton Buzzard",
@@ -72,7 +73,7 @@
       node.jobTitle = "Founder and Fractional CPO, Qube Catalyst";
       node.email = "hello@qubecatalyst.com";
       node.telephone = "+44 7417 336694";
-      node.description = businessDescription;
+      node.description = personDescription;
       node.address = businessAddress;
     }
     if (types.includes("WebPage") && /^https:\/\/qubecatalyst\.com\/(?:index\.html)?$/.test(node.url || "")) {
@@ -108,7 +109,7 @@
         "url": "https://qubecatalyst.com/",
         "email": "hello@qubecatalyst.com",
         "telephone": "+44 7417 336694",
-        "description": businessDescription,
+        "description": personDescription,
         "address": businessAddress,
         "worksFor": { "@id": "https://qubecatalyst.com/#organization" }
       },

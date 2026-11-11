@@ -1980,6 +1980,7 @@ body.homepage > section:not([hidden]) { padding-block: 72px; }
 .about-short { background: var(--color-surface-dark); color: var(--color-text-inverse); }
 .about-short .section-title { color: inherit; }
 .about-short p { max-width: 70ch; font-size: 1.1rem; }
+.about-short p:not(.about-short__signature) { margin: 0 0 1.1rem; }
 .about-short__signature { margin-top: 24px; }
 .lead-contact .section-title { max-width: 850px; margin: 0 auto 28px; text-align: center; }
 .contact-routes { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 42px; }
