@@ -275,9 +275,15 @@
       margin-top: var(--space-2);
       padding: .8rem 1.25rem;
       border-radius: 999px;
-      background: var(--color-accent);
-      color: var(--color-surface-dark);
+      background: #ff7043;
+      color: #0f2c2e;
       font-weight: 700;
+      transition: background-color var(--transition), color var(--transition);
+    }
+    .lab-featured-guide:hover .lab-featured-guide__button,
+    .lab-featured-guide:focus-visible .lab-featured-guide__button {
+      background: #e95e33;
+      color: #0b282a;
     }
   </style>
 </head>
