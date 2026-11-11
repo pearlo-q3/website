@@ -210,8 +210,6 @@
       trackLeadAction("whatsapp_click", { location: locationName });
     } else if (element.hasAttribute("data-sa-url") || element.classList.contains("hero__quiz-button")) {
       trackLeadAction("quiz_open", { location: locationName });
-    } else if (element.hasAttribute("data-contact-form-toggle")) {
-      trackLeadAction("contact_form_open", { location: locationName });
     }
   });
   window.addEventListener("hs-form-event:on-submission:success", event => {

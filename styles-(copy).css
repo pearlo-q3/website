@@ -1982,51 +1982,16 @@ body.homepage > section:not([hidden]) { padding-block: 72px; }
 .about-short p { max-width: 70ch; font-size: 1.1rem; }
 .about-short p:not(.about-short__signature) { margin: 0 0 1.1rem; }
 .about-short__signature { margin-top: 24px; }
-.lead-contact .section-title { max-width: 850px; margin: 0 auto 28px; text-align: center; }
-.contact-routes { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 0; }
-.contact-routes > * { min-height: 48px; }
-.lead-contact h3 { margin: 0 0 18px; text-align: center; font: 600 1.5rem/1.3 var(--font-display); }
-.lead-contact .contact-panel__form { max-width: 780px; margin: 0 auto; }
-.contact-form-panel {
-  max-width: 640px;
-  margin: var(--space-8) auto 0;
-  padding: clamp(var(--space-4), 3vw, var(--space-8));
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface-2);
-  color: var(--color-text);
+.about-quiz-cta {
+  padding: var(--space-5) 0;
+  background: var(--color-surface-dark);
+  text-align: center;
 }
-.contact-form-panel[hidden] { display: none; }
-.contact-form-panel__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
-}
-.contact-form-panel__header h3 {
-  margin: 0;
-  font: 600 var(--text-lg)/1.35 var(--font-display);
-}
-.contact-form-panel__close {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-2) var(--space-4);
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-.contact-form-panel__close:hover,
-.contact-form-panel__close:focus-visible {
-  border-color: var(--color-text);
-}
-.contact-form-panel__close:focus-visible,
-.contact-routes [data-contact-form-toggle]:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.contact-form-panel iframe { display: block; max-width: 100%; }
+.about-quiz-cta .hero__quiz-button { margin: 0 auto; }
+.homepage-contact { max-width: 680px; margin: 0 auto; }
+.homepage-contact .section-title { margin: 0 0 var(--space-6); text-align: center; }
+.homepage-contact__form { border-top: 1px solid var(--color-border); padding-top: var(--space-6); }
+.homepage-contact__form iframe { display: block; max-width: 100%; }
 .reviews-google { margin-top: 28px; text-align: center; }
 .btn, .hero__quiz-button { min-height: 48px; }
 .hero__reviews { display: inline-block; margin-top: 20px; color: var(--color-text); }
