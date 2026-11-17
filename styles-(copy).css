@@ -1184,6 +1184,12 @@ body.nav--open .nav__hamburger span:nth-child(3) {
   max-height: 86px;
 }
 
+@media (min-width: 901px) {
+  .partners__item:last-child:nth-child(5n + 1) {
+    grid-column: 3;
+  }
+}
+
 .partners__item--shadow {
   background: #050518;
   border-color: #050518;
@@ -1694,6 +1700,9 @@ body.nav--open .nav__hamburger span:nth-child(3) {
   .partners__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-3);
+  }
+  .partners__item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
   .partners__item {
     min-height: 104px;
