@@ -1987,6 +1987,12 @@ body.homepage > section:not([hidden]) { padding-block: 72px; }
   background: var(--color-surface-dark);
   text-align: center;
 }
+.about-quiz-cta__text {
+  margin: 0 0 1rem;
+  color: var(--color-text-inverse);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
 .about-quiz-cta .hero__quiz-button { margin: 0 auto; }
 .homepage-contact { max-width: 680px; margin: 0 auto; }
 .homepage-contact .section-title { margin: 0 0 var(--space-6); text-align: center; }
