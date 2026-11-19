@@ -159,13 +159,6 @@
 
   function loadMarketingScripts() {
     if (window.QUBE_CONSENT?.getChoice() !== "accepted") return;
-    if (!document.querySelector('script[src*="js-eu1.hs-scripts.com/148410884.js"]')) {
-      const hubspot = document.createElement("script");
-      hubspot.src = "https://js-eu1.hs-scripts.com/148410884.js";
-      hubspot.async = true;
-      hubspot.defer = true;
-      document.head.append(hubspot);
-    }
     if (!document.querySelector('script[src*="lftracker_v1_lAxoEaKQVo17OYGd"]')) {
       window.ldfdr = window.ldfdr || function () {
         (window.ldfdr._q = window.ldfdr._q || []).push([].slice.call(arguments));
