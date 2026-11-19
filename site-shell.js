@@ -159,6 +159,15 @@
 
   function loadMarketingScripts() {
     if (window.QUBE_CONSENT?.getChoice() !== "accepted") return;
+    window.$zoho = window.$zoho || {};
+    window.$zoho.salesiq = window.$zoho.salesiq || { ready: function () {} };
+    if (!document.getElementById("zsiqscript")) {
+      const zohoSalesIq = document.createElement("script");
+      zohoSalesIq.id = "zsiqscript";
+      zohoSalesIq.src = "https://salesiq.zoho.uk/widget?wc=183bb8b95a4a1cb2af7473980c00f61f8acc09a00ad57180dd0f5d1adb968e22";
+      zohoSalesIq.defer = true;
+      document.head.append(zohoSalesIq);
+    }
     if (!document.querySelector('script[src*="lftracker_v1_lAxoEaKQVo17OYGd"]')) {
       window.ldfdr = window.ldfdr || function () {
         (window.ldfdr._q = window.ldfdr._q || []).push([].slice.call(arguments));
