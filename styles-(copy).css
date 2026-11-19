@@ -2029,9 +2029,27 @@ body.homepage > section:not([hidden]) { padding-block: 72px; }
   #home .hero__sub { margin-bottom: 18px; font-size: 16px; line-height: 1.45; }
   #home .hero__actions { gap: 8px; }
   #home .hero__actions .btn { min-height: 48px; }
-  #home .hero__image-wrap { display: flex; margin-top: 8px; }
-  #home .hero__image-wrap img { width: 34%; max-width: 132px; }
-  #home .hero__image-quote { display: none; }
+  #home .hero__image-wrap { display: flex; align-items: center; margin-top: 8px; }
+  #home .hero__image-wrap img {
+    width: 100%;
+    max-width: 320px;
+    max-height: none;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center 22%;
+  }
+  #home .hero__image-quote {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin-top: 16px;
+    align-self: center;
+  }
+  #home .hero__image-quote-text {
+    font-size: clamp(1.05rem, 4.5vw, 1.2rem);
+    line-height: 1.45;
+  }
+  #home .hero__image-quote-source { font-size: 0.9rem; }
   .audience-selector__grid, .lead-section__inner, .lead-cases__grid { grid-template-columns: 1fr; }
   .audience-selector__grid a { min-height: 100px; }
   .pain-quotes { grid-template-columns: 1fr; }
