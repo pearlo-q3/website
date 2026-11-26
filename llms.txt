@@ -6,6 +6,13 @@
 - [Why is no one using your app?](https://qubecatalyst.com/lab/why-is-no-one-using-your-app.html): Pearl Oguchi's guide for founders whose app isn't getting users: how to tell a distribution problem from a product problem, and what to fix first. Six chapters, added weekly.
   - Chapter 1 — Ready to share: https://qubecatalyst.com/lab/why-is-no-one-using-your-app/ready-to-share.html
 
+## Product Lab articles
+- [Preventative Retention: Fixing Software Churn Before You Launch](https://qubecatalyst.com/lab/fix-churn.html): Stop chasing 1,000 users if your software is missing its bottom. Learn how to audit your onboarding flow, eliminate cognitive friction, and fix retention before launch.
+- [Kill the Founder: Eliminating High-Touch SaaS Retention Fractures](https://qubecatalyst.com/lab/kill-the-founder.html): Why high-touch management hides systemic scaling flaws. Learn to configure your application to onboard and retain users entirely on its own engineering merits.
+- [What Listening to Users Actually Looks Like: Behavioral Analytics Brief](https://qubecatalyst.com/lab/listening-to-users.html): Navigating the critical variance between stated user feedback and actual product behavioral metrics. Build research loops that identify genuine product need.
+- [Vibe Code, But Make It Make Sense](https://qubecatalyst.com/lab/vibe-coding-reality-check.html): A practical one-page reality check for founders who are vibe coding an app and want to clarify the user journey, feature logic, and next step.
+- [What’s Happening](https://qubecatalyst.com/events.html): What’s happening at Qube Catalyst: product insights, founder-facing events, demos, ecosystem activity, and updates from Pearl Oguchi on technology, product quality, and responsible innovation.
+
 ## What she helps with
 - Why no one is using an app: whether it's a distribution problem (not enough of the right people know it exists) or a product problem (people arrive and leave)
 - Users who sign up but don't come back

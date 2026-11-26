@@ -86,45 +86,47 @@
       script.textContent = JSON.stringify(normalizeSchema(JSON.parse(script.textContent)));
     } catch (_) {}
   });
-  const sharedSchema = document.createElement("script");
-  sharedSchema.type = "application/ld+json";
-  sharedSchema.textContent = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://qubecatalyst.com/#organization",
-        "name": "Qube Catalyst",
-        "url": "https://qubecatalyst.com/",
-        "email": "hello@qubecatalyst.com",
-        "telephone": "+44 7417 336694",
-        "description": businessDescription,
-        "address": businessAddress,
-      },
-      {
-        "@type": "Person",
-        "@id": "https://qubecatalyst.com/#person",
-        "name": "Pearl Oguchi",
-        "jobTitle": "Founder and Fractional CPO, Qube Catalyst",
-        "url": "https://qubecatalyst.com/",
-        "email": "hello@qubecatalyst.com",
-        "telephone": "+44 7417 336694",
-        "description": personDescription,
-        "address": businessAddress,
-        "worksFor": { "@id": "https://qubecatalyst.com/#organization" }
-      },
-      {
-        "@type": "WebPage",
-        "name": location.pathname === "/" || /\/index\.html$/.test(location.pathname)
-          ? "Why Is No One Using Your App? | Pearl Oguchi, Qube Catalyst" : pageTitle,
-        "description": pageDescription,
-        "url": canonicalUrl,
-        "publisher": { "@id": "https://qubecatalyst.com/#organization" },
-        "author": { "@id": "https://qubecatalyst.com/#person" }
-      }
-    ]
-  });
-  document.head.append(sharedSchema);
+  if (!document.querySelector('script[type="application/ld+json"][data-site-entity-schema]')) {
+    const sharedSchema = document.createElement("script");
+    sharedSchema.type = "application/ld+json";
+    sharedSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://qubecatalyst.com/#organization",
+          "name": "Qube Catalyst",
+          "url": "https://qubecatalyst.com/",
+          "email": "hello@qubecatalyst.com",
+          "telephone": "+44 7417 336694",
+          "description": businessDescription,
+          "address": businessAddress,
+        },
+        {
+          "@type": "Person",
+          "@id": "https://qubecatalyst.com/#person",
+          "name": "Pearl Oguchi",
+          "jobTitle": "Founder and Fractional CPO, Qube Catalyst",
+          "url": "https://qubecatalyst.com/",
+          "email": "hello@qubecatalyst.com",
+          "telephone": "+44 7417 336694",
+          "description": personDescription,
+          "address": businessAddress,
+          "worksFor": { "@id": "https://qubecatalyst.com/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "name": location.pathname === "/" || /\/index\.html$/.test(location.pathname)
+            ? "Why Is No One Using Your App? | Pearl Oguchi, Qube Catalyst" : pageTitle,
+          "description": pageDescription,
+          "url": canonicalUrl,
+          "publisher": { "@id": "https://qubecatalyst.com/#organization" },
+          "author": { "@id": "https://qubecatalyst.com/#person" }
+        }
+      ]
+    });
+    document.head.append(sharedSchema);
+  }
 
   const pathParts = location.pathname.split("/").filter(Boolean);
   const directoryDepth = location.pathname.endsWith("/")
@@ -223,14 +225,30 @@
     const formId = detail.formId || detail.form_id || detail.id || detail.data?.formId;
     if (formId === "a9988348-2b93-4285-9941-4bb6f8364a87") window.QUBE_FORM_SUCCESS(formId);
   });
-  const topbar = document.createElement("div");
-  topbar.className = "contact-topbar";
-  topbar.innerHTML = `<div class="contact-topbar__inner">
-    <a class="contact-topbar__phone" href="${telHref}">${svg(phoneIcon, "Phone")}<span>Call us <span class="contact-topbar__number">${config.phone}</span></span></a>
-    <span class="contact-topbar__or" aria-hidden="true">OR</span>
-    <a class="contact-topbar__booking" href="${config.bookingUrl}" target="_blank" rel="noopener noreferrer">${config.bookingLabel}</a>
-  </div>`;
-  nav.before(topbar);
+  let topbar = nav.previousElementSibling?.classList.contains("contact-topbar")
+    ? nav.previousElementSibling : null;
+  if (!topbar) {
+    topbar = document.createElement("div");
+    topbar.className = "contact-topbar";
+    topbar.innerHTML = `<div class="contact-topbar__inner">
+      <a class="contact-topbar__phone" href="${telHref}">${svg(phoneIcon, "Phone")}<span>Call us <span class="contact-topbar__number">${config.phone}</span></span></a>
+      <span class="contact-topbar__or" aria-hidden="true">OR</span>
+      <a class="contact-topbar__booking" href="${config.bookingUrl}" target="_blank" rel="noopener noreferrer">${config.bookingLabel}</a>
+    </div>`;
+    nav.before(topbar);
+  } else {
+    const phoneLink = topbar.querySelector(".contact-topbar__phone");
+    if (phoneLink) {
+      phoneLink.href = telHref;
+      const number = phoneLink.querySelector(".contact-topbar__number");
+      if (number) number.textContent = config.phone;
+    }
+    const bookingLink = topbar.querySelector(".contact-topbar__booking");
+    if (bookingLink) {
+      bookingLink.href = config.bookingUrl;
+      bookingLink.textContent = config.bookingLabel;
+    }
+  }
 
   const links = [
     ["Home", home],
@@ -280,6 +298,7 @@
   });
   document.querySelectorAll("[data-site-phone]").forEach(link => {
     link.href = telHref;
+    if (link.classList.contains("contact-topbar__phone")) return;
     if (link.classList.contains("btn")) {
       link.innerHTML = `${svg(phoneIcon, "Phone")}<span>Call us</span>`;
     } else {
@@ -314,22 +333,23 @@
       .replaceAll("__GOOGLE_REVIEWS__", config.googleReviewsUrl);
   });
 
-  if (!document.querySelector(".floating-whatsapp")) {
-    const floating = document.createElement("a");
+  let floating = document.querySelector(".floating-whatsapp");
+  if (!floating) {
+    floating = document.createElement("a");
     floating.className = "floating-whatsapp";
-    floating.href = whatsappHref;
-    floating.target = "_blank";
-    floating.rel = "noopener noreferrer";
-    floating.setAttribute("aria-label", "Message Pearl on WhatsApp");
-    floating.innerHTML = svg(whatsappIcon, "WhatsApp");
     document.body.append(floating);
-    const banner = document.getElementById("cookie-banner");
-    const reposition = () => {
-      const height = banner && !banner.hidden ? banner.getBoundingClientRect().height : 0;
-      floating.style.bottom = `calc(${Math.ceil(height)}px + 1rem)`;
-    };
-    reposition();
-    if (banner) new MutationObserver(reposition).observe(banner, { attributes: true, attributeFilter: ["hidden"] });
-    window.addEventListener("resize", reposition);
   }
+  floating.innerHTML = svg(whatsappIcon, "WhatsApp");
+  floating.href = whatsappHref;
+  floating.target = "_blank";
+  floating.rel = "noopener noreferrer";
+  floating.setAttribute("aria-label", "Message Pearl on WhatsApp");
+  const banner = document.getElementById("cookie-banner");
+  const reposition = () => {
+    const height = banner && !banner.hidden ? banner.getBoundingClientRect().height : 0;
+    floating.style.bottom = `calc(${Math.ceil(height)}px + 1rem)`;
+  };
+  reposition();
+  if (banner) new MutationObserver(reposition).observe(banner, { attributes: true, attributeFilter: ["hidden"] });
+  window.addEventListener("resize", reposition);
 })();
