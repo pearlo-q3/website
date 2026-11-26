@@ -238,7 +238,6 @@
     ["For scaling teams", home + "#scaling"],
     ["For programmes", home + "#programmes"],
     ["Testimonials", home + "#testimonials"],
-    ["Free Guide", "../".repeat(directoryDepth) + "lab/why-is-no-one-using-your-app.html"],
     ["Product Lab", "../".repeat(directoryDepth) + "lab.html"],
     ["Events", "../".repeat(directoryDepth) + "events.html"]
   ];
