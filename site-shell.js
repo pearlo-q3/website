@@ -31,7 +31,7 @@
     }
     meta.setAttribute("content", value);
   };
-  const articlePage = /^\/lab\/(?!game\/)[^/]+\.html$/.test(location.pathname);
+  const articlePage = /^\/lab\/(?!game\/)[^/]+(?:\/[^/]+)?\.html$/.test(location.pathname);
   setMeta('meta[property="og:title"]', "property", pageTitle);
   setMeta('meta[property="og:description"]', "property", pageDescription);
   setMeta('meta[property="og:url"]', "property", canonicalUrl);

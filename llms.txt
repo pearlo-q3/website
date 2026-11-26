@@ -4,6 +4,7 @@
 
 ## Main resource
 - [Why is no one using your app?](https://qubecatalyst.com/lab/why-is-no-one-using-your-app.html): Pearl Oguchi's guide for founders whose app isn't getting users: how to tell a distribution problem from a product problem, and what to fix first. Six chapters, added weekly.
+  - Chapter 1 — Ready to share: https://qubecatalyst.com/lab/why-is-no-one-using-your-app/ready-to-share.html
 
 ## What she helps with
 - Why no one is using an app: whether it's a distribution problem (not enough of the right people know it exists) or a product problem (people arrive and leave)

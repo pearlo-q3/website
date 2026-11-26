@@ -236,6 +236,21 @@
       padding: var(--space-6);
       min-height: 150px;
     }
+    .guide-chapter-card--link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .guide-chapter-card--link:hover,
+    .guide-chapter-card--link:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 16px rgba(23, 59, 61, .12);
+    }
+    .guide-chapter-card--link:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+    }
     .guide-chapter-card__number {
       color: var(--color-accent);
       font-weight: 700;
@@ -401,16 +416,16 @@
           <h2 id="validate-with-users">How do I validate my app with real users?</h2>
           <p>Watch strangers use it. Find a few people who match your target user and have never seen the app. Not friends, not other founders. Give them one thing to do, then watch without helping.</p>
           <p>I started my career 22 years ago as a software tester, and playing the user is still the most useful thing I do. On one product the team was sure everything worked. Within minutes of using it the way a new user would, I'd hit broken logos and a redirect that sent people somewhere nobody expected. None of it was hidden. The team had just stopped seeing it, because they knew the product too well.</p>
-          <p>Before you ask strangers to try it, make sure it's ready for them. <a class="guide-signpost" href="#chapter-1">(Chapter 1: Ready to share)</a></p>
+          <p>Before you ask strangers to try it, make sure it's ready for them. <a class="guide-signpost" href="why-is-no-one-using-your-app/ready-to-share.html">(Chapter 1: Ready to share)</a></p>
 
           <h2 id="why-now">Why this matters now</h2>
           <p>Investors ask for evidence of real usage, not sign-up counts. "We have 400 sign-ups" gets a very different reaction from "40 people use it every week, and here's why." Knowing which problem you've got means the next three months go on the thing that moves that number.</p>
 
           <h2 id="chapter-list">The guide</h2>
           <div class="guide-chapter-grid" aria-label="Guide chapters">
-            <article class="guide-chapter-card" id="chapter-1" data-future-url="why-is-no-one-using-your-app/ready-to-share.html">
-              <div class="guide-chapter-card__number">Chapter 1</div><h3>Ready to share</h3><span class="guide-coming-soon">Coming soon</span>
-            </article>
+            <a class="guide-chapter-card guide-chapter-card--link" id="chapter-1" href="why-is-no-one-using-your-app/ready-to-share.html">
+              <div class="guide-chapter-card__number">Chapter 1</div><h3>Ready to share</h3><span class="guide-coming-soon">Read chapter →</span>
+            </a>
             <article class="guide-chapter-card" id="chapter-2" data-future-url="why-is-no-one-using-your-app/reach.html">
               <div class="guide-chapter-card__number">Chapter 2</div><h3>Reach</h3><span class="guide-coming-soon">Coming soon</span>
             </article>
