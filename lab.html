@@ -2,7 +2,6 @@
 <html lang="en" data-theme="light">
 
 <head>
-  <script src="site-consent.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -65,6 +64,40 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    /* Run synchronously in <head>, before Google Analytics is configured. */
+    (function () {
+      const key = "cookieChoice";
+      const granted = { analytics_storage: "granted", ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted" };
+      const denied = { analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" };
+      let choice = "denied";
+      try {
+        choice = localStorage.getItem(key) === "accepted" ? "accepted" :
+          localStorage.getItem(key) === "rejected" ? "rejected" : "denied";
+      } catch (_) {}
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag("consent", "default", { ...denied, wait_for_update: 500 });
+      if (choice === "accepted") window.gtag("consent", "update", granted);
+      else if (choice === "rejected") window.gtag("consent", "update", denied);
+      window.gtag("js", new Date());
+      window.gtag("config", "G-4FJNXE3M7L");
+      const googleTag = document.createElement("script");
+      googleTag.async = true;
+      googleTag.src = "https://www.googletagmanager.com/gtag/js?id=G-4FJNXE3M7L";
+      document.head.append(googleTag);
+      window.QUBE_CONSENT = {
+        getChoice: () => choice,
+        setChoice(nextChoice) {
+          if (nextChoice !== "accepted" && nextChoice !== "rejected") return;
+          choice = nextChoice;
+          try { localStorage.setItem(key, nextChoice); } catch (_) {}
+          window.gtag("consent", "update", nextChoice === "accepted" ? granted : denied);
+          window.dispatchEvent(new CustomEvent("qube:consent", { detail: { choice } }));
+        }
+      };
+    })();
+  </script>
   <title>The Product Lab: Interactive Frameworks & Growth Diagnostics | Qube Catalyst</title>
   <meta name="description"
     content="Access unvarnished product briefs, real-time runway simulators, and interactive retention architecture tests for early-stage software founders." />
@@ -84,10 +117,29 @@
   <script src="site-config.js" defer></script>
   <script src="site-shell.js" defer></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap"
-    rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400 700;
+      font-display: swap;
+      src: url("assets/fonts/open-sans-latin-variable.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url("assets/fonts/poppins-latin-600.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url("assets/fonts/poppins-latin-700.woff2") format("woff2");
+    }
+  </style>
 
   <style>
     /* Custom layout layer specifically for the Product Lab Grid UI */
