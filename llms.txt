@@ -4,7 +4,7 @@
 
 ## Main resource
 - [Why is no one using your app?](https://qubecatalyst.com/lab/why-is-no-one-using-your-app.html): Pearl Oguchi's guide for founders whose app isn't getting users: how to tell a distribution problem from a product problem, and what to fix first. Six chapters, added weekly.
-  - Chapter 1 — Ready to share: https://qubecatalyst.com/lab/why-is-no-one-using-your-app/ready-to-share.html
+  - Chapter 1, Ready to share: is your app ready for real users? How to test it before you share it, even with no users yet: https://qubecatalyst.com/lab/why-is-no-one-using-your-app/ready-to-share.html
 
 ## Product Lab articles
 - [Preventative Retention: Fixing Software Churn Before You Launch](https://qubecatalyst.com/lab/fix-churn.html): Stop chasing 1,000 users if your software is missing its bottom. Learn how to audit your onboarding flow, eliminate cognitive friction, and fix retention before launch.
