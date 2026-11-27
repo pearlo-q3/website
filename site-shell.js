@@ -167,6 +167,9 @@
       window.$zoho.salesiq.floatbutton.visible("hide");
       window.$zoho.salesiq.tracking.on();
     };
+    window.$zoho.salesiq.afterReady = function () {
+      try { window.$zoho.salesiq.privacy.updateCookieConsent(['analytics', 'performance']); } catch (_) {}
+    };
     if (!document.getElementById("zsiqscript")) {
       const zohoSalesIq = document.createElement("script");
       zohoSalesIq.id = "zsiqscript";
