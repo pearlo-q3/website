@@ -22,14 +22,12 @@
   const pageDescription = document.querySelector('meta[name="description"]')?.content || "";
   const canonicalUrl = document.querySelector('link[rel="canonical"]')?.href || location.href;
   const setMeta = (selector, attribute, value) => {
-    let meta = document.querySelector(selector);
-    if (!meta) {
-      meta = document.createElement("meta");
-      const [key, keyValue] = selector.match(/\[(name|property)="([^"]+)"\]/).slice(1);
-      meta.setAttribute(key, keyValue);
-      document.head.append(meta);
-    }
+    if (document.querySelector(selector)) return;
+    const meta = document.createElement("meta");
+    const [key, keyValue] = selector.match(/\[(name|property)="([^"]+)"\]/).slice(1);
+    meta.setAttribute(key, keyValue);
     meta.setAttribute("content", value);
+    document.head.append(meta);
   };
   const articlePage = /^\/lab\/(?!game\/)[^/]+(?:\/[^/]+)?\.html$/.test(location.pathname);
   setMeta('meta[property="og:title"]', "property", pageTitle);
@@ -173,7 +171,7 @@
     if (!document.getElementById("zsiqscript")) {
       const zohoSalesIq = document.createElement("script");
       zohoSalesIq.id = "zsiqscript";
-      zohoSalesIq.src = "https://salesiq.zoho.uk/widget?wc=183bb8b95a4a1cb2af7473980c00f61f8acc09a00ad57180dd0f5d1adb968e22";
+      zohoSalesIq.src = "https://salesiq.zohopublic.uk/widget?wc=183bb8b95a4a1cb2af7473980c00f61f8acc09a00ad57180dd0f5d1adb968e22";
       zohoSalesIq.defer = true;
       document.head.append(zohoSalesIq);
     }
