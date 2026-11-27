@@ -171,7 +171,7 @@
     if (!document.getElementById("zsiqscript")) {
       const zohoSalesIq = document.createElement("script");
       zohoSalesIq.id = "zsiqscript";
-      zohoSalesIq.src = "https://salesiq.zohopublic.eu/widget?wc=siq21b1e8b45230bc0685c4ae960954ce33b9578b7eeeea3203d171ed0a75b22f1d";
+      zohoSalesIq.src = "https://salesiq.zohopublic.eu/widget?wc=siq21b1e8b45230bc0685c4ae960954ce333f1a55b6e534a3e7835dca0dba8f2baa";
       zohoSalesIq.defer = true;
       document.head.append(zohoSalesIq);
     }
