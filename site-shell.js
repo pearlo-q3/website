@@ -213,7 +213,7 @@
     const locationName = actionLocation(element);
     if (/^tel:/i.test(href) || element.hasAttribute("data-site-phone")) {
       trackLeadAction("call_click", { location: locationName });
-    } else if (/meetings-eu1\.hubspot\.com/i.test(href) || element.hasAttribute("data-site-booking")) {
+    } else if (/meetings-eu1\.hubspot\.com|pearlo-qubecatalyst47\.zohobookings\.eu/i.test(href) || element.hasAttribute("data-site-booking")) {
       trackLeadAction("booking_click", { location: locationName });
     } else if (/wa\.me/i.test(href) || element.classList.contains("floating-whatsapp") || element.hasAttribute("data-site-whatsapp")) {
       trackLeadAction("whatsapp_click", { location: locationName });
